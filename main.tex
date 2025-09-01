@@ -15,7 +15,7 @@
 描述静电场的基本方程是麦克斯韦方程组在静态条件下的两个特例：高斯定律和静电场的环路定理。
 
 \subsection{高斯定律 (Gauss's Law)}
-\begin{definition}[高斯定律-微分形式]
+\begin{law}[高斯定律-微分形式]
     静电场散度与电荷密度 $\rho$ 的关系由高斯定律的微分形式给出：
     \begin{equation}
         \nabla \cdot \bm{E} = \frac{\rho}{\epsilon_0}
@@ -28,7 +28,7 @@
         \mathrm{F/m}$。
     \end{itemize}
     这个方程表明，电场的源是电荷。正电荷是电场线的起点（散度为正），负电荷是电场线的终点（散度为负）。
-\end{definition}
+\end{law}
 
 为了从根源上理解电场，我们首先考虑由连续分布的电荷所产生的电场。空间中某点 $\bm{r}$ 的电场 $\bm{E}(\bm{r})$，
 是由位于源点 $\bm{r'}$ 的所有微元电荷 $\mathrm{d}q$ 在该点产生电场的矢量和。
@@ -42,16 +42,19 @@
 \mathrm{d}l'$ 分别为体积元、面积元和线元。
 根据库仑定律，整个电荷分布在点 $\bm{r}$ 处产生的总电场为对所有源电荷的贡献进行积分。以体电荷分布为例：
 \begin{equation}
-    \bm{E}(\bm{r}) = \frac{1}{4\pi\epsilon_0} \int_V \frac{\mathrm{d}q}{|\bm{r}-\bm{r'}|^2} \frac{\bm{r}-\bm{r'}}{|\bm{r}-\bm{r'}|} = \frac{1}{4\pi\epsilon_0} \int_V \frac{\rho(\bm{r'})(\bm{r}-\bm{r'})}{|\bm{r}-\bm{r'}|^3} \mathrm{d}\bm{r}
+    \bm{E}(\bm{r}) = \frac{1}{4\pi\epsilon_0} \int_V \frac{\mathrm{d}q}{|\bm{r}-\bm{r'}|^2} 
+    \frac{\bm{r}-\bm{r'}}{|\bm{r}-\bm{r'}|} = \frac{1}{4\pi\epsilon_0} 
+    \int_V \frac{\rho(\bm{r'})(\bm{r}-\bm{r'})}{|\bm{r}-\bm{r'}|^3} \mathrm{d}\bm{\tau'}
 \end{equation}
 
-\begin{definition}[高斯定律-积分形式]
-    穿过任意闭合曲面 $S$ 的电通量 $\Phi_E$ 等于该曲面所包围的总电荷量 $Q_{\text{enc}}$ 
+\begin{law}[高斯定律-积分形式]
+    真空中，穿过任意闭合曲面 $S$ 的电通量 $\Phi_E$ 等于该曲面所包围的总电荷量 $Q_{\text{enc}}$ 
     除以真空介电常数 $\epsilon_0$。
     \begin{equation}
-        \Phi_E = \oint_S \bm{E} \cdot \mathrm{d}\bm{S} = \frac{Q_{\text{enc}}}{\epsilon_0} = \frac{1}{\epsilon_0} \int_V \rho \mathrm{d}\tau
+        \Phi_E = \oint_S \bm{E} \cdot \mathrm{d}\bm{S} = \frac{Q_{\text{enc}}}{\epsilon_0} 
+        = \frac{1}{\epsilon_0} \int_V \rho \mathrm{d}\tau
     \end{equation}
-\end{definition}
+\end{law}
 
 \begin{example}[点电荷的电通量]
     我们来验证一个被任意闭合曲面 $S$ 包围的点电荷 $q$ 的情况。
@@ -60,18 +63,20 @@
     \begin{equation}
     \begin{aligned}
         \Phi_E &= \oint_S \bm{E} \cdot \mathrm{d}\bm{S} \\
-        &= \oint_S \left(\frac{q}{4\pi\epsilon_0 r^2} \hat{\bm{r}}\right) \cdot (r^2 \sin\theta \mathrm{d}\theta \mathrm{d}\phi \, \hat{\bm{r}}) \\
-        &= \frac{q}{4\pi\epsilon_0} \int_{0}^{2\pi} \mathrm{d}\phi \int_{0}^{\pi} \sin\theta \mathrm{d}\theta \\
+        &= \oint_S \left(\frac{q}{4\pi\epsilon_0 r^2} \hat{\bm{r}}\right) 
+        \cdot (r^2 \sin\theta \mathrm{d}\theta \mathrm{d}\phi \, \hat{\bm{r}}) \\
+        &= \frac{q}{4\pi\epsilon_0} \int_{0}^{2\pi} \mathrm{d}\phi 
+        \int_{0}^{\pi} \sin\theta \mathrm{d}\theta \\
         &= \frac{q}{4\pi\epsilon_0} (2\pi) (2) = \frac{q}{\epsilon_0}
     \end{aligned}
     \end{equation}
-    这验证了对于点电荷，高斯定律成立。该结果与包围电荷的曲面形状无关。
-    \textit{手稿中的积分[18]存在笔误，修正如下：}
-    \begin{itemize}
-        \item \textcolor{red}{$=\frac{q}{4\pi t_{0}}\cdot\int_{0}^{2\pi}d\theta\int_{0}^{2}d\theta\cdot\frac{1}{r^{2}}\cdot r^{2}\cdot sin\theta.$} [18]
-        \item \textbf{修正后}: $=\frac{q}{4\pi \epsilon_{0}}\cdot\int_{0}^{2\pi}\mathrm{d}\phi\int_{0}^{\pi}\mathrm{d}\theta \sin\theta$
-        \item \textbf{说明}: 球坐标系下的立体角微元中，方位角(azimuthal angle) $\phi$ 的范围是 $[0, 2\pi]$，天顶角(polar angle) $\theta$ 的范围是 $[0, \pi]$。
-    \end{itemize}
+    这验证了对于点电荷，高斯定律成立。
+
+    实际上，公式中变量$r(\theta, \phi)$被约掉了，对于任意的闭合曲面，积分结果都是相同的。
+    该结果与包围电荷的曲面形状无关。
+
+    \textbf{说明}: 球坐标系下的立体角微元中，方位角(azimuthal angle) $\phi$ 的范围是 $[0, 2\pi]$，
+    极角(polar angle) $\theta$ 的范围是 $[0, \pi]$。
 \end{example}
 
 高斯定律的微分形式可以通过积分形式和高斯散度定理 (Divergence Theorem) 推导出来。
@@ -80,7 +85,8 @@
     \begin{equation}
         \oint_S \bm{E} \cdot \mathrm{d}\bm{S} = \frac{1}{\epsilon_0} \int_V \rho \mathrm{d}\tau
     \end{equation}
-    根据高斯散度定理，任何矢量场 $\bm{A}$ 的面积分都可与其散度的体积分联系起来： $\oint_S \bm{A} \cdot \mathrm{d}\bm{S} = \int_V (\nabla \cdot \bm{A}) \mathrm{d}\tau$。
+    根据高斯散度定理，矢量场 $\bm{A}$ 的面积分都可与其散度的体积分联系起来： 
+    $\oint_S \bm{A} \cdot \mathrm{d}\bm{S} = \int_V (\nabla \cdot \bm{A}) \mathrm{d}\tau$。
     将此定理应用于电场 $\bm{E}$：
     \begin{equation}
         \int_V (\nabla \cdot \bm{E}) \mathrm{d}\tau = \frac{1}{\epsilon_0} \int_V \rho \mathrm{d}\tau
@@ -90,8 +96,8 @@
         \nabla \cdot \bm{E} = \frac{\rho}{\epsilon_0}
     \end{equation}
 \end{proof}
-\subsection{静电场的环路定理}
-\begin{proposition}[静电场无旋性]
+\subsection{静电场的环路定律}
+\begin{law}[静电场无旋性]
     静电场是一个保守场 (conservative field)，这意味着电场沿任何闭合路径的线积分为零。其微分形式为：
     \begin{equation}
         \nabla \times \bm{E} = \bm{0}
@@ -101,10 +107,10 @@
         \oint_C \bm{E} \cdot \mathrm{d}\bm{l} = 0
     \end{equation}
     这个性质保证了我们可以引入一个标量势——电势 (electric potential) $V$，使得 $\bm{E} = -\nabla V$。
-\end{proposition}
+\end{law}
 
 \section{静磁场 (Magnetostatics)}
-静磁学研究由稳恒电流 (steady current) 产生的磁场。稳恒电流指的是电流密度 $\bm{J}$ 不随时间变化。
+静磁学研究由稳恒电流 (steady current) 产生的磁场。稳恒电流指的是电流不随时间变化。
 
 \subsection{电荷守恒与连续性方程}
 电流密度 $\bm{J}$ 描述了单位时间内通过单位面积的电荷量。通过一个曲面 $S$ 的总电流 $I$ 为：
@@ -113,18 +119,23 @@
 \end{equation}
 对于一个闭合曲面 $S$，流出该曲面的净电流表示该曲面所包围的体积 $V$ 内电荷量的减少率。
 \begin{equation}
-    \oint_S \bm{J} \cdot \mathrm{d}\bm{S} = -\frac{\mathrm{d}Q_{\text{enc}}}{\mathrm{d}t} = -\frac{\mathrm{d}}{\mathrm{d}t} \int_V \rho \mathrm{d}\tau
+    \oint_S \bm{J} \cdot \mathrm{d}\bm{S} 
+    = -\frac{\mathrm{d}Q_{\text{enc}}}{\mathrm{d}t} 
+    = -\frac{\mathrm{d}}{\mathrm{d}t} \int_V \rho \mathrm{d}\tau
 \end{equation}
 应用高斯散度定理，可将左侧的面积分转化为体积分：
 \begin{equation}
-    \int_V (\nabla \cdot \bm{J}) \mathrm{d}\tau = -\int_V \frac{\partial\rho}{\partial t} \mathrm{d}\tau
+    \int_V (\nabla \cdot \bm{J}) \mathrm{d}\tau 
+    = -\int_V \frac{\partial\rho}{\partial t} \mathrm{d}\tau
 \end{equation}
-由于该等式对任意体积 $V$ 均成立，因此被积函数必须相等，这就得到了电荷守恒的微分形式，即\textbf{连续性方程 (Continuity Equation)}：
+由于该等式对任意体积 $V$ 均成立，因此被积函数必须相等，这就得到了电荷守恒的微分形式，
+即\textbf{连续性方程 (Continuity Equation)}：
 \begin{equation}
     \nabla \cdot \bm{J} + \frac{\partial\rho}{\partial t} = 0
 \end{equation}
 \begin{definition}[稳恒电流]
-    在静磁学中，我们处理的是稳恒电流，其电荷密度在任何地方都不随时间变化，即 $\frac{\partial\rho}{\partial t} = 0$。
+    在静磁学中，我们处理的是稳恒电流，其电荷密度在任何地方都不随时间变化，
+    即 $\frac{\partial\rho}{\partial t} = 0$。
     在这种稳恒条件下，连续性方程简化为：
     \begin{equation}
         \nabla \cdot \bm{J} = 0
@@ -134,10 +145,12 @@
 
 \subsection{毕奥-萨伐尔定律 (Biot-Savart Law)}
 毕奥-萨伐尔定律是静磁学中的基本定律，用于计算稳恒电流产生的磁场。
-\begin{proposition}[毕奥-萨伐尔定律]
+\begin{theorem}[毕奥-萨伐尔定律]
     由体电流密度为 $\bm{J}(\bm{r'})$ 的电流分布在空间中某点 $\bm{r}$ 处产生的磁感应强度 $\bm{B}(\bm{r})$ 为：
     \begin{equation}
-        \bm{B}(\bm{r}) = \frac{\mu_0}{4\pi} \int_V \frac{\bm{J}(\bm{r'}) \times (\bm{r}-\bm{r'})}{|\bm{r}-\bm{r'}|^3} \mathrm{d}\bm{r}
+        \bm{B}(\bm{r}) 
+        = \frac{\mu_0}{4\pi} \int_V \frac{\bm{J}(\bm{r'}) 
+        \times (\bm{r}-\bm{r'})}{|\bm{r}-\bm{r'}|^3} \mathrm{d}\bm{r}
     \end{equation}
     其中 $\mu_0$ 是真空磁导率 (vacuum permeability)，其值为 $4\pi \times 10^{-7} \, \mathrm{N/A^2}$。
 
@@ -145,16 +158,18 @@
     \begin{itemize}
         \item \textbf{线电流}: 
         \begin{equation}
-        \bm{B}(\bm{r}) = \frac{\mu_0}{4\pi} \int_L \frac{\bm{I}(\bm{r'})\mathrm{d}\bm{l'} \times (\bm{r}-\bm{r'})}{|\bm{r}-\bm{r'}|^3}
+        \bm{B}(\bm{r}) = \frac{\mu_0}{4\pi} \int_L \frac{I(\bm{r'})\mathrm{d}\bm{l'} 
+        \times (\bm{r}-\bm{r'})}{|\bm{r}-\bm{r'}|^3}
         \end{equation}
         \item \textbf{面电流}: 
         \begin{equation}
-        \bm{B}(\bm{r}) = \frac{\mu_0}{4\pi} \int_S \frac{\bm{K}(\bm{r'}) \times (\bm{r}-\bm{r'})}{|\bm{r}-\bm{r'}|^3} \mathrm{d}S'
+        \bm{B}(\bm{r}) = \frac{\mu_0}{4\pi} \int_S \frac{\bm{K}(\bm{r'}) 
+        \times (\bm{r}-\bm{r'})}{|\bm{r}-\bm{r'}|^3} \mathrm{d}S'
         \end{equation}
     \end{itemize}
-\end{proposition}
+\end{theorem}
 
-\subsection{安培定律 (Ampere's Law)}
+\subsection{安培环路定律 ( Ampère's circuital law)}
 \begin{example}[无限长直导线的磁场]
     使用毕奥-萨伐尔定律可以计算出一根载有电流 $I$ 的无限长直导线，在距离导线垂直距离为 $r$ 处的磁场大小为：
     \begin{equation}
@@ -162,18 +177,50 @@
     \end{equation}
     磁场的方向遵循右手定则，呈环绕导线的同心圆状。
 \end{example}
+
 如果我们计算这个磁场沿一个半径为 $r$ 的圆形闭合路径的环路积分，可以得到：
 \begin{equation}
-    \oint_C \bm{B} \cdot \mathrm{d}\bm{l} = \oint_C \frac{\mu_0 I}{2\pi r} \hat{\bm{\phi}} \cdot (r \mathrm{d}\phi \hat{\bm{\phi}}) = \frac{\mu_0 I}{2\pi r} \cdot 2\pi r = \mu_0 I
+    \oint_C \bm{B} \cdot \mathrm{d}\bm{l} 
+    = \oint_C \frac{\mu_0 I}{2\pi r} \hat{\bm{\phi}} \cdot (r \mathrm{d}\phi \hat{\bm{\phi}}) 
+    = \frac{\mu_0 I}{2\pi r} \cdot 2\pi r = \mu_0 I
 \end{equation}
+\begin{proof}
+    首先，我们给出无限长载流直导线产生的磁场 $\bm{B}$ 和柱坐标系下的路径微元 $d\bm{l}$。
+\begin{equation}
+    \bm{B} = \frac{\mu_0 I}{2\pi r} \hat{\bm{e}}_{\phi}, 
+    \quad d\bm{l} = dr \cdot \hat{\bm{e}}_r + r d\phi \cdot \hat{\bm{e}}_{\phi}
+\end{equation}
+其中，$I$ 是导线中的电流，$\mu_0$ 是真空磁导率，$r$ 
+是到导线的垂直距离，$\hat{\bm{e}}_{\phi}$ 和 $\hat{\bm{e}}_r$ 分别是方位角和径向的单位向量。
+
+接下来，计算 $\bm{B}$ 和 $d\bm{l}$ 的点积。由于单位向量 $\hat{\bm{e}}_{\phi}$ 
+和 $\hat{\bm{e}}_r$ 正交（即 $\hat{\bm{e}}_{\phi} \cdot \hat{\bm{e}}_r = 0$），我们得到：
+\begin{equation}
+    \bm{B} \cdot d\bm{l} = \left( \frac{\mu_0 I}{2\pi r} \hat{\bm{e}}_{\phi} \right) 
+    \cdot \left( dr \cdot \hat{\bm{e}}_r + r d\phi \cdot \hat{\bm{e}}_{\phi} \right) 
+    = \frac{\mu_0 I}{2\pi r} (r d\phi) = \frac{\mu_0 I}{2\pi} d\phi
+\end{equation}
+
+因为$\bm{B}$与$r$无关，我们可以对一个环绕导线的任意闭合路径进行线积分。此时角度 $\phi$ 从 $0$ 变化到 $2\pi$：
+\begin{equation}
+    \oint_{\partial S} \bm{B} \cdot d\bm{l} = \int_{0}^{2\pi} \frac{\mu_0 I}{2\pi} d\phi 
+    = \frac{\mu_0 I}{2\pi} [\phi]_{0}^{2\pi} = \frac{\mu_0 I}{2\pi} (2\pi - 0) = \mu_0 I
+\end{equation}
+如此证明了安培环路定律。
+\end{proof}
+
 这个结果可以推广到任意形状的闭合回路和任意的电流分布，即安培定律的积分形式。
-\begin{definition}[安培定律]
-    磁场 $\bm{B}$ 沿任意闭合回路 $\partial S$ 的线积分，等于真空磁导率 $\mu_0$ 乘以穿过该回路所限定的任意曲面 $S$ 的净电流 $I_{\text{enc}}$。
+\begin{law}[安培环路定律]
+    磁场 $\bm{B}$ 沿任意闭合回路 $\partial S$ 的线积分，
+    等于真空磁导率 $\mu_0$ 乘以穿过该回路所限定的任意曲面 $S$ 的净电流 $I_{\text{enc}}$。
     \begin{equation}
-        \oint_{\partial S} \bm{B} \cdot \mathrm{d}\bm{l} = \mu_0 I_{\text{enc}} = \mu_0 \int_S \bm{J} \cdot \mathrm{d}\bm{S}
+        \oint_{\partial S} \bm{B} \cdot \mathrm{d}\bm{l} = \mu_0 I_{\text{enc}} 
+        = \mu_0 \int_S \bm{J} \cdot \mathrm{d}\bm{S}
     \end{equation}
-\end{definition}
-利用斯托克斯定理 (Stokes' Theorem)，$\oint_{\partial S} \bm{B} \cdot \mathrm{d}\bm{l} = \int_S (\nabla \times \bm{B}) \cdot \mathrm{d}\bm{S}$，我们可以得到安培定律的微分形式：
+\end{law}
+
+利用斯托克斯定理 (Stokes' Theorem)，$\oint_{\partial S} \bm{B} \cdot \mathrm{d}\bm{l} 
+= \int_S (\nabla \times \bm{B}) \cdot \mathrm{d}\bm{S}$，我们可以得到安培定律的微分形式：
 \begin{equation}
     \nabla \times \bm{B} = \mu_0 \bm{J}
 \end{equation}
@@ -183,20 +230,26 @@
 
 \subsection{法拉第电磁感应定律 (Faraday's Law of Induction)}
 \begin{definition}[电动势]
-    电动势 (electromotive force, EMF, 记为 $\mathcal{E}$) 驱动电荷在回路中运动。它定义为作用在单位电荷上的总力 $\bm{f}$ 沿闭合回路 $C$ 的线积分。总力 $\bm{f}$ 来自洛伦兹力 $\bm{F} = q(\bm{E} + \bm{v} \times \bm{B})$，即 $\bm{f} = \bm{E} + \bm{v} \times \bm{B}$。
+    电动势 (electromotive force, EMF, 记为 $\mathcal{E}$) 驱动电荷在回路中运动。
+    它定义为作用在单位电荷上的总力 $\bm{f}$ 沿闭合回路 $C$ 的线积分。
+    总力 $\bm{f}$ 来自洛伦兹力 $\bm{F} = q(\bm{E} + \bm{v} \times \bm{B})$，
+    即 $\bm{f} = \bm{E} + \bm{v} \times \bm{B}$。
     \begin{equation}
-        \mathcal{E} = \oint_C \bm{f} \cdot \mathrm{d}\bm{l} = \oint_C (\bm{E} + \bm{v} \times \bm{B}) \cdot \mathrm{d}\bm{l}
+        \mathcal{E} = \oint_C \bm{f} \cdot \mathrm{d}\bm{l}
+        = \oint_C (\bm{E} + \bm{v} \times \bm{B}) \cdot \mathrm{d}\bm{l}
     \end{equation}
 \end{definition}
 
-\begin{proposition}[法拉第定律]
+\begin{law}[法拉第定律]
     一个闭合回路中的感应电动势 $\mathcal{E}$，等于穿过该回路的磁通量 $\Phi_B$ 随时间变化率的负值。
     \begin{equation}
         \mathcal{E} = - \frac{\mathrm{d}\Phi_B}{\mathrm{d}t}
     \end{equation}
-    其中磁通量 $\Phi_B = \int_S \bm{B} \cdot \mathrm{d}\bm{S}$。结合电动势的定义（对于静止回路 $\bm{v}=0$），我们得到法拉第定律的积分形式：
+    其中磁通量 $\Phi_B = \int_S \bm{B} \cdot \mathrm{d}\bm{S}$。
+    结合电动势的定义（对于静止回路 $\bm{v}=0$），我们得到法拉第定律的积分形式：
     \begin{equation}
-        \oint_C \bm{E} \cdot \mathrm{d}\bm{l} = - \frac{\mathrm{d}}{\mathrm{d}t} \int_S \bm{B} \cdot \mathrm{d}\bm{S}
+        \oint_C \bm{E} \cdot \mathrm{d}\bm{l} 
+        = - \frac{\mathrm{d}}{\mathrm{d}t} \int_S \bm{B} \cdot \mathrm{d}\bm{S}
     \end{equation}
     负号代表了楞次定律 (Lenz's Law)，即感应电流的方向总是反抗引起感应电流的磁通量变化。
     利用斯托克斯定理，可将其转化为微分形式：
@@ -204,48 +257,70 @@
         \nabla \times \bm{E} = - \frac{\partial\bm{B}}{\partial t}
     \end{equation}
     这个方程表明，变化的磁场会产生一个非保守的（有旋的）电场，称为感生电场。
-\end{proposition}
+\end{law}
 
-\subsection{安培定律的修正：位移电流}
-在静磁场中，我们有安培定律 $\nabla \times \bm{B} = \mu_0 \bm{J}$。然而，这个方程在处理时变场时存在逻辑矛盾。对该式两边取散度：
+\subsection{安培环路定律的修正：位移电流}
+在静磁场中，我们有安培环路定律 $\nabla \times \bm{B} = \mu_0 \bm{J}$。
+然而，这个方程在处理时变场时存在逻辑矛盾。对该式两边取散度：
 \begin{equation}
     \nabla \cdot (\nabla \times \bm{B}) = \mu_0 (\nabla \cdot \bm{J})
 \end{equation}
-由于任何旋度的散度恒为零，即 $\nabla \cdot (\nabla \times \bm{B}) \equiv 0$，这意味着 $\nabla \cdot \bm{J}$ 必须为零。但这与连续性方程 $\nabla \cdot \bm{J} = -\partial\rho/\partial t$ 相矛盾，除非 $\partial\rho/\partial t = 0$（即稳恒电流）。
+由于任何旋度的散度恒为零，即 $\nabla \cdot (\nabla \times \bm{B}) \equiv 0$，
+这意味着 $\nabla \cdot \bm{J}$ 必须为零。但这与连续性方程 
+$\nabla \cdot \bm{J} = -\partial\rho/\partial t$ 相矛盾，
+除非 $\partial\rho/\partial t = 0$（即稳恒电流）。
 
-为了解决这个矛盾，麦克斯韦对安培定律进行了修正。他引入了一个新的项，称为\textbf{位移电流密度 (displacement current density)} $\bm{J}_D$。
+为了解决这个矛盾，麦克斯韦对安培定律进行了修正。他引入了一个新的项，
+称为\textbf{位移电流密度 (displacement current density)} $\bm{J}_D$。
 从连续性方程和高斯定律 $\rho = \epsilon_0 (\nabla \cdot \bm{E})$ 出发：
 \begin{equation}
-    \nabla \cdot \bm{J} = -\frac{\partial\rho}{\partial t} = -\frac{\partial}{\partial t} (\epsilon_0 \nabla \cdot \bm{E}) = -\nabla \cdot \left(\epsilon_0 \frac{\partial \bm{E}}{\partial t}\right)
+    \nabla \cdot \bm{J} = -\frac{\partial\rho}{\partial t} 
+    = -\frac{\partial}{\partial t} (\epsilon_0 \nabla \cdot \bm{E}) 
+    = -\nabla \cdot \left(\epsilon_0 \frac{\partial \bm{E}}{\partial t}\right)
 \end{equation}
 \begin{equation}
     \nabla \cdot \left(\bm{J} + \epsilon_0 \frac{\partial \bm{E}}{\partial t}\right) = 0
 \end{equation}
-这表明，一个新的“总电流” $\bm{J}_{\text{total}} = \bm{J} + \epsilon_0 \frac{\partial \bm{E}}{\partial t}$ 的散度恒为零。麦克斯韦假设，在安培定律中，应该用这个总电流来代替传导电流 $\bm{J}$。
-\begin{definition}[安培-麦克斯韦定律]
+这表明，一个新的“总电流” $\bm{J}_{\text{total}} 
+= \bm{J} + \epsilon_0 \frac{\partial \bm{E}}{\partial t}$ 的散度恒为零。
+麦克斯韦假设，在安培定律中，应该用这个总电流来代替传导电流 $\bm{J}$。
+\begin{law}[安培-麦克斯韦定律]
     修正后的安培定律，即安培-麦克斯韦定律，其微分形式为：
     \begin{equation}
-        \nabla \times \bm{B} = \mu_0 \left(\bm{J} + \epsilon_0 \frac{\partial \bm{E}}{\partial t}\right)
+        \nabla \times \bm{B} 
+        = \mu_0 \left(\bm{J} + \epsilon_0 \frac{\partial \bm{E}}{\partial t}\right)
     \end{equation}
     积分形式为：
     \begin{equation}
-        \oint_{\partial S} \bm{B} \cdot \mathrm{d}\bm{l} = \mu_0 \left(I_{\text{enc}} + \epsilon_0 \frac{\mathrm{d}\Phi_E}{\mathrm{d}t}\right)
+        \oint_{\partial S} \bm{B} \cdot \mathrm{d}\bm{l} 
+        = \mu_0 \left(I_{\text{enc}} + \epsilon_0 \frac{\mathrm{d}\Phi_E}{\mathrm{d}t}\right)
     \end{equation}
     其中 $\Phi_E = \int_S \bm{E} \cdot \mathrm{d}\bm{S}$ 是电通量。
     这个修正至关重要，它揭示了变化的电场也可以产生磁场，这是电磁波能够存在的理论基础。
-\end{definition}
+\end{law}
 
 \section{介质中的麦克斯韦方程组}
-当电磁场存在于介质（如电介质或磁介质）中时，介质会被极化或磁化，产生束缚电荷和束缚电流，从而改变总的场分布。为了简化计算，我们引入辅助场 $\bm{D}$ (电位移矢量) 和 $\bm{H}$ (磁场强度)。
-\subsection{辅助场 D 和 H}
+当电磁场存在于介质（如电介质或磁介质）中时，介质会被极化或磁化，
+产生束缚电荷和束缚电流，从而改变总的场分布。为了简化计算，我们引入辅助场 $\bm{D}$ (电位移矢量) 
+和 $\bm{H}$ (磁场强度)。
+\subsection{辅助场}
 \begin{itemize}
-    \item \textbf{电介质}: 在外电场 $\bm{E}$ 作用下，介质会产生电极化强度 $\bm{P}$ (单位体积的电偶极矩)。极化会产生束缚电荷密度 $\rho_b = -\nabla \cdot \bm{P}$。总电荷密度 $\rho = \rho_f + \rho_b$，其中 $\rho_f$ 是自由电荷密度。高斯定律变为 $\nabla \cdot \bm{E} = (\rho_f + \rho_b)/\epsilon_0$。
-    定义\textbf{电位移矢量} $\bm{D} = \epsilon_0 \bm{E} + \bm{P}$，高斯定律可以写成只与自由电荷相关的简洁形式：
+    \item \textbf{电介质}: 在外电场 $\bm{E}$ 作用下，介质会产生电极化强度 $\bm{P}$ (单位体积的电偶极矩)。
+    极化会产生束缚电荷密度 $\rho_b = -\nabla \cdot \bm{P}$。
+    总电荷密度 $\rho = \rho_f + \rho_b$，其中 $\rho_f$ 是自由电荷密度。
+    高斯定律变为 $\nabla \cdot \bm{E} = (\rho_f + \rho_b)/\epsilon_0$。
+    定义\textbf{电位移矢量} $\bm{D} = \epsilon_0 \bm{E} + \bm{P}$，
+    高斯定律可以写成只与自由电荷相关的简洁形式：
     \begin{equation}
         \nabla \cdot \bm{D} = \rho_f
     \end{equation}
-    \item \textbf{磁介质}: 在外磁场 $\bm{B}$ 作用下，介质会产生磁化强度 $\bm{M}$ (单位体积的磁偶极矩)。磁化会产生束缚电流密度 $\bm{J}_b = \nabla \times \bm{M}$。总电流密度 $\bm{J} = \bm{J}_f + \bm{J}_b + \bm{J}_p$，其中 $\bm{J}_f$ 是自由电流密度，$\bm{J}_p = \partial\bm{P}/\partial t$ 是极化电流密度。
-    定义\textbf{磁场强度} $\bm{H} = \frac{1}{\mu_0}\bm{B} - \bm{M}$，安培-麦克斯韦定律可以写成只与自由电流和位移电流相关的形式：
+    \item \textbf{磁介质}: 在外磁场 $\bm{B}$ 作用下，
+    介质会产生磁化强度 $\bm{M}$ (单位体积的磁偶极矩)。
+    磁化会产生束缚电流密度 $\bm{J}_b = \nabla \times \bm{M}$。
+    总电流密度 $\bm{J} = \bm{J}_f + \bm{J}_b + \bm{J}_p$，
+    其中 $\bm{J}_f$ 是自由电流密度，$\bm{J}_p = \partial\bm{P}/\partial t$ 是极化电流密度。
+    定义\textbf{磁场强度} $\bm{H} = \frac{1}{\mu_0}\bm{B} - \bm{M}$，
+    安培-麦克斯韦定律可以写成只与自由电流和位移电流相关的形式：
     \begin{equation}
         \nabla \times \bm{H} = \bm{J}_f + \frac{\partial \bm{D}}{\partial t}
     \end{equation}
@@ -253,43 +328,58 @@
 
 \subsection{宏观麦克斯韦方程组}
 综上，在介质中的宏观麦克斯韦方程组（以自由电荷和自由电流表示）为：
-\begin{align}
-    \nabla \cdot \bm{D} &= \rho_f \label{eq:maxwell1_matter} \\
-    \nabla \cdot \bm{B} &= 0 \label{eq:maxwell2_matter} \\
-    \nabla \times \bm{E} &= -\frac{\partial\bm{B}}{\partial t} \label{eq:maxwell3_matter} \\
-    \nabla \times \bm{H} &= \bm{J}_f + \frac{\partial \bm{D}}{\partial t} \label{eq:maxwell4_matter}
-\end{align}
+\begin{equation}
+    \left\{
+    \begin{aligned}
+    &\nabla \cdot \bm{D} = \rho_f \\
+    &\nabla \cdot \bm{B} = 0 \\
+    &\nabla \times \bm{E} = -\frac{\partial\bm{B}}{\partial t}\\
+    &\nabla \times \bm{H} = \bm{J}_f + \frac{\partial \bm{D}}{\partial t}
+    \end{aligned}
+    \right.
+\end{equation}
 对于线性、各向同性、均匀 (LIH) 介质，我们有简单的\textbf{本构关系 (Constitutive Relations)}：
-\begin{align}
-    \bm{D} &= \epsilon \bm{E} \\
-    \bm{H} &= \frac{1}{\mu} \bm{B}
-\end{align}
+\begin{equation}
+    \left\{
+    \begin{aligned}
+    &\bm{D} = \epsilon \bm{E} \\
+    &\bm{H} = \frac{1}{\mu} \bm{B}
+    \end{aligned}
+    \right.
+\end{equation}
 其中 $\epsilon$ 是介质的介电常数，$\mu$ 是介质的磁导率。
 
 \subsection{电磁场的边界条件}
-在两种不同介质的分界面上，电磁场会发生突变。通过将麦克斯韦方程组的积分形式应用于分界面上的一个微小“高斯药丸盒”或“安培回路”，可以推导出场的边界条件。
-假设分界面的法向单位矢量为 $\hat{\bm{n}}$ (从介质2指向介质1)，界面上存在自由面电荷密度 $\sigma_f$ 和自由面电流密度 $\bm{K}_f$。
+在两种不同介质的分界面上，电磁场会发生突变。
+通过将麦克斯韦方程组的积分形式应用于分界面上的一个微小“高斯药丸盒”或“安培回路”，可以推导出场的边界条件。
+假设分界面的法向单位矢量为 $\hat{\bm{n}}$ (从介质2指向介质1)，
+界面上存在自由面电荷密度 $\sigma_f$ 和自由面电流密度 $\bm{K}_f$。
 \begin{equation}    
-\begin{aligned}
-    D_1^{\perp} - D_2^{\perp} &= \sigma_f \\
-    B_1^{\perp} - B_2^{\perp} &= 0 \\
-    \bm{E}_1^{\parallel} - \bm{E}_2^{\parallel} &= \bm{0} \\
-    \bm{H}_1^{\parallel} - \bm{H}_2^{\parallel} &= \bm{K}_f \times \hat{\bm{n}}
-\end{aligned}
+    \left\{
+    \begin{aligned}
+    &D_1^{\perp} - D_2^{\perp} = \sigma_f \\
+    &B_1^{\perp} - B_2^{\perp} = 0 \\
+    &\bm{E}_1^{\parallel} - \bm{E}_2^{\parallel} = \bm{0} \\
+    &\bm{H}_1^{\parallel} - \bm{H}_2^{\parallel} = \bm{K}_f \times \hat{\bm{n}}
+    \end{aligned}
+    \right.
 \end{equation}
 
 其中 $\perp$ 表示垂直于分界面的分量，$\parallel$ 表示平行于分界面的分量。
 在连续均匀介质中有：
 \begin{equation}
+    \left\{
     \begin{aligned}
     &\epsilon_{up}E^{\perp}_{up} - \epsilon_{down}E^{\perp}_{down} = \sigma_f \\
     &\bm{E}^{\parallel}_{up} - \bm{E}^{\parallel}_{down} = 0 \\
     &B^{\perp}_{up} - B^{\perp}_{down} = 0 \\
-    &\frac{1}{\mu_{up}}\bm{B}^{\parallel}_{up} - \frac{1}{\mu_{down}}\bm{B}^{\parallel}_{down} = \bm{K}_f \times \bm{n}
-\end{aligned}
+    &\frac{1}{\mu_{up}}\bm{B}^{\parallel}_{up} - \frac{1}{\mu_{down}}\bm{B}^{\parallel}_{down} 
+    = \bm{K}_f \times \bm{n}
+    \end{aligned}
+    \right.
 \end{equation}
 
-\section{电介质中的电场}
+\section{介质中的电磁场}
 本章主要讨论电磁场在介质中行为。当材料被置于外部电场或磁场中时，其内部的原子和分子会响应这些场，
 从而改变场在介质内部和周围的分布。我们将引入极化强度矢量$\bm{P}$和磁化强度矢量$\bm{M}$来描述介质的电响应和磁响应，
 并定义辅助场——电位移矢量$\bm{D}$和磁场强度$\bm{H}$，以简化在介质存在下的麦克斯韦方程组。
@@ -795,9 +885,9 @@ $u = \frac{1}{2}(\bm{E}\cdot\bm{D} + \bm{B}\cdot\bm{H})$ 为电磁场的\textbf{
 其中 $\bm{E}$ 是电场强度矢量，$\bm{B}$ 是磁感应强度矢量，$\varepsilon_0$ 是真空介电常数，$\mu_0$ 是真空磁导率。
 \end{definition}
 
-\begin{proposition}[电磁波的波动方程]
+\begin{theorem}[电磁波的波动方程]
 在真空中，电场 $\bm{E}$ 和磁场 $\bm{B}$ 均满足三维波动方程。
-\end{proposition}
+\end{theorem}
 
 \begin{proof}
 为了推导出电场 $\bm{E}$ 满足的方程，我们对方程 \eqref{eq:faraday} 两边取旋度：
@@ -856,9 +946,9 @@ c = \frac{1}{\sqrt{\mu_0 \varepsilon_0}}
 \end{equation}
 这四个方程不是完全独立的，两个旋度方程可以导出两个散度方程为零。
 
-\begin{proposition}[亥姆霍兹方程]
+\begin{theorem}[亥姆霍兹方程]
 在线性介质中，时谐电磁场的复振幅满足亥姆霍兹方程。
-\end{proposition}
+\end{theorem}
 \begin{proof}
 对 $\nabla \times \bm{E}$ 方程再次取旋度：
 \begin{equation}
@@ -893,13 +983,13 @@ c = \frac{1}{\sqrt{\mu_0 \varepsilon_0}}
 其中 $\bm{E}_0$ 和 $\bm{B}_0$ 是恒定的复矢量振幅，$\bm{k}$ 是波矢，其方向为波的传播方向，大小为波数 $k=|\bm{k}|$。波的等相位面（波前）由 $\bm{k} \cdot \bm{r} = \text{const}$ 定义，是垂直于 $\bm{k}$ 的平面。
 \end{definition}
 
-\begin{proposition}[平面电磁波的性质]
+\begin{theorem}[平面电磁波的性质]
 \begin{enumerate}
     \item \textbf{横波性：} 电场 $\bm{E}$ 和磁场 $\bm{B}$ 都垂直于传播方向 $\bm{k}$。
     \item \textbf{正交性：} 电场 $\bm{E}$ 和磁场 $\bm{B}$ 相互垂直。
     \item $\bm{E}, \bm{B}, \bm{k}$ 构成右手系。
 \end{enumerate}
-\end{proposition}
+\end{theorem}
 \begin{proof}
 将平面波解代入麦克斯韦方程的散度条件 $\nabla \cdot \bm{E}=0$。注意到 $\nabla \to \mathrm{i}\bm{k}$：
 \begin{equation}
@@ -942,13 +1032,13 @@ c = \frac{1}{\sqrt{\mu_0 \varepsilon_0}}
 \end{enumerate}
 \end{definition}
 
-\begin{proposition}[时谐场的平均值]
+\begin{theorem}[时谐场的平均值]
 对于两个时谐量 $f(t) = \mathrm{Re}[f_0 \mathrm{e}^{-\mathrm{i}\omega t}]$ 和 $g(t) = \mathrm{Re}[g_0 \mathrm{e}^{-\mathrm{i}\omega t}]$，它们乘积在一个周期 $T=2\pi/\omega$ 内的时间平均值为：
 \begin{equation}
 \langle f(t)g(t) \rangle = \frac{1}{T}\int_0^T f(t)g(t) \mathrm{d}t = \frac{1}{2}\mathrm{Re}[f_0 g_0^*] = \frac{1}{2}\mathrm{Re}[f_0^* g_0]
 \end{equation}
 其中 $*$ 代表复共轭。
-\end{proposition}
+\end{theorem}
 
 应用这个定理，我们可以计算平均能量密度和平均能流：
 \begin{itemize}
@@ -1806,13 +1896,13 @@ x^{\mu'} = \Lambda^{\mu'}_{\nu} x^{\nu}
 \end{definition}
 
 在闵可夫斯基空间中，时空间隔在洛伦兹变换下是不变的。
-\begin{proposition}[时空间隔不变性]
+\begin{theorem}[时空间隔不变性]
 时空间隔的平方 $s^2$ 定义为：
 \begin{equation}
 s^2 = -(ct)^2 + x^2 + y^2 + z^2 = -(x^0)^2 + (x^1)^2 + (x^2)^2 + (x^3)^2
 \end{equation}
 在洛伦兹变换下，$s^2$ 的值保持不变，即 $s^2 = s'^{2}$。
-\end{proposition}
+\end{theorem}
 \begin{proof}
 $-(x^{0'})^2 + (x^{1'})^2 = -\gamma^2(x^0 - \beta x^1)^2 + \gamma^2(x^1 - \beta x^0)^2 = -\gamma^2(1-\beta^2)(x^0)^2 + \gamma^2(1-\beta^2)(x^1)^2 = -(x^0)^2 + (x^1)^2$。由于 $x^{2'}=x^2$ 和 $x^{3'}=x^3$，因此 $s^2$ 不变。
 \end{proof}
@@ -1880,13 +1970,13 @@ $\bm{p}$ 是四维动量的空间分量，即相对论动量。
 在一个任意的封闭体系中，总的四维动量是守恒的。这意味着总能量和总动量在任何相互作用中都各自守恒。
 \end{theorem}
 
-\begin{proposition}
+\begin{theorem}
 区分不变量和守恒量是非常重要的。
 \begin{itemize}
     \item \textbf{不变量}：在不同的惯性参考系下（即经过洛伦兹变换后），其值保持不变的物理量。例如，静止质量 $m_0$，电荷 $q$，时空间隔 $s^2$。
     \item \textbf{守恒量}：在一个孤立系统内，经过某个物理过程（例如碰撞、衰变）后，其总值保持不变的物理量。例如，能量、动量、电荷。
 \end{itemize}
-\end{proposition}
+\end{theorem}
 
 四维动量的模方是一个洛伦兹不变量：
 \begin{equation}
@@ -1980,7 +2070,7 @@ K^{\mu} = \frac{\mathrm{d}p^{\mu}}{\mathrm{d}\tau}
 \subsection{相对论电动力学}
 \subsubsection{电磁场张量}
 电场 $\bm{E}$ 和磁场 $\bm{B}$ 在洛伦兹变换下会相互转化。它们不是独立的实体，而是统一的电磁场的不同表现。
-\begin{proposition}[场变换]
+\begin{theorem}[场变换]
 在从 $S$ 系到 $S'$ 系的洛伦兹变换下（$S'$ 相对 $S$ 以速度 $v$ 沿 $x$ 轴运动），电磁场分量的变换关系为：
 \begin{equation}
 \begin{cases} 
@@ -1995,7 +2085,7 @@ B'_y = \gamma(B_y + \frac{v}{c^2}E_z) \\
 B'_z = \gamma(B_z - \frac{v}{c^2}E_y)
 \end{cases}
 \end{equation}
-\end{proposition}
+\end{theorem}
 为了以一种洛伦兹协变的形式来描述电磁场，我们引入电磁场张量。
 \begin{definition}[电磁场张量]
 电磁场张量 $F^{\mu\nu}$ 是一个二阶反对称张量，其分量由电场和磁场的分量构成：
@@ -2045,7 +2135,7 @@ J^{\mu} = (\rho c, \bm{j})
 
 \subsubsection{洛伦兹力}
 运动电荷在电磁场中受到的洛伦兹力可以用协变形式表示。
-\begin{proposition}[协变洛伦兹力]
+\begin{theorem}[协变洛伦兹力]
 电荷为 $q$ 的粒子所受到的闵可夫斯基力 $K^{\mu}$ 为：
 \begin{equation}
 K^{\mu} = q F^{\mu\nu}U_{\nu}
@@ -2059,7 +2149,7 @@ K^0 = \gamma_u \frac{\bm{u}\cdot\bm{F}}{c} = \gamma_u q \bm{u}\cdot\bm{E} / c
 \begin{equation}
 \bm{K} = \gamma_u \bm{F} = \gamma_u q(\bm{E} + \bm{u} \times \bm{B})
 \end{equation}
-\end{proposition}
+\end{theorem}
 
 \subsection{电磁势和规范变换}
 \begin{definition}[四维势]
@@ -2110,7 +2200,7 @@ k^{2'} = (\omega'/c)\sin\theta' = k^2 = (\omega/c)\sin\theta
 \end{cases}
 \end{equation}
 
-\begin{proposition}[相对论多普勒效应]
+\begin{theorem}[相对论多普勒效应]
 从第一个变换方程，我们可以直接得到两个参考系中频率的关系：
 \begin{equation}
 \omega' = \gamma\omega(1 - \beta\cos\theta) = \frac{1 - (v/c)\cos\theta}{\sqrt{1 - v^2/c^2}}\omega
@@ -2128,9 +2218,9 @@ k^{2'} = (\omega'/c)\sin\theta' = k^2 = (\omega/c)\sin\theta
         \item 光源朝向观察者 ($\theta = \pi$): $\omega' = \omega\sqrt{\frac{1+\beta}{1-\beta}}$。频率升高（蓝移）。
     \end{itemize}
 \end{itemize}
-\end{proposition}
+\end{theorem}
 
-\begin{proposition}[光行差]
+\begin{theorem}[光行差]
 光行差描述的是光的传播方向因相对运动而发生的改变。我们可以通过将 $k^{1'}$ 和 $k^{2'}$ 的变换式相除来得到 $\theta$ 和 $\theta'$ 的关系。
 \begin{equation}
 \tan\theta' = \frac{k^{2'}}{k^{1'}} = \frac{(\omega/c)\sin\theta}{\gamma((\omega/c)\cos\theta - \beta\omega/c)} = \frac{\sin\theta}{\gamma(\cos\theta - \beta)}
@@ -2140,6 +2230,6 @@ k^{2'} = (\omega'/c)\sin\theta' = k^2 = (\omega/c)\sin\theta
 \cos\theta = \frac{\cos\theta' + \beta}{1 + \beta\cos\theta'}
 \end{equation}
 这个公式描述了在 $S'$ 系中以 $\theta'$ 角传播的光，在 $S$ 系中被观测到的传播方向 $\theta$。例如，从天顶 ($\theta'=\pi/2$) 射来的一束星光，在运动的地球 ($S$ 系) 上看来，将偏向运动的前方，即 $\cos\theta = \beta > 0$。
-\end{proposition}
+\end{theorem}
 
 \end{document}

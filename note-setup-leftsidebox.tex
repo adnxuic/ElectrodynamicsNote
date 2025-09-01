@@ -227,13 +227,13 @@
 %   - `numberwithin=section`：基于 section 编号
 %   - `sibling=theorem`：共享 `theorem` 环境的编号
 
-% 采用 plain 样式，定义 `theorem`/`theorem*`、`proposition`/`proposition*`、`corollary`/`corollary*`、`lemma`/`lemma*`、`claim`/`claim*` 环境
+% 采用 plain 样式，定义 `theorem`/`theorem*`、`law`/`law*`、`corollary`/`corollary*`、`lemma`/`lemma*`、`claim`/`claim*` 环境
 
 \declaretheorem[style=plain, name=Theorem, numbered=yes, numberwithin=section]{theorem}
 \declaretheorem[style=plain, name=Theorem, numbered=no]{theorem*}
 
-\declaretheorem[style=plain, name=Proposition, numbered=yes, sibling=theorem]{proposition}
-\declaretheorem[style=plain, name=Proposition, numbered=no]{proposition*}
+\declaretheorem[style=plain, name=Law, numbered=yes, sibling=theorem]{law}
+\declaretheorem[style=plain, name=Law, numbered=no]{law*}
 
 \declaretheorem[style=plain, name=Corollary, numbered=yes, sibling=theorem]{corollary}
 \declaretheorem[style=plain, name=Corollary, numbered=no]{corollary*}
@@ -298,7 +298,7 @@
 %
 % |            环境名             |   盒子边框颜色    |    盒子背景色    |
 % | :---------------------------: | :---------------: | :--------------: |
-% |   `theorem`, `proposition`    |    RoyalPurple    |  RoyalPurple!8   |
+% |   `theorem`, `law`    |    RoyalPurple    |  RoyalPurple!8   |
 % | `corollary`, `lemma`, `claim` |     NavyBlue      |    SkyBlue!8     |
 % |         `definition`          |    ForestGreen    |  ForestGreen!5   |
 % |           `example`           |     RawSienna     |   RawSienna!5    |
@@ -310,7 +310,7 @@
 % - 为了避免颜色过多，对语义类似的环境合并采用相同的盒子颜色。
 
 \newtcbenvironment{theorem}{colframe=RoyalPurple, colback=RoyalPurple!8}
-\newtcbenvironment{proposition}{colframe=RoyalPurple, colback=RoyalPurple!8}
+\newtcbenvironment{law}{colframe=RoyalPurple, colback=RoyalPurple!8}
 \newtcbenvironment{corollary}{colframe=NavyBlue, colback=SkyBlue!8}
 \newtcbenvironment{lemma}{colframe=NavyBlue, colback=SkyBlue!8}
 \newtcbenvironment{claim}{colframe=NavyBlue, colback=SkyBlue!8}
