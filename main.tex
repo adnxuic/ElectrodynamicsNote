@@ -385,7 +385,9 @@ $\nabla \cdot \bm{J} = -\partial\rho/\partial t$ 相矛盾，
 并定义辅助场——电位移矢量$\bm{D}$和磁场强度$\bm{H}$，以简化在介质存在下的麦克斯韦方程组。
 
 \subsection{诱导偶极子与电极化}
-当一个电中性的原子或分子被置于外部电场$\bm{E}$中时，其内部的正电荷中心（原子核）和负电荷中心（电子云）会受到相反方向的电场力作用，导致它们发生微小的相对位移。这种正负电荷中心的分离形成了一个电偶极子，这个过程称为电极化。所形成的偶极子被称为\textbf{诱导偶极子}。
+当一个电中性的原子或分子被置于外部电场$\bm{E}$中时，其内部的正电荷中心（原子核）
+和负电荷中心（电子云）会受到相反方向的电场力作用，导致它们发生微小的相对位移。
+这种正负电荷中心的分离形成了一个电偶极子，这个过程称为电极化。所形成的偶极子被称为\textbf{诱导偶极子}。
 
 \begin{definition}[电偶极矩]
     对于一个由相距为$\bm{d}$的等量异种电荷$+q$和$-q$构成的系统，其电偶极矩$\bm{p}$定义为：
@@ -399,7 +401,8 @@ $\nabla \cdot \bm{J} = -\partial\rho/\partial t$ 相矛盾，
 \begin{equation}
     \bm{p} = \alpha \bm{E}
 \end{equation}
-这里的$\alpha$是原子或分子的\textbf{极化率(polarizability)}。对于各向异性的介质，$\alpha$是一个张量，写为$\bm{\alpha}$，此时$\bm{p}$和$\bm{E}$的方向可以不一致：
+这里的$\alpha$是原子或分子的\textbf{极化率(polarizability)}。对于各向异性的介质，
+$\alpha$是一个张量，写为$\bm{\alpha}$，此时$\bm{p}$和$\bm{E}$的方向可以不一致：
 \begin{equation}
     \bm{p} = \bm{\alpha} \bm{E}
 \end{equation}
@@ -415,25 +418,38 @@ $\nabla \cdot \bm{J} = -\partial\rho/\partial t$ 相矛盾，
 
 \subsection{极化介质产生的电场}
 一个被极化的电介质，其本身会成为一个电场源。我们可以计算由极化强度$\bm{P}$产生的电势。
-考虑体积为$V$的极化介质，其在场点$\bm{r}$处产生的电势为所有微小体积元$\mathrm{d}V'$中电偶极矩$\mathrm{d}\bm{p} = \bm{P}(\bm{r}')\mathrm{d}V'$产生电势的积分。
+考虑体积为$V$的极化介质，
+其在场点$\bm{r}$处产生的电势为所有微小体积元$\mathrm{d}V'$中
+电偶极矩$\mathrm{d}\bm{p} = \bm{P}(\bm{r}')\mathrm{d}V'$产生电势的积分。
 \begin{equation}
-    V(\bm{r}) = \frac{1}{4\pi\epsilon_0} \int_V \frac{\mathrm{d}\bm{p} \cdot \hat{\bm{\mathscr{r}}}}{|\bm{\mathscr{r}}|^2} = \frac{1}{4\pi\epsilon_0} \int_V \frac{\bm{P}(\bm{r}') \cdot (\bm{r}-\bm{r}')}{|\bm{r}-\bm{r}'|^3} \mathrm{d}V'
+    V(\bm{r}) = \frac{1}{4\pi\epsilon_0} \int_V \frac{\mathrm{d}\bm{p} 
+    \cdot \hat{\bm{\mathscr{r}}}}{|\bm{\mathscr{r}}|^2} 
+    = \frac{1}{4\pi\epsilon_0} \int_V \frac{\bm{P}(\bm{r}') 
+    \cdot (\bm{r}-\bm{r}')}{|\bm{r}-\bm{r}'|^3} \mathrm{d}V'
 \end{equation}
-其中$\bm{r}'$是源点，$\bm{\mathscr{r}} = \bm{r}-\bm{r}'$。利用矢量恒等式 $\nabla' \left(\frac{1}{|\bm{\mathscr{r}}|}\right) = \frac{\hat{\bm{\mathscr{r}}}}{|\bm{\mathscr{r}}|^2}$，电势可写为：
+其中$\bm{r}'$是源点，$\bm{\mathscr{r}} = \bm{r}-\bm{r}'$。
+利用矢量恒等式 $\nabla' \left(\frac{1}{|\bm{\mathscr{r}}|}\right) 
+= \frac{\hat{\bm{\mathscr{r}}}}{|\bm{\mathscr{r}}|^2}$，电势可写为：
 \begin{equation}
-    V(\bm{r}) = \frac{1}{4\pi\epsilon_0} \int_V \bm{P}(\bm{r}') \cdot \nabla' \left( \frac{1}{|\bm{\mathscr{r}}|} \right) \mathrm{d}V'
+    V(\bm{r}) = \frac{1}{4\pi\epsilon_0} \int_V \bm{P}(\bm{r}') 
+    \cdot \nabla' \left( \frac{1}{|\bm{\mathscr{r}}|} \right) \mathrm{d}V'
 \end{equation}
-再利用矢量乘积法则 $\nabla' \cdot (f\bm{A}) = f(\nabla' \cdot \bm{A}) + \bm{A} \cdot (\nabla' f)$，我们可以得到：
+再利用矢量乘积法则 $\nabla' \cdot (f\bm{A}) = f(\nabla' \cdot \bm{A}) 
++ \bm{A} \cdot (\nabla' f)$，我们可以得到：
 \begin{equation}
-\begin{aligned}
-    \bm{P} \cdot \nabla' \left( \frac{1}{|\bm{\mathscr{r}}|} \right) &= \nabla' \cdot \left( \frac{\bm{P}}{|\bm{\mathscr{r}}|} \right) - \frac{1}{|\bm{\mathscr{r}}|} (\nabla' \cdot \bm{P})
-\end{aligned}
+    \bm{P} \cdot \nabla' \left( \frac{1}{|\bm{\mathscr{r}}|} \right) 
+    = \nabla' \cdot \left( \frac{\bm{P}}{|\bm{\mathscr{r}}|} \right) 
+    - \frac{1}{|\bm{\mathscr{r}}|} (\nabla' \cdot \bm{P})
 \end{equation}
 代入积分，并对第一项使用散度定理，可得：
 \begin{equation}
 \begin{aligned}
-    V(\bm{r}) &= \frac{1}{4\pi\epsilon_0} \left[ \int_V \nabla' \cdot \left( \frac{\bm{P}}{|\bm{\mathscr{r}}|} \right) \mathrm{d}V' - \int_V \frac{\nabla' \cdot \bm{P}}{|\bm{\mathscr{r}}|} \mathrm{d}V' \right] \\
-    &= \frac{1}{4\pi\epsilon_0} \oint_{\partial V} \frac{\bm{P} \cdot \hat{\bm{n}}}{|\bm{\mathscr{r}}|} \mathrm{d}S' + \frac{1}{4\pi\epsilon_0} \int_V \frac{-\nabla' \cdot \bm{P}}{|\bm{\mathscr{r}}|} \mathrm{d}V'
+    V(\bm{r}) &= \frac{1}{4\pi\epsilon_0} \left[ \int_V \nabla' \cdot 
+    \left( \frac{\bm{P}}{|\bm{\mathscr{r}}|} \right) \mathrm{d}V' 
+    - \int_V \frac{\nabla' \cdot \bm{P}}{|\bm{\mathscr{r}}|} \mathrm{d}V' \right] \\
+    &= \frac{1}{4\pi\epsilon_0} \oint_{\partial V} \frac{\bm{P} \cdot 
+    \hat{\bm{n}}}{|\bm{\mathscr{r}}|} \mathrm{d}S' + \frac{1}{4\pi\epsilon_0} 
+    \int_V \frac{-\nabla' \cdot \bm{P}}{|\bm{\mathscr{r}}|} \mathrm{d}V'
 \end{aligned}
 \end{equation}
 这个结果表明，极化介质产生的电势可以等效为由两种电荷产生的电势之和。
@@ -455,11 +471,14 @@ $\nabla \cdot \bm{J} = -\partial\rho/\partial t$ 相矛盾，
 \end{definition}
 因此，电势可以简洁地写为：
 \begin{equation}
-    V(\bm{r}) = \frac{1}{4\pi\epsilon_0} \oint_{\partial V} \frac{\sigma_b}{|\bm{\mathscr{r}}|} \mathrm{d}S' + \frac{1}{4\pi\epsilon_0} \int_V \frac{\rho_b}{|\bm{\mathscr{r}}|} \mathrm{d}V'
+    V(\bm{r}) = \frac{1}{4\pi\epsilon_0} \oint_{\partial V} \frac{\sigma_b}{|\bm{\mathscr{r}}|} 
+    \mathrm{d}S' + \frac{1}{4\pi\epsilon_0} \int_V \frac{\rho_b}{|\bm{\mathscr{r}}|} \mathrm{d}V'
 \end{equation}
 可以证明，束缚电荷的总量为零，这体现了电中性介质的电荷守恒：
 \begin{equation}
-    \int_V \rho_b \mathrm{d}V + \oint_{\partial V} \sigma_b \mathrm{d}S = \int_V (-\nabla \cdot \bm{P}) \mathrm{d}V + \oint_{\partial V} (\bm{P} \cdot \hat{\bm{n}}) \mathrm{d}S = 0
+    \int_V \rho_b \mathrm{d}V + \oint_{\partial V} \sigma_b \mathrm{d}S 
+    = \int_V (-\nabla \cdot \bm{P}) \mathrm{d}V + \oint_{\partial V} (\bm{P} \cdot \hat{\bm{n}}) 
+    \mathrm{d}S = 0
 \end{equation}
 这里第二个等号是根据散度定理得到的。
 
@@ -468,9 +487,11 @@ $\nabla \cdot \bm{J} = -\partial\rho/\partial t$ 相矛盾，
 \begin{equation}
     \rho = \rho_f + \rho_b
 \end{equation}
-真空中的高斯定律是 $\nabla \cdot \bm{E} = \rho_{\text{total}} / \epsilon_0$。在介质中，这个定律依然成立，只是总电荷包含了束缚电荷：
+真空中的高斯定律是 $\nabla \cdot \bm{E} = \rho_{\text{total}} / \epsilon_0$。
+在介质中，这个定律依然成立，只是总电荷包含了束缚电荷：
 \begin{equation}
-    \nabla \cdot \bm{E} = \frac{1}{\epsilon_0} (\rho_f + \rho_b) = \frac{1}{\epsilon_0} (\rho_f - \nabla \cdot \bm{P})
+    \nabla \cdot \bm{E} = \frac{1}{\epsilon_0} (\rho_f + \rho_b) = \frac{1}{\epsilon_0} 
+    (\rho_f - \nabla \cdot \bm{P})
 \end{equation}
 移项整理可得：
 \begin{equation}
@@ -484,12 +505,12 @@ $\nabla \cdot \bm{J} = -\partial\rho/\partial t$ 相矛盾，
         \bm{D} = \epsilon_0 \bm{E} + \bm{P}
     \end{equation}
 \end{definition}
-\begin{theorem}[介质中的高斯定律]
+\begin{law}[介质中的高斯定律]
     电位移矢量$\bm{D}$的散度等于自由电荷体密度$\rho_f$。
     \begin{equation}
         \nabla \cdot \bm{D} = \rho_f
     \end{equation}
-\end{theorem}
+\end{law}
 
 对于\textbf{线性电介质(linear dielectrics)}，电极化强度$\bm{P}$与电场$\bm{E}$成正比：
 \begin{equation}
@@ -499,7 +520,8 @@ $\nabla \cdot \bm{J} = -\partial\rho/\partial t$ 相矛盾，
 \begin{equation}
     \bm{D} = \epsilon_0 \bm{E} + \epsilon_0 \chi_e \bm{E} = \epsilon_0 (1 + \chi_e) \bm{E}
 \end{equation}
-我们定义\textbf{相对介电常数(relative permittivity)} $\epsilon_r = 1+\chi_e$ 和 \textbf{介电常数(permittivity)} $\epsilon = \epsilon_0 \epsilon_r$，则有：
+我们定义\textbf{相对介电常数(relative permittivity)} $\epsilon_r = 1+\chi_e$ 
+和 \textbf{介电常数(permittivity)} $\epsilon = \epsilon_0 \epsilon_r$，则有：
 \begin{equation}
     \bm{D} = \epsilon \bm{E}
 \end{equation}
@@ -507,7 +529,8 @@ $\nabla \cdot \bm{J} = -\partial\rho/\partial t$ 相矛盾，
 \section{磁介质中的磁场}
 
 \subsection{磁偶极子与磁化强度}
-物质的磁性起源于微观层面上的电流圈，例如电子绕原子核的轨道运动和电子的自旋。每一个这样的微观电流圈都等效于一个小磁偶极子。
+物质的磁性起源于微观层面上的电流圈，例如电子绕原子核的轨道运动和电子的自旋。
+每一个这样的微观电流圈都等效于一个小磁偶极子。
 
 \begin{definition}[磁偶极矩]
     一个面积为$S$、载有电流$I$的平面线圈，其磁偶极矩$\bm{m}$定义为：
@@ -517,7 +540,8 @@ $\nabla \cdot \bm{J} = -\partial\rho/\partial t$ 相矛盾，
     其中矢量$\bm{S}$的方向由右手定则确定。
 \end{definition}
 
-在没有外磁场时，材料中微观磁偶极矩的取向是随机的，宏观上不显示磁性。当施加一个外部磁场时，这些磁偶极矩会倾向于沿着外场方向排列，使材料被\textbf{磁化}。
+在没有外磁场时，材料中微观磁偶极矩的取向是随机的，宏观上不显示磁性。
+当施加一个外部磁场时，这些磁偶极矩会倾向于沿着外场方向排列，使材料被\textbf{磁化}。
 
 \begin{definition}[磁化强度矢量]
     \textbf{磁化强度(Magnetization Vector)}$\bm{M}$定义为介质中单位体积内的净磁偶极矩。
@@ -527,17 +551,25 @@ $\nabla \cdot \bm{J} = -\partial\rho/\partial t$ 相矛盾，
 \end{definition}
 
 \subsection{磁化介质产生的磁场}
-与极化电介质类似，一个被磁化的物体也会产生它自己的磁场。我们可以通过计算其产生的矢量磁势$\bm{A}$来研究这个场。单个磁偶极子$\bm{m}$在场点$\bm{r}$处产生的矢势为：
+与极化电介质类似，一个被磁化的物体也会产生它自己的磁场。
+我们可以通过计算其产生的矢量磁势$\bm{A}$来研究这个场。单个磁偶极子$\bm{m}$在场点$\bm{r}$处产生的矢势为：
 \begin{equation}
-    \bm{A}_{\text{dipole}}(\bm{r}) = \frac{\mu_0}{4\pi} \frac{\bm{m} \times \hat{\bm{\mathscr{r}}}}{|\bm{\mathscr{r}}|^2}
+    \bm{A}_{\text{dipole}}(\bm{r}) = \frac{\mu_0}{4\pi} \frac{\bm{m} 
+    \times \hat{\bm{\mathscr{r}}}}{|\bm{\mathscr{r}}|^2}
 \end{equation}
 对于一个磁化体，总的矢势为对所有磁偶极矩$\mathrm{d}\bm{m} = \bm{M}(\bm{r}')\mathrm{d}V'$的贡献进行积分：
 \begin{equation}
-    \bm{A}(\bm{r}) = \frac{\mu_0}{4\pi} \int_V \frac{\bm{M}(\bm{r}') \times (\bm{r}-\bm{r}')}{|\bm{r}-\bm{r}'|^3} \mathrm{d}V'
+    \bm{A}(\bm{r}) = \frac{\mu_0}{4\pi} \int_V \frac{\bm{M}(\bm{r}') 
+    \times (\bm{r}-\bm{r}')}{|\bm{r}-\bm{r}'|^3} \mathrm{d}V'
 \end{equation}
-利用恒等式 $\nabla' \left(\frac{1}{|\bm{\mathscr{r}}|}\right) = \frac{\hat{\bm{\mathscr{r}}}}{|\bm{\mathscr{r}}|^2}$，并使用矢量乘积法则 $\nabla' \times (f\bm{A}) = f(\nabla' \times \bm{A}) - \bm{A} \times (\nabla' f)$，经过与电偶极势类似的推导，可以得到：
+利用恒等式 $\nabla' \left(\frac{1}{|\bm{\mathscr{r}}|}\right) 
+= \frac{\hat{\bm{\mathscr{r}}}}{|\bm{\mathscr{r}}|^2}$，
+并使用矢量乘积法则 $\nabla' \times (f\bm{A}) = f(\nabla' \times \bm{A}) 
+- \bm{A} \times (\nabla' f)$，经过与电偶极势类似的推导，可以得到：
 \begin{equation}
-    \bm{A}(\bm{r}) = \frac{\mu_0}{4\pi} \int_V \frac{\nabla' \times \bm{M}}{|\bm{\mathscr{r}}|} \mathrm{d}V' + \frac{\mu_0}{4\pi} \oint_{\partial V} \frac{\bm{M} \times \hat{\bm{n}}}{|\bm{\mathscr{r}}|} \mathrm{d}S'
+    \bm{A}(\bm{r}) = \frac{\mu_0}{4\pi} \int_V \frac{\nabla' \times \bm{M}}
+    {|\bm{\mathscr{r}}|} \mathrm{d}V' + \frac{\mu_0}{4\pi} \oint_{\partial V} 
+    \frac{\bm{M} \times \hat{\bm{n}}}{|\bm{\mathscr{r}}|} \mathrm{d}S'
 \end{equation}
 这个结果表明，磁化介质产生的磁场可以等效为由两种电流产生的磁场之和。
 
@@ -558,7 +590,9 @@ $\nabla \cdot \bm{J} = -\partial\rho/\partial t$ 相矛盾，
 \end{definition}
 因此，矢量磁势可以简洁地写为：
 \begin{equation}
-    \bm{A}(\bm{r}) = \frac{\mu_0}{4\pi} \int_V \frac{\bm{J}_b(\bm{r}')}{|\bm{\mathscr{r}}|} \mathrm{d}V' + \frac{\mu_0}{4\pi} \oint_{\partial V} \frac{\bm{K}_b(\bm{r}')}{|\bm{\mathscr{r}}|} \mathrm{d}S'
+    \bm{A}(\bm{r}) = \frac{\mu_0}{4\pi} \int_V \frac{\bm{J}_b(\bm{r}')}
+    {|\bm{\mathscr{r}}|} \mathrm{d}V' + \frac{\mu_0}{4\pi} \oint_{\partial V} 
+    \frac{\bm{K}_b(\bm{r}')}{|\bm{\mathscr{r}}|} \mathrm{d}S'
 \end{equation}
 由于任何旋度的散度恒为零，束缚体电流密度满足稳恒电流条件：
 \begin{equation}
@@ -586,12 +620,12 @@ $\nabla \cdot \bm{J} = -\partial\rho/\partial t$ 相矛盾，
         \bm{H} = \frac{\bm{B}}{\mu_0} - \bm{M}
     \end{equation}
 \end{definition}
-\begin{theorem}[介质中的安培定律]
+\begin{law}[介质中的安培定律]
     磁场强度$\bm{H}$的旋度等于自由电流体密度$\bm{J}_f$。
     \begin{equation}
         \nabla \times \bm{H} = \bm{J}_f
     \end{equation}
-\end{theorem}
+\end{law}
 
 对于\textbf{线性磁介质(linear magnetic media)}，磁化强度$\bm{M}$与磁场强度$\bm{H}$成正比：
 \begin{equation}
@@ -601,32 +635,42 @@ $\nabla \cdot \bm{J} = -\partial\rho/\partial t$ 相矛盾，
 \begin{equation}
     \bm{B} = \mu_0 (\bm{H} + \bm{M}) = \mu_0 (1 + \chi_m) \bm{H}
 \end{equation}
-我们定义\textbf{相对磁导率(relative permeability)} $\mu_r = 1+\chi_m$ 和 \textbf{磁导率(permeability)} $\mu = \mu_0 \mu_r$，则有：
+我们定义\textbf{相对磁导率(relative permeability)} $\mu_r = 1+\chi_m$ 
+和 \textbf{磁导率(permeability)} $\mu = \mu_0 \mu_r$，则有：
 \begin{equation}
     \bm{B} = \mu \bm{H}
 \end{equation}
 
 \section{介质交界面上的边界条件}
-当电磁场穿过两种不同介质的交界面时，场矢量会发生变化。我们可以利用麦克斯韦方程组的积分形式推导这些边界条件。设界面法向量$\hat{\bm{n}}$从介质2指向介质1。
+当电磁场穿过两种不同介质的交界面时，场矢量会发生变化。
+我们可以利用麦克斯韦方程组的积分形式推导这些边界条件。设界面法向量$\hat{\bm{n}}$从介质2指向介质1。
 
 \subsection{静电场的边界条件}
 \begin{enumerate}
-    \item 将高斯定律 $\oint_{\partial V} \bm{D} \cdot \mathrm{d}\bm{S} = Q_{f, \text{enc}}$ 应用于一个穿过界面的薄“药盒”形高斯面，可以得到$\bm{D}$的法向分量关系：
+    \item 将高斯定律 $\oint_{\partial V} \bm{D} \cdot \mathrm{d}\bm{S} = Q_{f, \text{enc}}$ 
+    应用于一个穿过界面的薄“药盒”形高斯面，可以得到$\bm{D}$的法向分量关系：
     \begin{equation}
-        (\bm{D}_1 - \bm{D}_2) \cdot \hat{\bm{n}} = \sigma_f \quad \text{或} \quad D_{1}^{\perp} - D_{2}^{\perp} = \sigma_f
+        (\bm{D}_1 - \bm{D}_2) \cdot \hat{\bm{n}} 
+        = \sigma_f \quad \text{或} \quad D_{1}^{\perp} - D_{2}^{\perp} = \sigma_f
     \end{equation}
     其中$\sigma_f$是界面上的自由面电荷密度。这表明$\bm{D}$的法向分量在有自由面电荷处是不连续的。
-    \item 将环路定理 $\oint \bm{E} \cdot \mathrm{d}\bm{l} = 0$ 应用于一个穿过界面的细长矩形回路，可以得到$\bm{E}$的切向分量关系：
+    \item 将环路定理 $\oint \bm{E} \cdot \mathrm{d}\bm{l} = 0$ 应用于一个穿过界面的细长矩形回路，
+    可以得到$\bm{E}$的切向分量关系：
     \begin{equation}
-        (\bm{E}_1 - \bm{E}_2) \times \hat{\bm{n}} = \bm{0} \quad \text{或} \quad \bm{E}_{1}^{\parallel} = \bm{E}_{2}^{\parallel}
+        (\bm{E}_1 - \bm{E}_2) \times \hat{\bm{n}} 
+        = \bm{0} \quad \text{或} \quad \bm{E}_{1}^{\parallel} = \bm{E}_{2}^{\parallel}
     \end{equation}
     这表明$\bm{E}$的切向分量是连续的。
 \end{enumerate}
 对于线性介质，这些条件可以写为：
-\begin{gather}
-    \epsilon_1 E_{1}^{\perp} - \epsilon_2 E_{2}^{\perp} = \sigma_f \\
-    \frac{1}{\epsilon_1}D_{1}^{\parallel} = \frac{1}{\epsilon_2}D_{2}^{\parallel}
-\end{gather}
+\begin{equation}
+    \left\{
+    \begin{aligned}
+    &\epsilon_1 E_{1}^{\perp} - \epsilon_2 E_{2}^{\perp} = \sigma_f \\
+    &\frac{1}{\epsilon_1}D_{1}^{\parallel} = \frac{1}{\epsilon_2}D_{2}^{\parallel}
+    \end{aligned}
+    \right.
+\end{equation}
 由于电势是连续的 ($V_1 = V_2$) 且 $\bm{E} = -\nabla V$，边界条件也可以用电势表示：
 \begin{equation}
     \epsilon_1 \frac{\partial V_1}{\partial n} - \epsilon_2 \frac{\partial V_2}{\partial n} = -\sigma_f
@@ -634,33 +678,39 @@ $\nabla \cdot \bm{J} = -\partial\rho/\partial t$ 相矛盾，
 
 \subsection{静磁场的边界条件}
 \begin{enumerate}
-    \item 将高斯磁定律 $\oint_{\partial V} \bm{B} \cdot \mathrm{d}\bm{S} = 0$ 应用于一个穿过界面的薄“药盒”形高斯面，可以得到$\bm{B}$的法向分量关系：
+    \item 将高斯磁定律 $\oint_{\partial V} \bm{B} \cdot \mathrm{d}\bm{S} = 0$ 
+    应用于一个穿过界面的薄“药盒”形高斯面，可以得到$\bm{B}$的法向分量关系：
     \begin{equation}
         (\bm{B}_1 - \bm{B}_2) \cdot \hat{\bm{n}} = 0 \quad \text{或} \quad B_{1}^{\perp} = B_{2}^{\perp}
     \end{equation}
     这表明$\bm{B}$的法向分量总是连续的。
-    \item 将安培环路定理 $\oint \bm{H} \cdot \mathrm{d}\bm{l} = I_{f, \text{enc}}$ 应用于一个穿过界面的细长矩形回路，可以得到$\bm{H}$的切向分量关系：
+    \item 将安培环路定理 $\oint \bm{H} \cdot \mathrm{d}\bm{l} = I_{f, \text{enc}}$ 
+    应用于一个穿过界面的细长矩形回路，可以得到$\bm{H}$的切向分量关系：
     \begin{equation}
         (\bm{H}_1 - \bm{H}_2) \times \hat{\bm{n}} = \bm{K}_f \quad \text{或} \quad \bm{H}_{1}^{\parallel} - \bm{H}_{2}^{\parallel} = \bm{K}_f \times \hat{\bm{n}}
     \end{equation}
     其中$\bm{K}_f$是界面上的自由面电流密度。这表明$\bm{H}$的切向分量在有自由面电流处是不连续的。
 \end{enumerate}
 对于线性介质，这些条件可以写为：
-\begin{gather}
-    \mu_1 H_{1}^{\perp} = \mu_2 H_{2}^{\perp} \\
-    \frac{1}{\mu_1} \bm{B}_{1}^{\parallel} - \frac{1}{\mu_2} \bm{B}_{2}^{\parallel} = \bm{K}_f \times \hat{\bm{n}}
-\end{gather}
-
-\textit{Note: 手稿第5页的公式 {\color{red}$H_{up}^{2}-H_{daun}^{\frac{J^{\prime\prime}}{dap}}=(B_{up}^{2}-B_{dov}-(M_{ap}^{2}-M_{doun}^{2}))$} 似乎有误，它在量纲和物理意义上都不清晰，正确的边界条件如上所列。}
+\begin{equation}
+    \left\{
+    \begin{aligned}
+    &\mu_1 H_{1}^{\perp} = \mu_2 H_{2}^{\perp} \\
+    &\frac{1}{\mu_1} \bm{B}_{1}^{\parallel} - \frac{1}{\mu_2} \bm{B}_{2}^{\parallel} 
+    = \bm{K}_f \times \hat{\bm{n}}
+    \end{aligned}
+    \right.
+\end{equation}
 
 \section{电磁场的能量与动量}
-本章节旨在从麦克斯韦方程组出发，推导电磁场的能量、能流、动量和动量流的表达式，并最终建立电磁场的能量守恒和动量守恒定律。
+本章节旨在从麦克斯韦方程组出发，推导电磁场的能量、能流、动量和动量流的表达式，
+并最终建立电磁场的能量守恒和动量守恒定律。
 
 \subsection{电磁场的能量}
 
-\begin{definition}[电磁场对电荷做功]
-当空间中存在电荷与电流分布，并因此激发了电磁场时，场会对其中的运动电荷施加洛伦兹力，从而对电荷做功。根据功能原理，电磁场对电荷做的功将转化为电荷的动能或其他形式的能量，这部分能量来源于电磁场本身。因此，电磁场对电荷做正功的过程，是电磁场能量减少的过程。
-\end{definition}
+当空间中存在电荷与电流分布，并因此激发了电磁场时，场会对其中的运动电荷施加洛伦兹力，从而对电荷做功。
+根据功能原理，电磁场对电荷做的功将转化为电荷的动能或其他形式的能量，这部分能量来源于电磁场本身。
+因此，电磁场对电荷做正功的过程，是电磁场能量减少的过程。
 
 考虑一个以速度 $\bm{v}$ 运动的点电荷 $q$，它在电磁场 ($\bm{E}$ 和 $\bm{B}$) 中受到的洛伦兹力为 $\bm{F} = q(\bm{E} + \bm{v} \times \bm{B})$。在微小时间间隔 $\mathrm{d}t$ 内，电荷移动的位移为 $\mathrm{d}\bm{l} = \bm{v}\mathrm{d}t$。电磁场对该电荷做的微功 $\mathrm{d}W$ 为：
 \begin{equation}
