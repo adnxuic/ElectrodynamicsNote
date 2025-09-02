@@ -18,13 +18,13 @@
 \begin{law}[高斯定律-微分形式]
     静电场散度与电荷密度 $\rho$ 的关系由高斯定律的微分形式给出：
     \begin{equation}
-        \nabla \cdot \bm{E} = \frac{\rho}{\epsilon_0}
+        \nabla \cdot \bm{E} = \frac{\rho}{\varepsilon_0}
     \end{equation}
     其中：
     \begin{itemize}
         \item $\bm{E}$ 是电场强度矢量 (electric field)，单位为 $\mathrm{V/m}$ 或 $\mathrm{N/C}$。
         \item $\rho$ 是电荷体密度 (volume charge density)，单位为 $\mathrm{C/m^3}$。
-        \item $\epsilon_0$ 是真空介电常数 (vacuum permittivity)，其值约为 $8.854 \times 10^{-12} \, 
+        \item $\varepsilon_0$ 是真空介电常数 (vacuum permittivity)，其值约为 $8.854 \times 10^{-12} \, 
         \mathrm{F/m}$。
     \end{itemize}
     这个方程表明，电场的源是电荷。正电荷是电场线的起点（散度为正），负电荷是电场线的终点（散度为负）。
@@ -42,32 +42,32 @@
 \mathrm{d}l'$ 分别为体积元、面积元和线元。
 根据库仑定律，整个电荷分布在点 $\bm{r}$ 处产生的总电场为对所有源电荷的贡献进行积分。以体电荷分布为例：
 \begin{equation}
-    \bm{E}(\bm{r}) = \frac{1}{4\pi\epsilon_0} \int_V \frac{\mathrm{d}q}{|\bm{r}-\bm{r'}|^2} 
-    \frac{\bm{r}-\bm{r'}}{|\bm{r}-\bm{r'}|} = \frac{1}{4\pi\epsilon_0} 
+    \bm{E}(\bm{r}) = \frac{1}{4\pi\varepsilon_0} \int_V \frac{\mathrm{d}q}{|\bm{r}-\bm{r'}|^2} 
+    \frac{\bm{r}-\bm{r'}}{|\bm{r}-\bm{r'}|} = \frac{1}{4\pi\varepsilon_0} 
     \int_V \frac{\rho(\bm{r'})(\bm{r}-\bm{r'})}{|\bm{r}-\bm{r'}|^3} \mathrm{d}\bm{\tau'}
 \end{equation}
 
 \begin{law}[高斯定律-积分形式]
     真空中，穿过任意闭合曲面 $S$ 的电通量 $\Phi_E$ 等于该曲面所包围的总电荷量 $Q_{\text{enc}}$ 
-    除以真空介电常数 $\epsilon_0$。
+    除以真空介电常数 $\varepsilon_0$。
     \begin{equation}
-        \Phi_E = \oint_S \bm{E} \cdot \mathrm{d}\bm{S} = \frac{Q_{\text{enc}}}{\epsilon_0} 
-        = \frac{1}{\epsilon_0} \int_V \rho \mathrm{d}\tau
+        \Phi_E = \oint_S \bm{E} \cdot \mathrm{d}\bm{S} = \frac{Q_{\text{enc}}}{\varepsilon_0} 
+        = \frac{1}{\varepsilon_0} \int_V \rho \mathrm{d}\tau
     \end{equation}
 \end{law}
 
 \begin{example}[点电荷的电通量]
     我们来验证一个被任意闭合曲面 $S$ 包围的点电荷 $q$ 的情况。
-    点电荷产生的电场为 $\bm{E} = \frac{q}{4\pi\epsilon_0 r^2} \hat{\bm{r}}$。
+    点电荷产生的电场为 $\bm{E} = \frac{q}{4\pi\varepsilon_0 r^2} \hat{\bm{r}}$。
     为了方便计算，我们选取一个半径为 $r$ 的球面作为高斯面 $S$。
     \begin{equation}
     \begin{aligned}
         \Phi_E &= \oint_S \bm{E} \cdot \mathrm{d}\bm{S} \\
-        &= \oint_S \left(\frac{q}{4\pi\epsilon_0 r^2} \hat{\bm{r}}\right) 
+        &= \oint_S \left(\frac{q}{4\pi\varepsilon_0 r^2} \hat{\bm{r}}\right) 
         \cdot (r^2 \sin\theta \mathrm{d}\theta \mathrm{d}\phi \, \hat{\bm{r}}) \\
-        &= \frac{q}{4\pi\epsilon_0} \int_{0}^{2\pi} \mathrm{d}\phi 
+        &= \frac{q}{4\pi\varepsilon_0} \int_{0}^{2\pi} \mathrm{d}\phi 
         \int_{0}^{\pi} \sin\theta \mathrm{d}\theta \\
-        &= \frac{q}{4\pi\epsilon_0} (2\pi) (2) = \frac{q}{\epsilon_0}
+        &= \frac{q}{4\pi\varepsilon_0} (2\pi) (2) = \frac{q}{\varepsilon_0}
     \end{aligned}
     \end{equation}
     这验证了对于点电荷，高斯定律成立。
@@ -83,17 +83,17 @@
 \begin{proof}[高斯定律微分形式的推导]
     由积分形式出发：
     \begin{equation}
-        \oint_S \bm{E} \cdot \mathrm{d}\bm{S} = \frac{1}{\epsilon_0} \int_V \rho \mathrm{d}\tau
+        \oint_S \bm{E} \cdot \mathrm{d}\bm{S} = \frac{1}{\varepsilon_0} \int_V \rho \mathrm{d}\tau
     \end{equation}
     根据高斯散度定理，矢量场 $\bm{A}$ 的面积分都可与其散度的体积分联系起来： 
     $\oint_S \bm{A} \cdot \mathrm{d}\bm{S} = \int_V (\nabla \cdot \bm{A}) \mathrm{d}\tau$。
     将此定理应用于电场 $\bm{E}$：
     \begin{equation}
-        \int_V (\nabla \cdot \bm{E}) \mathrm{d}\tau = \frac{1}{\epsilon_0} \int_V \rho \mathrm{d}\tau
+        \int_V (\nabla \cdot \bm{E}) \mathrm{d}\tau = \frac{1}{\varepsilon_0} \int_V \rho \mathrm{d}\tau
     \end{equation}
     为了使这个等式对任意体积 $V$ 都成立，被积函数必须相等。因此，我们得到高斯定律的微分形式：
     \begin{equation}
-        \nabla \cdot \bm{E} = \frac{\rho}{\epsilon_0}
+        \nabla \cdot \bm{E} = \frac{\rho}{\varepsilon_0}
     \end{equation}
 \end{proof}
 \subsection{静电场的环路定律}
@@ -272,28 +272,28 @@ $\nabla \cdot \bm{J} = -\partial\rho/\partial t$ 相矛盾，
 
 为了解决这个矛盾，麦克斯韦对安培定律进行了修正。他引入了一个新的项，
 称为\textbf{位移电流密度 (displacement current density)} $\bm{J}_D$。
-从连续性方程和高斯定律 $\rho = \epsilon_0 (\nabla \cdot \bm{E})$ 出发：
+从连续性方程和高斯定律 $\rho = \varepsilon_0 (\nabla \cdot \bm{E})$ 出发：
 \begin{equation}
     \nabla \cdot \bm{J} = -\frac{\partial\rho}{\partial t} 
-    = -\frac{\partial}{\partial t} (\epsilon_0 \nabla \cdot \bm{E}) 
-    = -\nabla \cdot \left(\epsilon_0 \frac{\partial \bm{E}}{\partial t}\right)
+    = -\frac{\partial}{\partial t} (\varepsilon_0 \nabla \cdot \bm{E}) 
+    = -\nabla \cdot \left(\varepsilon_0 \frac{\partial \bm{E}}{\partial t}\right)
 \end{equation}
 \begin{equation}
-    \nabla \cdot \left(\bm{J} + \epsilon_0 \frac{\partial \bm{E}}{\partial t}\right) = 0
+    \nabla \cdot \left(\bm{J} + \varepsilon_0 \frac{\partial \bm{E}}{\partial t}\right) = 0
 \end{equation}
 这表明，一个新的“总电流” $\bm{J}_{\text{total}} 
-= \bm{J} + \epsilon_0 \frac{\partial \bm{E}}{\partial t}$ 的散度恒为零。
+= \bm{J} + \varepsilon_0 \frac{\partial \bm{E}}{\partial t}$ 的散度恒为零。
 麦克斯韦假设，在安培定律中，应该用这个总电流来代替传导电流 $\bm{J}$。
 \begin{law}[安培-麦克斯韦定律]
     修正后的安培定律，即安培-麦克斯韦定律，其微分形式为：
     \begin{equation}
         \nabla \times \bm{B} 
-        = \mu_0 \left(\bm{J} + \epsilon_0 \frac{\partial \bm{E}}{\partial t}\right)
+        = \mu_0 \left(\bm{J} + \varepsilon_0 \frac{\partial \bm{E}}{\partial t}\right)
     \end{equation}
     积分形式为：
     \begin{equation}
         \oint_{\partial S} \bm{B} \cdot \mathrm{d}\bm{l} 
-        = \mu_0 \left(I_{\text{enc}} + \epsilon_0 \frac{\mathrm{d}\Phi_E}{\mathrm{d}t}\right)
+        = \mu_0 \left(I_{\text{enc}} + \varepsilon_0 \frac{\mathrm{d}\Phi_E}{\mathrm{d}t}\right)
     \end{equation}
     其中 $\Phi_E = \int_S \bm{E} \cdot \mathrm{d}\bm{S}$ 是电通量。
     这个修正至关重要，它揭示了变化的电场也可以产生磁场，这是电磁波能够存在的理论基础。
@@ -308,8 +308,8 @@ $\nabla \cdot \bm{J} = -\partial\rho/\partial t$ 相矛盾，
     \item \textbf{电介质}: 在外电场 $\bm{E}$ 作用下，介质会产生电极化强度 $\bm{P}$ (单位体积的电偶极矩)。
     极化会产生束缚电荷密度 $\rho_b = -\nabla \cdot \bm{P}$。
     总电荷密度 $\rho = \rho_f + \rho_b$，其中 $\rho_f$ 是自由电荷密度。
-    高斯定律变为 $\nabla \cdot \bm{E} = (\rho_f + \rho_b)/\epsilon_0$。
-    定义\textbf{电位移矢量} $\bm{D} = \epsilon_0 \bm{E} + \bm{P}$，
+    高斯定律变为 $\nabla \cdot \bm{E} = (\rho_f + \rho_b)/\varepsilon_0$。
+    定义\textbf{电位移矢量} $\bm{D} = \varepsilon_0 \bm{E} + \bm{P}$，
     高斯定律可以写成只与自由电荷相关的简洁形式：
     \begin{equation}
         \nabla \cdot \bm{D} = \rho_f
@@ -422,16 +422,16 @@ $\alpha$是一个张量，写为$\bm{\alpha}$，此时$\bm{p}$和$\bm{E}$的方�
 其在场点$\bm{r}$处产生的电势为所有微小体积元$\mathrm{d}V'$中
 电偶极矩$\mathrm{d}\bm{p} = \bm{P}(\bm{r}')\mathrm{d}V'$产生电势的积分。
 \begin{equation}
-    V(\bm{r}) = \frac{1}{4\pi\epsilon_0} \int_V \frac{\mathrm{d}\bm{p} 
+    V(\bm{r}) = \frac{1}{4\pi\varepsilon_0} \int_V \frac{\mathrm{d}\bm{p} 
     \cdot \hat{\bm{\mathscr{r}}}}{|\bm{\mathscr{r}}|^2} 
-    = \frac{1}{4\pi\epsilon_0} \int_V \frac{\bm{P}(\bm{r}') 
+    = \frac{1}{4\pi\varepsilon_0} \int_V \frac{\bm{P}(\bm{r}') 
     \cdot (\bm{r}-\bm{r}')}{|\bm{r}-\bm{r}'|^3} \mathrm{d}V'
 \end{equation}
 其中$\bm{r}'$是源点，$\bm{\mathscr{r}} = \bm{r}-\bm{r}'$。
 利用矢量恒等式 $\nabla' \left(\frac{1}{|\bm{\mathscr{r}}|}\right) 
 = \frac{\hat{\bm{\mathscr{r}}}}{|\bm{\mathscr{r}}|^2}$，电势可写为：
 \begin{equation}
-    V(\bm{r}) = \frac{1}{4\pi\epsilon_0} \int_V \bm{P}(\bm{r}') 
+    V(\bm{r}) = \frac{1}{4\pi\varepsilon_0} \int_V \bm{P}(\bm{r}') 
     \cdot \nabla' \left( \frac{1}{|\bm{\mathscr{r}}|} \right) \mathrm{d}V'
 \end{equation}
 再利用矢量乘积法则 $\nabla' \cdot (f\bm{A}) = f(\nabla' \cdot \bm{A}) 
@@ -444,11 +444,11 @@ $\alpha$是一个张量，写为$\bm{\alpha}$，此时$\bm{p}$和$\bm{E}$的方�
 代入积分，并对第一项使用散度定理，可得：
 \begin{equation}
 \begin{aligned}
-    V(\bm{r}) &= \frac{1}{4\pi\epsilon_0} \left[ \int_V \nabla' \cdot 
+    V(\bm{r}) &= \frac{1}{4\pi\varepsilon_0} \left[ \int_V \nabla' \cdot 
     \left( \frac{\bm{P}}{|\bm{\mathscr{r}}|} \right) \mathrm{d}V' 
     - \int_V \frac{\nabla' \cdot \bm{P}}{|\bm{\mathscr{r}}|} \mathrm{d}V' \right] \\
-    &= \frac{1}{4\pi\epsilon_0} \oint_{\partial V} \frac{\bm{P} \cdot 
-    \hat{\bm{n}}}{|\bm{\mathscr{r}}|} \mathrm{d}S' + \frac{1}{4\pi\epsilon_0} 
+    &= \frac{1}{4\pi\varepsilon_0} \oint_{\partial V} \frac{\bm{P} \cdot 
+    \hat{\bm{n}}}{|\bm{\mathscr{r}}|} \mathrm{d}S' + \frac{1}{4\pi\varepsilon_0} 
     \int_V \frac{-\nabla' \cdot \bm{P}}{|\bm{\mathscr{r}}|} \mathrm{d}V'
 \end{aligned}
 \end{equation}
@@ -471,8 +471,8 @@ $\alpha$是一个张量，写为$\bm{\alpha}$，此时$\bm{p}$和$\bm{E}$的方�
 \end{definition}
 因此，电势可以简洁地写为：
 \begin{equation}
-    V(\bm{r}) = \frac{1}{4\pi\epsilon_0} \oint_{\partial V} \frac{\sigma_b}{|\bm{\mathscr{r}}|} 
-    \mathrm{d}S' + \frac{1}{4\pi\epsilon_0} \int_V \frac{\rho_b}{|\bm{\mathscr{r}}|} \mathrm{d}V'
+    V(\bm{r}) = \frac{1}{4\pi\varepsilon_0} \oint_{\partial V} \frac{\sigma_b}{|\bm{\mathscr{r}}|} 
+    \mathrm{d}S' + \frac{1}{4\pi\varepsilon_0} \int_V \frac{\rho_b}{|\bm{\mathscr{r}}|} \mathrm{d}V'
 \end{equation}
 可以证明，束缚电荷的总量为零，这体现了电中性介质的电荷守恒：
 \begin{equation}
@@ -487,22 +487,22 @@ $\alpha$是一个张量，写为$\bm{\alpha}$，此时$\bm{p}$和$\bm{E}$的方�
 \begin{equation}
     \rho = \rho_f + \rho_b
 \end{equation}
-真空中的高斯定律是 $\nabla \cdot \bm{E} = \rho_{\text{total}} / \epsilon_0$。
+真空中的高斯定律是 $\nabla \cdot \bm{E} = \rho_{\text{total}} / \varepsilon_0$。
 在介质中，这个定律依然成立，只是总电荷包含了束缚电荷：
 \begin{equation}
-    \nabla \cdot \bm{E} = \frac{1}{\epsilon_0} (\rho_f + \rho_b) = \frac{1}{\epsilon_0} 
+    \nabla \cdot \bm{E} = \frac{1}{\varepsilon_0} (\rho_f + \rho_b) = \frac{1}{\varepsilon_0} 
     (\rho_f - \nabla \cdot \bm{P})
 \end{equation}
 移项整理可得：
 \begin{equation}
-    \nabla \cdot (\epsilon_0 \bm{E} + \bm{P}) = \rho_f
+    \nabla \cdot (\varepsilon_0 \bm{E} + \bm{P}) = \rho_f
 \end{equation}
 这个结果启发我们定义一个新的矢量场，其散度仅与我们更容易控制的自由电荷有关。
 
 \begin{definition}[电位移矢量]
     \textbf{电位移矢量(Electric Displacement)}$\bm{D}$定义为：
     \begin{equation}
-        \bm{D} = \epsilon_0 \bm{E} + \bm{P}
+        \bm{D} = \varepsilon_0 \bm{E} + \bm{P}
     \end{equation}
 \end{definition}
 \begin{law}[介质中的高斯定律]
@@ -514,14 +514,14 @@ $\alpha$是一个张量，写为$\bm{\alpha}$，此时$\bm{p}$和$\bm{E}$的方�
 
 对于\textbf{线性电介质(linear dielectrics)}，电极化强度$\bm{P}$与电场$\bm{E}$成正比：
 \begin{equation}
-    \bm{P} = \epsilon_0 \chi_e \bm{E}
+    \bm{P} = \varepsilon_0 \chi_e \bm{E}
 \end{equation}
 其中$\chi_e$称为\textbf{电极化率(electric susceptibility)}。此时，$\bm{D}$场可以表示为：
 \begin{equation}
-    \bm{D} = \epsilon_0 \bm{E} + \epsilon_0 \chi_e \bm{E} = \epsilon_0 (1 + \chi_e) \bm{E}
+    \bm{D} = \varepsilon_0 \bm{E} + \varepsilon_0 \chi_e \bm{E} = \varepsilon_0 (1 + \chi_e) \bm{E}
 \end{equation}
 我们定义\textbf{相对介电常数(relative permittivity)} $\epsilon_r = 1+\chi_e$ 
-和 \textbf{介电常数(permittivity)} $\epsilon = \epsilon_0 \epsilon_r$，则有：
+和 \textbf{介电常数(permittivity)} $\epsilon = \varepsilon_0 \epsilon_r$，则有：
 \begin{equation}
     \bm{D} = \epsilon \bm{E}
 \end{equation}
@@ -721,7 +721,9 @@ $\alpha$是一个张量，写为$\bm{\alpha}$，此时$\bm{p}$和$\bm{E}$的方�
     \mathrm{d}W = q\bm{E} \cdot \bm{v}\mathrm{d}t
 \end{equation}
 
-现在，我们将此结论推广到连续分布的电荷和电流。在一个体积微元 $\mathrm{d}V$ 内，电荷量为 $\mathrm{d}q = \rho \mathrm{d}V$，其中 $\rho$ 是电荷体密度。这部分电荷运动形成的电流密度为 $\bm{J} = \rho \bm{v}$。那么，在时间 $\mathrm{d}t$ 内，场对整个体积 $V$ 内所有电荷做的总功为：
+现在，我们将此结论推广到连续分布的电荷和电流。在一个体积微元 $\mathrm{d}V$ 内，
+电荷量为 $\mathrm{d}q = \rho \mathrm{d}V$，其中 $\rho$ 是电荷体密度。
+这部分电荷运动形成的电流密度为 $\bm{J} = \rho \bm{v}$。那么，在时间 $\mathrm{d}t$ 内，场对整个体积 $V$ 内所有电荷做的总功为：
 \begin{equation}
     \mathrm{d}W = \int_V (\rho \mathrm{d}V) \bm{E} \cdot \bm{v} \mathrm{d}t = \int_V (\bm{J} \cdot \bm{E}) \mathrm{d}V \mathrm{d}t
 \end{equation}
@@ -745,16 +747,17 @@ $\alpha$是一个张量，写为$\bm{\alpha}$，此时$\bm{p}$和$\bm{E}$的方�
 \end{equation}
 再利用法拉第电磁感应定律：$\nabla \times \bm{E} = -\frac{\partial \bm{B}}{\partial t}$，代入上式可得：
 \begin{equation}
-    \bm{J} \cdot \bm{E} = -\frac{\partial \bm{B}}{\partial t} \cdot \bm{H} - \frac{\partial \bm{D}}{\partial t} \cdot \bm{E} - \nabla \cdot (\bm{E} \times \bm{H})
+    \bm{J} \cdot \bm{E} = -\frac{\partial \bm{B}}{\partial t} \cdot \bm{H} 
+    - \frac{\partial \bm{D}}{\partial t} \cdot \bm{E} - \nabla \cdot (\bm{E} \times \bm{H})
 \end{equation}
-对于线性各向同性介质，我们有关系式 $\bm{D} = \varepsilon \bm{E}$ 和 $\bm{B} = \mu \bm{H}$。此时：
+
+定义总的电磁场能量密度为 $u$为：
 \begin{equation}
-\begin{aligned}
-    \bm{E} \cdot \frac{\partial \bm{D}}{\partial t} &= \bm{E} \cdot \frac{\partial (\varepsilon \bm{E})}{\partial t} = \varepsilon \bm{E} \cdot \frac{\partial \bm{E}}{\partial t} = \frac{\partial}{\partial t}\left(\frac{1}{2}\varepsilon E^2\right) = \frac{\partial u_e}{\partial t} \\
-    \bm{H} \cdot \frac{\partial \bm{B}}{\partial t} &= \bm{H} \cdot \frac{\partial (\mu \bm{H})}{\partial t} = \mu \bm{H} \cdot \frac{\partial \bm{H}}{\partial t} = \frac{\partial}{\partial t}\left(\frac{1}{2}\mu H^2\right) = \frac{\partial u_m}{\partial t}
-\end{aligned}
+    \frac{\partial u}{\partial t} 
+    = \frac{\partial \bm{B}}{\partial t} \cdot \bm{H} 
+    + \frac{\partial \bm{D}}{\partial t} \cdot \bm{E}
 \end{equation}
-其中 $u_e$ 和 $u_m$ 分别是电场能量密度和磁场能量密度。定义总的电磁场能量密度为 $u = u_e + u_m = \frac{1}{2}(\bm{E}\cdot\bm{D} + \bm{B}\cdot\bm{H})$。
+
 于是，$\bm{J} \cdot \bm{E}$ 的表达式变为：
 \begin{equation}
     \bm{J} \cdot \bm{E} = - \frac{\partial u}{\partial t} - \nabla \cdot (\bm{E} \times \bm{H})
@@ -779,8 +782,11 @@ $\alpha$是一个张量，写为$\bm{\alpha}$，此时$\bm{p}$和$\bm{E}$的方�
 我们定义矢量 $\bm{S} = \bm{E} \times \bm{H}$ 为\textbf{坡印亭矢量(Poynting Vector)}。它的方向代表电磁能流动的方向，大小代表单位时间内垂直通过单位面积的能量，即\textbf{能流密度}。
 \end{definition}
 
-\begin{definition}[电磁场能量密度]
-$u = \frac{1}{2}(\bm{E}\cdot\bm{D} + \bm{B}\cdot\bm{H})$ 为电磁场的\textbf{能量密度}，即单位体积内电磁场储存的能量。
+\begin{definition}[单位时间内变化的电磁场能量密度]
+$\frac{\partial u}{\partial t} 
+= \frac{\partial \bm{B}}{\partial t} \cdot \bm{H} 
++ \frac{\partial \bm{D}}{\partial t} \cdot \bm{E}$ 
+为电磁场的\textbf{单位时间内变化的电磁场能量密度}。
 \end{definition}
 
 坡印亭定理可以写成一个更简洁的积分形式：
@@ -796,6 +802,17 @@ $u = \frac{1}{2}(\bm{E}\cdot\bm{D} + \bm{B}\cdot\bm{H})$ 为电磁场的\textbf{
     \frac{\partial u}{\partial t} + \nabla \cdot \bm{S} = 0
 \end{equation}
 这个方程表明，在没有源（电荷）的情况下，空间某一点的能量密度的时间变化率等于流入该点的能量通量密度的负值。
+
+对于线性各向同性介质，我们有关系式 $\bm{D} = \varepsilon \bm{E}$ 和 $\bm{B} = \mu \bm{H}$。此时：
+\begin{equation}
+    \left\{
+    \begin{aligned}
+    \bm{E} \cdot \frac{\partial \bm{D}}{\partial t} &= \bm{E} \cdot \frac{\partial (\varepsilon \bm{E})}{\partial t} = \varepsilon \bm{E} \cdot \frac{\partial \bm{E}}{\partial t} = \frac{\partial}{\partial t}\left(\frac{1}{2}\varepsilon E^2\right) = \frac{\partial u_e}{\partial t} \\
+    \bm{H} \cdot \frac{\partial \bm{B}}{\partial t} &= \bm{H} \cdot \frac{\partial (\mu \bm{H})}{\partial t} = \mu \bm{H} \cdot \frac{\partial \bm{H}}{\partial t} = \frac{\partial}{\partial t}\left(\frac{1}{2}\mu H^2\right) = \frac{\partial u_m}{\partial t}
+    \end{aligned}
+    \right.
+\end{equation}
+此时，总的电磁场能量密度为 $u = \frac{1}{2}(\bm{E}\cdot\bm{D} + \bm{B}\cdot\bm{H})$。
 
 \subsection{电磁场的动量}
 
@@ -815,40 +832,57 @@ $u = \frac{1}{2}(\bm{E}\cdot\bm{D} + \bm{B}\cdot\bm{H})$ 为电磁场的\textbf{
 \begin{equation}
     \bm{f} = \varepsilon_0 (\nabla \cdot \bm{E})\bm{E} + \left(\frac{1}{\mu_0}\nabla \times \bm{B} - \varepsilon_0 \frac{\partial \bm{E}}{\partial t}\right) \times \bm{B}
 \end{equation}
-利用法拉第定律 $\nabla \times \bm{E} = -\frac{\partial \bm{B}}{\partial t}$ 和另一条麦克斯韦方程 $\nabla \cdot \bm{B} = 0$，并使用恒等式 $\frac{\partial}{\partial t}(\bm{E} \times \bm{B}) = \frac{\partial \bm{E}}{\partial t} \times \bm{B} + \bm{E} \times \frac{\partial \bm{B}}{\partial t}$，经过一系列复杂的矢量运算，上式可以整理成如下形式：
+
+利用法拉第定律 $\nabla \times \bm{E} = -\frac{\partial \bm{B}}{\partial t}$ 
+和另一条麦克斯韦方程 $\nabla \cdot \bm{B} = 0$，
+并使用恒等式 $\frac{\partial}{\partial t}(\bm{E} \times \bm{B}) 
+= \frac{\partial \bm{E}}{\partial t} \times \bm{B} + \bm{E} \times \frac{\partial \bm{B}}{\partial t}$，
+经过一系列复杂的矢量运算，上式可以整理成如下形式：
 \begin{equation}
-    \bm{f} + \varepsilon_0\mu_0\frac{\partial}{\partial t}(\bm{E} \times \bm{H}) = \nabla \cdot \mathbf{T}
+    \bm{f} + \varepsilon_0\frac{\partial}{\partial t}(\bm{E} \times \bm{B}) 
+    = \nabla \cdot \overset{\leftrightarrow}{\bm{T}}
 \end{equation}
-其中 $\mathbf{T}$ 是一个二阶张量，称为\textbf{麦克斯韦应力张量(Maxwell Stress Tensor)}。
+
+其中 $\overset{\leftrightarrow}{\bm{T}}$ 是一个二阶张量，
+称为\textbf{麦克斯韦应力张量(Maxwell Stress Tensor)}。
+其表达式（以并矢形式）为：
+\begin{equation}
+    \overset{\leftrightarrow}{\bm{T}} 
+    = \varepsilon_0 \bm{E}\bm{E} + \frac{1}{\mu_0}\bm{B}\bm{B} 
+    - \frac{1}{2}\overset{\leftrightarrow}{\bm{I}}(\varepsilon_0 \bm{E}^2 + \frac{1}{\mu_0}\bm{B}^2)
+\end{equation}
+其中$\overset{\leftrightarrow}{\bm{I}}$为单位二阶张量。
 
 \begin{definition}[麦克斯韦应力张量]
-麦克斯韦应力张量 $\mathbf{T}$ 的分量形式为（在真空中）：
+麦克斯韦应力张量 $\overset{\leftrightarrow}{\bm{T}}$ 的分量形式为（在真空中）：
 \begin{equation}
     T_{ij} = \varepsilon_0 \left(E_i E_j - \frac{1}{2}\delta_{ij}E^2\right) + \frac{1}{\mu_0}\left(B_i B_j - \frac{1}{2}\delta_{ij}B^2\right)
 \end{equation}
 其中 $\delta_{ij}$ 是克罗内克符号。
-\textcolor{red}{原始笔记公式: $\mathbf{T} = \varepsilon_0 \bm{E}\bm{E} + \mu_0 \bm{B}\bm{B} - \frac{1}{2}\mathbf{I}(\varepsilon_0 E^2 + \mu_0 B^2)$}
-
-\textcolor{blue}{注：原始笔记中的公式存在错误。正确的张量表达式（以并矢形式）应该是 $\mathbf{T} = \varepsilon_0 \bm{E}\bm{E} + \frac{1}{\mu_0}\bm{B}\bm{B} - \frac{1}{2}\mathbf{I}(\varepsilon_0 E^2 + \frac{1}{\mu_0}B^2)$。其中 $\bm{E}\bm{E}$ 表示并矢积。}
 \end{definition}
 
 \begin{definition}[电磁场动量密度]
-我们定义矢量 $\bm{g} = \varepsilon_0\mu_0(\bm{E} \times \bm{H}) = \frac{1}{c^2}\bm{S}$ 为\textbf{电磁场的动量密度(Momentum Density)}。
+我们定义矢量 $\bm{g} = \varepsilon_0(\bm{E} \times \bm{B})$ 为\textbf{电磁场的动量密度(Momentum Density)}。
+\end{definition}
+
+\begin{definition}[动量流]
+    我们定义矢量 $- \overset{\leftrightarrow}{\bm{T}}$ 为\textbf{动量流(Momentum Flux)}。
 \end{definition}
 
 于是，力密度方程可以写成动量守恒的微分形式：
 \begin{equation}
-    \bm{f} + \frac{\partial \bm{g}}{\partial t} = \nabla \cdot \mathbf{T}
+    \bm{f} + \frac{\partial \bm{g}}{\partial t} = \nabla \cdot \overset{\leftrightarrow}{\bm{T}}
 \end{equation}
 对体积 $V$ 积分，并应用高斯散度定理：
 \begin{equation}
-    \int_V \bm{f} \mathrm{d}V + \frac{\mathrm{d}}{\mathrm{d}t}\int_V \bm{g} \mathrm{d}V = \oint_S \mathbf{T} \cdot \mathrm{d}\bm{S}
+    \int_V \bm{f} \mathrm{d}V + \frac{\mathrm{d}}{\mathrm{d}t}\int_V \bm{g} \mathrm{d}V 
+    = \oint_S \overset{\leftrightarrow}{\bm{T}} \cdot \mathrm{d}\bm{S}
 \end{equation}
 这个方程是\textbf{电磁场动量守恒定律}的积分形式。
 \begin{itemize}
     \item $\bm{P}_{\text{mech}} = \int_V \bm{p}_{\text{mech}} \mathrm{d}V$，$\bm{f} = \frac{\mathrm{d}\bm{p}_{\text{mech}}}{\mathrm{d}t}$。因此 $\int_V \bm{f} \mathrm{d}V = \frac{\mathrm{d}\bm{P}_{\text{mech}}}{\mathrm{d}t}$，代表体积 $V$ 内所有带电物质的机械动量变化率。
     \item $\bm{P}_{\text{em}} = \int_V \bm{g} \mathrm{d}V$ 是体积 $V$ 内电磁场的总动量。
-    \item $\oint_S \mathbf{T} \cdot \mathrm{d}\bm{S}$ 代表通过曲面 $S$ 的动量流。$T_{ij}$ 可以理解为动量的第 $i$ 个分量沿第 $j$ 个方向的流量。
+    \item $\oint_S \overset{\leftrightarrow}{\bm{T}} \cdot \mathrm{d}\bm{S}$ 代表通过曲面 $S$ 的动量流。$T_{ij}$ 可以理解为动量的第 $i$ 个分量沿第 $j$ 个方向的流量。
 \end{itemize}
 动量守恒方程可以重新写作：
 \begin{equation}
@@ -863,13 +897,10 @@ $u = \frac{1}{2}(\bm{E}\cdot\bm{D} + \bm{B}\cdot\bm{H})$ 为电磁场的\textbf{
 
 \subsection{平面电磁波的能量与动量}
 现在我们考虑在真空中传播的平面电磁波。
-对于平面电磁波，电场 $\bm{E}$、磁场 $\bm{B}$ 和传播方向 $\hat{\bm{k}}$ 相互垂直，且 $E = cB$。
+对于平面电磁波，电场 $\bm{E}$、磁场 $\bm{B}$ 和传播方向 $\hat{\bm{k}}$ 相互垂直，且 $\bm{E} = c\bm{B}$。
 \begin{equation}
     \bm{B} = \frac{1}{c}(\hat{\bm{k}} \times \bm{E})
 \end{equation}
-\textcolor{red}{原始笔记公式: $B = \frac{k}{c} \times E$}
-
-\textcolor{blue}{注：原始笔记中的公式 $B = \frac{k}{c} \times E$ 在矢量关系和量纲上都是错误的。正确的矢量关系如上所示，其中 $\hat{\bm{k}}$ 是传播方向的单位矢量。}
 
 \textbf{能量密度 $u$}:
 \begin{equation}
