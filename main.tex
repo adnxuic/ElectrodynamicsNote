@@ -1552,24 +1552,25 @@ k_x = \frac{m\pi}{L_x}, \quad k_y = \frac{n\pi}{L_y}, \quad k_z = \frac{p\pi}{L_
 
 \subsection{静电场的基本方程与电势}
 
-\begin{definition}[静电场基本方程]
-在宏观电磁场理论中，真空中不随时间变化的静电场由以下两个方程描述：
+\begin{theorem}[静电场基本方程]
+真空中不随时间变化的静电场由以下两个方程描述：
 \begin{itemize}
     \item 高斯定律（微分形式）：
     \begin{equation}
         \nabla \cdot \bm{E} = \frac{\rho}{\varepsilon_0}
     \end{equation}
-    其中 $\bm{E}$ 是电场强度矢量，$\rho$ 是空间中的电荷体密度，$\varepsilon_0$ 是真空介电常数。该定律表明电场线的源头是正电荷，尾闾是负电荷。
+    其中 $\bm{E}$ 是电场强度矢量，$\rho$ 是空间中的电荷体密度，$\varepsilon_0$ 是真空介电常数。
     \item 静电场的环路定理（微分形式）：
     \begin{equation}
         \nabla \times \bm{E} = 0
     \end{equation}
     该方程表明静电场是无旋场，即静电场力是保守力。
 \end{itemize}
-\end{definition}
+\end{theorem}
 
 \begin{definition}[电势]
-由于静电场是无旋场（$\nabla \times \bm{E} = 0$），根据亥姆霍兹定理，它可以表示为一个标量函数 $\varphi$ 的梯度。为了使电场力做功的表达式更为简洁，我们定义电势 $\varphi$ 如下：
+由于静电场是无旋场（$\nabla \times \bm{E} = 0$），根据亥姆霍兹定理，
+它可以表示为一个标量函数 $\varphi$ 的梯度。为了使电场力做功的表达式更为简洁，我们定义电势 $\varphi$ 如下：
 \begin{equation}
     \bm{E} = -\nabla \varphi
 \end{equation}
@@ -1580,17 +1581,19 @@ k_x = \frac{m\pi}{L_x}, \quad k_y = \frac{n\pi}{L_y}, \quad k_z = \frac{p\pi}{L_
 \begin{equation}
     \nabla \cdot (-\nabla \varphi) = -\nabla^2 \varphi = \frac{\rho}{\varepsilon_0}
 \end{equation}
-整理后即为**泊松方程（Poisson's Equation）**:
+整理后即为泊松方程（Poisson's Equation）:
 \begin{equation}
     \nabla^2 \varphi = -\frac{\rho}{\varepsilon_0}
 \end{equation}
-在没有电荷分布的区域（$\rho=0$），泊松方程简化为**拉普拉斯方程（Laplace's Equation）**:
+
+在没有电荷分布的区域（$\rho=0$），泊松方程简化为拉普拉斯方程（Laplace's Equation）:
 \begin{equation}
     \nabla^2 \varphi = 0
 \end{equation}
 
 \subsubsection{线性介质中的静电场}
-在线性、各向同性、均匀的电介质中，引入电位移矢量 $\bm{D} = \varepsilon \bm{E}$，其中 $\varepsilon$ 是介质的介电常数。高斯定律可以写为只与自由电荷 $\rho_{\mathrm{f}}$ 相关的形式：
+在线性、各向同性、均匀的电介质中，引入电位移矢量 $\bm{D} = \varepsilon \bm{E}$，
+其中 $\varepsilon$ 是介质的介电常数。高斯定律可以写为只与自由电荷 $\rho_{\mathrm{f}}$ 相关的形式：
 \begin{equation}
     \nabla \cdot \bm{D} = \rho_{\mathrm{f}}
 \end{equation}
@@ -1603,27 +1606,24 @@ k_x = \frac{m\pi}{L_x}, \quad k_y = \frac{n\pi}{L_y}, \quad k_z = \frac{p\pi}{L_
 在两种不同介质的分界面上，电场矢量满足以下边界条件：
 \begin{itemize}
     \item 电场强度的切向分量连续：$\bm{E}_{\text{up}}^{\parallel} = \bm{E}_{\text{down}}^{\parallel}$。
-    \item 电位移矢量的法向分量不连续，其差值等于界面上的自由电荷面密度 $\sigma_{\mathrm{f}}$：$D_{\text{up}}^{\perp} - D_{\text{down}}^{\perp} = \sigma_{\mathrm{f}}$。
+    \item 电位移矢量的法向分量不连续，其差值等于界面上的自由电荷面密度 
+    $\sigma_{\mathrm{f}}$：$D_{\text{up}}^{\perp} - D_{\text{down}}^{\perp} = \sigma_{\mathrm{f}}$。
 \end{itemize}
 用电势表示，并设 $\bm{\hat{n}}$ 为从down区域指向up区域的单位法向量，则边界条件为：
 \begin{equation}
     \begin{cases}
         \varphi_{\text{up}} = \varphi_{\text{down}} & \text{(在界面上)} \\
-        \varepsilon_{\text{down}} \frac{\partial \varphi_{\text{down}}}{\partial n} - \varepsilon_{\text{up}} \frac{\partial \varphi_{\text{up}}}{\partial n} = \sigma_{\mathrm{f}}
+        \varepsilon_{\text{down}} \frac{\partial \varphi_{\text{down}}}{\partial n} 
+        - \varepsilon_{\text{up}} \frac{\partial \varphi_{\text{up}}}{\partial n} = \sigma_{\mathrm{f}}
     \end{cases}
 \end{equation}
-\textit{
-    手稿中的第二个边界条件表达式存在一些模糊之处。原始笔记为：
-$D_{\text{up}} - D_{\text{down}} = \sigma_f \implies \error{- \varepsilon_{\text{up}} \frac{\partial \varphi_{\text{up}}}{\partial n} + E_{\text{down}} \frac{\partial \varphi_{\text{down}}}{\partial n} = \sigma_f}$
-这里 $D$ 应为法向分量，且第二项应为 $\varepsilon_{\text{down}}$ 而非 $E_{\text{down}}$。
-根据标准定义 $D^{\perp} = \bm{D} \cdot \bm{\hat{n}} = -\varepsilon \frac{\partial \varphi}{\partial n}$，
-正确的推导应为
-$D_{\text{up}}^{\perp} - D_{\text{down}}^{\perp} = (-\varepsilon_{\text{up}} \frac{\partial \varphi_{\text{up}}}{\partial n}) - (-\varepsilon_{\text{down}} \frac{\partial \varphi_{\text{down}}}{\partial n}) = \sigma_{\mathrm{f}}$，整理后即为上述修正的公式。}
 
 \begin{example}[导体边界]
-对于导体，其内部电场为零，整个导体是一个等势体（$\varphi_{\text{down}} = \text{const}$）。因此，导体内部 $\bm{E}_{\text{down}}=0$, $\bm{D}_{\text{down}}=0$。导体表面的边界条件简化为：
+对于导体，其内部电场为零，整个导体是一个等势体（$\varphi_{\text{down}} = \text{const}$）。
+因此，导体内部 $\bm{E}_{\text{down}}=0$, $\bm{D}_{\text{down}}=0$。导体表面的边界条件简化为：
 \begin{equation}
-    D_{\text{up}}^{\perp} = \sigma_{\mathrm{f}} \implies -\varepsilon_{\text{up}} \frac{\partial \varphi_{\text{up}}}{\partial n} = \sigma_{\mathrm{f}}
+    D_{\text{up}}^{\perp} = \sigma_{\mathrm{f}} \implies -\varepsilon_{\text{up}} 
+    \frac{\partial \varphi_{\text{up}}}{\partial n} = \sigma_{\mathrm{f}}
 \end{equation}
 \end{example}
 
@@ -1632,7 +1632,8 @@ $D_{\text{up}}^{\perp} - D_{\text{down}}^{\perp} = (-\varepsilon_{\text{up}} \fr
 \begin{equation}
     W = \frac{1}{2} \int_V \bm{E} \cdot \bm{D} \, \mathrm{d}V
 \end{equation}
-利用 $\nabla \cdot \bm{D} = \rho$ 和 $\bm{E} = -\nabla \varphi$，通过分部积分可以证明，能量也可以表示为电荷与电势的乘积在整个电荷分布区的积分：
+利用 $\nabla \cdot \bm{D} = \rho$ 和 $\bm{E} = -\nabla \varphi$，通过分部积分可以证明，
+能量也可以表示为电荷与电势的乘积在整个电荷分布区的积分：
 \begin{equation}
     W = \frac{1}{2} \int_V \rho \varphi \, \mathrm{d}V
 \end{equation}
@@ -1640,7 +1641,8 @@ $D_{\text{up}}^{\perp} - D_{\text{down}}^{\perp} = (-\varepsilon_{\text{up}} \fr
 
 \subsection{唯一性定理}
 \begin{theorem}[唯一性定理]
-在一个由边界 $S$ 所包围的体积 $V$ 内，若给定了电荷密度 $\rho$，则泊松方程 $\nabla^2 \varphi = -\rho/\varepsilon$ 的解 $\varphi$ 由以下任一边界条件唯一确定：
+在一个由边界 $S$ 所包围的体积 $V$ 内，若给定了电荷密度 $\rho$，
+则泊松方程 $\nabla^2 \varphi = -\rho/\varepsilon$ 的解 $\varphi$ 由以下任一边界条件唯一确定：
 \begin{enumerate}
     \item 狄利克雷（Dirichlet）条件：在边界 $S$ 上给定电势 $\varphi$ 的值。
     \item 诺伊曼（Neumann）条件：在边界 $S$ 上给定电势的法向导数 $\partial \varphi / \partial n$ 的值。
@@ -1652,8 +1654,11 @@ $D_{\text{up}}^{\perp} - D_{\text{down}}^{\perp} = (-\varepsilon_{\text{up}} \fr
 在球坐标系 $(r, \theta, \phi)$ 中，拉普拉斯方程 $\nabla^2 \varphi = 0$ 的通解可以表示为：
 \begin{equation}
 \begin{aligned}
-    \varphi(r, \theta, \phi) = \sum_{n=0}^{\infty} \sum_{m=-n}^{n} & \left( A_{nm} r^n + \frac{B_{nm}}{r^{n+1}} \right) P_n^m(\cos\theta) \cos(m\phi) \\
-    + & \sum_{n=0}^{\infty} \sum_{m=1}^{n} \left( C_{nm} r^n + \frac{D_{nm}}{r^{n+1}} \right) P_n^m(\cos\theta) \sin(m\phi)
+    \varphi(r, \theta, \phi) 
+    = \sum_{n=0}^{\infty} \sum_{m=-n}^{n} & \left( A_{nm} r^n + \frac{B_{nm}}{r^{n+1}} \right) 
+    P_n^m(\cos\theta) \cos(m\phi) \\
+    + & \sum_{n=0}^{\infty} \sum_{m=1}^{n} \left( C_{nm} r^n + \frac{D_{nm}}{r^{n+1}} \right) 
+    P_n^m(\cos\theta) \sin(m\phi)
 \end{aligned}
 \end{equation}
 其中 $P_n^m(\cos\theta)$ 是连带勒让德多项式，系数 $A_{nm}, B_{nm}, C_{nm}, D_{nm}$ 由具体问题的边界条件确定。
@@ -1671,42 +1676,59 @@ $D_{\text{up}}^{\perp} - D_{\text{down}}^{\perp} = (-\varepsilon_{\text{up}} \fr
 \end{example}
 
 \subsection{电多极展开}
-对于一个局域化的电荷体系（即电荷分布在有限的空间区域内），其在远处（观测点 $\bm{r}$ 距离电荷体系中心远大于体系自身尺度 $|\bm{r}| \gg |\bm{r'}|$）产生的电势可以通过多极展开来近似。
+对于一个局域化的电荷体系（即电荷分布在有限的空间区域内），
+其在远处（观测点 $\bm{r}$ 距离电荷体系中心远大于体系自身尺度 $|\bm{r}| \gg |\bm{r'}|$）产生的电势
+可以通过多极展开来近似。
 电势由积分公式给出：
 \begin{equation}
-    \varphi(\bm{r}) = \frac{1}{4\pi\varepsilon_0} \int \frac{\rho(\bm{r'})}{|\bm{r} - \bm{r'}|} \, \mathrm{d}V'
+    \varphi(\bm{r}) 
+    = \frac{1}{4\pi\varepsilon_0} \int \frac{\rho(\bm{r'})}{|\bm{r} - \bm{r'}|} \, \mathrm{d}V'
 \end{equation}
-\textit{注意：手稿中缺少常数因子 $1/(4\pi\varepsilon_0)$。}
 
 我们将被积函数中的 $1/|\bm{r} - \bm{r'}|$ 对小量 $\bm{r'}$ 在 $\bm{r'}=0$ 处进行泰勒展开：
 \begin{equation}
-    \frac{1}{|\bm{r} - \bm{r'}|} = \frac{1}{r} - \bm{r'} \cdot \nabla\left(\frac{1}{r}\right) + \frac{1}{2} \sum_{i,j} r'_i r'_j \frac{\partial^2}{\partial r'_i \partial r'_j} \left(\frac{1}{|\bm{r} - \bm{r'}|}\right)\bigg|_{\bm{r'}=0} + \dots
+    \frac{1}{|\bm{r} - \bm{r'}|} 
+    = \frac{1}{r} - \bm{r'} \cdot \nabla\left(\frac{1}{r}\right) 
+    + \frac{1}{2} \sum_{i,j} r'_i r'_j \frac{\partial^2}{\partial r'_i \partial r'_j} 
+    \left(\frac{1}{|\bm{r} - \bm{r'}|}\right)\bigg|_{\bm{r'}=0} + \dots
 \end{equation}
 注意到 $\nabla_{\bm{r'}} f(\bm{r}-\bm{r'}) = -\nabla_{\bm{r}} f(\bm{r}-\bm{r'})$，我们可以得到：
 \begin{equation}
-    \frac{1}{|\bm{r} - \bm{r'}|} \approx \frac{1}{r} + \frac{\bm{r} \cdot \bm{r'}}{r^3} + \frac{1}{2r^5} \left( 3(\bm{r} \cdot \bm{r'})^2 - r^2 r'^2 \right) + \dots
+    \frac{1}{|\bm{r} - \bm{r'}|} \approx 
+    \frac{1}{r} + \frac{\bm{r} \cdot \bm{r'}}{r^3} + \frac{1}{2r^5} 
+    \left( 3(\bm{r} \cdot \bm{r'})^2 - r^2 r'^2 \right) + \dots
 \end{equation}
-将此展开代入电势积分，得到电势的多极展开形式 $\varphi = \varphi^{(0)} + \varphi^{(1)} + \varphi^{(2)} + \dots$
+将此展开代入电势积分，
+得到电势的多极展开形式 $\varphi = \varphi^{(0)} + \varphi^{(1)} + \varphi^{(2)} + \dots$
 
 \begin{definition}[电多极矩]
 \begin{itemize}
-    \item **第零阶项（电单极矩）**:
+    前三个项分别为电单极矩、电偶极矩和电四极矩。
+    \item 第零阶项（电单极矩）:
     \begin{equation}
-        \varphi^{(0)}(\bm{r}) = \frac{1}{4\pi\varepsilon_0 r} \int \rho(\bm{r'}) \, \mathrm{d}V' = \frac{Q}{4\pi\varepsilon_0 r}
+        \varphi^{(0)}(\bm{r}) = 
+        \frac{1}{4\pi\varepsilon_0} \int \rho(\bm{r'}) \, \mathrm{d}V' 
+        = \frac{Q}{4\pi\varepsilon_0 r}
     \end{equation}
     其中 $Q = \int \rho(\bm{r'}) \, \mathrm{d}V'$ 是体系的总电荷，也称为电单极矩。
     
-    \item **第一阶项（电偶极矩）**:
+    \item 第一阶项（电偶极矩）:
     \begin{equation}
-        \varphi^{(1)}(\bm{r}) = \frac{1}{4\pi\varepsilon_0 r^3} \bm{r} \cdot \int \bm{r'} \rho(\bm{r'}) \, \mathrm{d}V' = \frac{1}{4\pi\varepsilon_0} \frac{\bm{p} \cdot \bm{r}}{r^3}
+        \varphi^{(1)}(\bm{r}) 
+        = \frac{1}{4\pi\varepsilon_0 r^3} \bm{r} \cdot \int \bm{r'} \rho(\bm{r'}) \, \mathrm{d}V' 
+        = \frac{1}{4\pi\varepsilon_0} \frac{\bm{p} \cdot \bm{r}}{r^3}
     \end{equation}
     其中 $\bm{p} = \int \bm{r'} \rho(\bm{r'}) \, \mathrm{d}V'$ 是电偶极矩矢量。
     
-    \item **第二阶项（电四极矩）**:
+    \item 第二阶项（电四极矩）:
     \begin{equation}
-        \varphi^{(2)}(\bm{r}) = \frac{1}{4\pi\varepsilon_0} \frac{1}{2} \sum_{i,j} \frac{r_i r_j}{r^5} \int (3r'_i r'_j - r'^2\delta_{ij})\rho(\bm{r'}) \, \mathrm{d}V' = \frac{1}{4\pi\varepsilon_0} \frac{1}{2} \sum_{i,j} \frac{\hat{r}_i \hat{r}_j}{r^3} Q_{ij}
+        \varphi^{(2)}(\bm{r}) = \frac{1}{4\pi\varepsilon_0} \frac{1}{2} 
+        \sum_{i,j} \frac{r_i r_j}{r^5} \int (3r'_i r'_j - r'^2\delta_{ij})\rho(\bm{r'}) \, 
+        \mathrm{d}V' = \frac{1}{4\pi\varepsilon_0} \frac{1}{2} 
+        \sum_{i,j} \frac{\hat{r}_i \hat{r}_j}{r^3} \mathscr{D}_{ij}
     \end{equation}
-    其中 $Q_{ij} = \int (3r'_i r'_j - r'^2\delta_{ij})\rho(\bm{r'}) \, \mathrm{d}V'$ 是迹为零的电四极矩张量。
+    其中 $\mathscr{D}_{ij} = \int (3r'_i r'_j - r'^2\delta_{ij})\rho(\bm{r'}) \, \mathrm{d}V'$ 
+    是迹为零的电四极矩张量。
 \end{itemize}
 \end{definition}
 
@@ -1717,20 +1739,29 @@ $D_{\text{up}}^{\perp} - D_{\text{down}}^{\perp} = (-\varepsilon_{\text{up}} \fr
 \end{equation}
 将外电势 $\varphi_{\mathrm{e}}$ 在电荷体系中心（设为原点）附近做泰勒展开：
 \begin{equation}
-    \varphi_{\mathrm{e}}(\bm{r}) = \varphi_{\mathrm{e}}(0) + \bm{r} \cdot \nabla \varphi_{\mathrm{e}}\big|_{\bm{r}=0} + \frac{1}{2} \sum_{i,j} x_i x_j \frac{\partial^2 \varphi_{\mathrm{e}}}{\partial x_i \partial x_j}\bigg|_{\bm{r}=0} + \dots
+    \varphi_{\mathrm{e}}(\bm{r}) 
+    = \varphi_{\mathrm{e}}(0) + \bm{r} \cdot \nabla \varphi_{\mathrm{e}}\big|_{\bm{r}=0} 
+    + \frac{1}{2} \sum_{i,j} x_i x_j \frac{\partial^2 \varphi_{\mathrm{e}}}{\partial x_i \partial x_j}
+    \bigg|_{\bm{r}=0} + \dots
 \end{equation}
 代入能量积分，同样得到能量的多极展开：
 \begin{itemize}
-    \item **单极项**: $W^{(0)} = \int \rho(\bm{r}) \varphi_{\mathrm{e}}(0) \, \mathrm{d}V = Q \varphi_{\mathrm{e}}(0)$
-    \item **偶极项**: $W^{(1)} = \int \rho(\bm{r}) \left( \bm{r} \cdot \nabla \varphi_{\mathrm{e}}\big|_{0} \right) \, \mathrm{d}V = \bm{p} \cdot \nabla \varphi_{\mathrm{e}}\big|_{0} = -\bm{p} \cdot \bm{E}_{\mathrm{e}}(0)$
-    \item **四极项**: $W^{(2)} = \frac{1}{2} \int \rho(\bm{r}) \sum_{i,j} x_i x_j \frac{\partial^2 \varphi_{\mathrm{e}}}{\partial x_i \partial x_j}\bigg|_{0} \, \mathrm{d}V = \frac{1}{6} \sum_{i,j} Q_{ij} \frac{\partial^2 \varphi_{\mathrm{e}}}{\partial x_i \partial x_j}\bigg|_{0}$
+    \item 单极项: $W^{(0)} = \int \rho(\bm{r}) \varphi_{\mathrm{e}}(0) \, 
+    \mathrm{d}V = Q \varphi_{\mathrm{e}}(0)$
+    \item 偶极项: $W^{(1)} = \int \rho(\bm{r}) \left( \bm{r} \cdot \nabla \varphi_{\mathrm{e}}\big|_{0} 
+    \right) \, \mathrm{d}V = \bm{p} \cdot \nabla \varphi_{\mathrm{e}}\big|_{0} 
+    = -\bm{p} \cdot \bm{E}_{\mathrm{e}}(0)$
+    \item 四极项: $W^{(2)} = \frac{1}{2} \int \rho(\bm{r}) 
+    \sum_{i,j} x_i x_j \frac{\partial^2 \varphi_{\mathrm{e}}}{\partial x_i \partial x_j}\bigg|_{0} 
+    \, \mathrm{d}V = \frac{1}{6} \sum_{i,j} \mathscr{D}_{ij} \frac{\partial^2 \varphi_{\mathrm{e}}}
+    {\partial x_i \partial x_j}\bigg|_{0}$
 \end{itemize}
 
 \section{静磁场}
 
 \subsection{磁矢势}
-\begin{definition}[静磁场基本方程]
-在宏观电磁场理论中，真空中不随时间变化的静磁场由以下两个方程描述：
+\begin{theorem}[静磁场基本方程]
+真空中不随时间变化的静磁场由以下两个方程描述：
 \begin{itemize}
     \item 磁场的高斯定律：
     \begin{equation}
@@ -1739,14 +1770,15 @@ $D_{\text{up}}^{\perp} - D_{\text{down}}^{\perp} = (-\varepsilon_{\text{up}} \fr
     该定律表明磁场是无源场，不存在磁单极子，磁感线总是闭合的。
     \item 安培环路定律（微分形式）：
     \begin{equation}
-        \nabla \times \bm{B} = \mu_0 \bm{j}
+        \nabla \times \bm{B} = \mu_0 \bm{J}
     \end{equation}
-    其中 $\bm{B}$ 是磁感应强度矢量，$\bm{j}$ 是电流密度矢量，$\mu_0$ 是真空磁导率。
+    其中 $\bm{B}$ 是磁感应强度矢量，$\bm{J}$ 是电流密度矢量，$\mu_0$ 是真空磁导率。
 \end{itemize}
-\end{definition}
+\end{theorem}
 
 \begin{definition}[磁矢势]
-由于磁场是无源场（$\nabla \cdot \bm{B} = 0$），根据亥姆霍兹定理，它可以表示为一个矢量函数 $\bm{A}$ 的旋度。我们定义磁矢势 $\bm{A}$ 如下：
+由于磁场是无源场（$\nabla \cdot \bm{B} = 0$），根据亥姆霍兹定理，
+它可以表示为一个矢量函数 $\bm{A}$ 的旋度。我们定义磁矢势 $\bm{A}$ 如下：
 \begin{equation}
     \bm{B} = \nabla \times \bm{A}
 \end{equation}
@@ -1754,29 +1786,33 @@ $D_{\text{up}}^{\perp} - D_{\text{down}}^{\perp} = (-\varepsilon_{\text{up}} \fr
 
 将磁矢势的定义代入安培定律：
 \begin{equation}
-    \nabla \times (\nabla \times \bm{A}) = \mu_0 \bm{j}
+    \nabla \times (\nabla \times \bm{A}) = \mu_0 \bm{J}
 \end{equation}
-利用矢量恒等式 $\nabla \times (\nabla \times \bm{A}) = \nabla(\nabla \cdot \bm{A}) - \nabla^2 \bm{A}$，上式变为：
+利用矢量恒等式 $\nabla \times (\nabla \times \bm{A}) 
+= \nabla(\nabla \cdot \bm{A}) - \nabla^2 \bm{A}$，上式变为：
 \begin{equation}
-    \nabla(\nabla \cdot \bm{A}) - \nabla^2 \bm{A} = \mu_0 \bm{j}
+    \nabla(\nabla \cdot \bm{A}) - \nabla^2 \bm{A} = \mu_0 \bm{J}
 \end{equation}
 
 \subsubsection{规范自由度与库仑规范}
-磁矢势 $\bm{A}$ 的定义不是唯一的。对于任意标量函数 $\psi$，作一个规范变换 $\bm{A}' = \bm{A} + \nabla \psi$，新的磁矢势 $\bm{A}'$ 产生的磁场与原来相同：
+磁矢势 $\bm{A}$ 的定义不是唯一的。对于任意标量函数 $\psi$，
+作一个规范变换 $\bm{A}' = \bm{A} + \nabla \psi$，新的磁矢势 $\bm{A}'$ 产生的磁场与原来相同：
 \begin{equation}
-    \bm{B}' = \nabla \times \bm{A}' = \nabla \times (\bm{A} + \nabla \psi) = \nabla \times \bm{A} + \nabla \times (\nabla \psi) = \bm{B}
+    \bm{B}' = \nabla \times \bm{A}' = \nabla \times (\bm{A} + \nabla \psi) 
+    = \nabla \times \bm{A} + \nabla \times (\nabla \psi) = \bm{B}
 \end{equation}
 因为梯度的旋度恒为零。这种变换下物理实在（磁场 $\bm{B}$）不变的性质称为规范不变性。
 
-我们可以利用这种规范自由度来简化磁矢势的方程。一个常用的选择是**库仑规范（Coulomb Gauge）**，即要求磁矢势的散度为零：
+我们可以利用这种规范自由度来简化磁矢势的方程。一个常用的选择是库仑规范（Coulomb Gauge），
+即要求磁矢势的散度为零：
 \begin{equation}
     \nabla \cdot \bm{A} = 0
 \end{equation}
 在此规范下，磁矢势的方程简化为类似于泊松方程的矢量形式：
 \begin{equation}
-    \nabla^2 \bm{A} = -\mu_0 \bm{j}
+    \nabla^2 \bm{A} = -\mu_0 \bm{J}
 \end{equation}
-这意味着 $\bm{A}$ 的每一个笛卡尔分量都满足泊松方程，例如 $A_x$ 的方程为 $\nabla^2 A_x = -\mu_0 j_x$。
+这意味着 $\bm{A}$ 的每一个笛卡尔分量都满足泊松方程，例如 $A_x$ 的方程为 $\nabla^2 A_x = -\mu_0 J_x$。
 
 \subsubsection{磁矢势的积分形式}
 类似于静电势的解，上式的解为：
@@ -1785,45 +1821,55 @@ $D_{\text{up}}^{\perp} - D_{\text{down}}^{\perp} = (-\varepsilon_{\text{up}} \fr
 \end{equation}
 对于特定的电流分布：
 \begin{itemize}
-    \item **线电流**: $\bm{A}(\bm{r}) = \frac{\mu_0 I}{4\pi} \oint \frac{\mathrm{d}\bm{l'}}{|\bm{r} - \bm{r'}|}$
-    \item **面电流**: $\bm{A}(\bm{r}) = \frac{\mu_0}{4\pi} \int_S \frac{\bm{K}(\bm{r'})}{|\bm{r} - \bm{r'}|} \, \mathrm{d}S'$
+    \item 线电流: $\bm{A}(\bm{r}) 
+    = \frac{\mu_0}{4\pi} \oint \frac{I \mathrm{d}\bm{l'}}{|\bm{r} - \bm{r'}|}$
+    \item 面电流: $\bm{A}(\bm{r}) 
+    = \frac{\mu_0}{4\pi} \int_S \frac{\bm{K}(\bm{r'})}{|\bm{r} - \bm{r'}|} \, \mathrm{d}S'$
 \end{itemize}
 
 \subsubsection{边界条件}
 在两种不同磁介质的分界面上（界面上有表面电流 $\bm{K}$），磁场矢量满足以下边界条件（设 $\bm{\hat{n}}$ 为法向量）：
 \begin{itemize}
     \item 磁感应强度的法向分量连续：$B_{\text{up}}^{\perp} = B_{\text{down}}^{\perp}$。
-    \item 磁场强度的切向分量不连续：$\bm{H}_{\text{up}}^{\parallel} - \bm{H}_{\text{down}}^{\parallel} = \bm{K} \times \bm{\hat{n}}$。在真空中，$\bm{H} = \bm{B}/\mu_0$，所以 $\bm{B}_{\text{up}}^{\parallel} - \bm{B}_{\text{down}}^{\parallel} = \mu_0 (\bm{K} \times \bm{\hat{n}})$。
+    \item 磁场强度的切向分量不连续：$\bm{H}_{\text{up}}^{\parallel} - \bm{H}_{\text{down}}^{\parallel} 
+    = \bm{K} \times \bm{\hat{n}}$。
+    在真空中，$\bm{H} = \bm{B}/\mu_0$，
+    所以 $\bm{B}_{\text{up}}^{\parallel} - \bm{B}_{\text{down}}^{\parallel} 
+    = \mu_0 (\bm{K} \times \bm{\hat{n}})$。
 \end{itemize}
-\textit{手稿中的第二个边界条件为 $\error{\bm{B}_{\text{up}}^{\parallel} - \bm{B}_{\text{down}}^{\parallel} = \mu_0 \bm{K} \times \bm{\hat{n}}}$，这与标准形式 $\bm{\hat{n}} \times (\bm{H}_2 - \bm{H}_1) = \bm{K}$ 在符号上可能不一致，取决于 $\bm{\hat{n}}$ 的定义。如果 $\bm{\hat{n}}$ 从 down 指向 up，标准形式是 $\bm{B}_{\text{up}}^{\parallel} - \bm{B}_{\text{down}}^{\parallel} = \mu_0 (\bm{K} \times \bm{\hat{n}})$。}
 
 用磁矢势表示的边界条件（在库仑规范下）为：
 \begin{itemize}
     \item $\bm{A}_{\text{up}} = \bm{A}_{\text{down}}$
-    \item $\frac{\partial \bm{A}_{\text{up}}}{\partial n} - \frac{\partial \bm{A}_{\text{down}}}{\partial n} = -\mu_0 \bm{K}$
+    \item $\frac{\partial \bm{A}_{\text{up}}}{\partial n} 
+    - \frac{\partial \bm{A}_{\text{down}}}{\partial n} = -\mu_0 \bm{K}$
 \end{itemize}
 
 \subsection{磁多极展开}
 与电势类似，对于一个局域化的电流体系，其在远处的磁矢势也可以进行多极展开。
 \begin{equation}
-    \bm{A}(\bm{r}) \approx \frac{\mu_0}{4\pi} \int \bm{j}(\bm{r'}) \left( \frac{1}{r} + \frac{\bm{r} \cdot \bm{r'}}{r^3} + \dots \right) \, \mathrm{d}V'
+    \bm{A}(\bm{r}) \approx \frac{\mu_0}{4\pi} \int \bm{J}(\bm{r'}) \left( \frac{1}{r} + \frac{\bm{r} 
+    \cdot \bm{r'}}{r^3} + \dots \right) \, \mathrm{d}V'
 \end{equation}
 
 \begin{itemize}
-    \item **第零阶项（磁单极矩）**:
+    \item 第零阶项（磁单极矩）:
     \begin{equation}
-        \bm{A}^{(0)}(\bm{r}) = \frac{\mu_0}{4\pi r} \int \bm{j}(\bm{r'}) \, \mathrm{d}V'
+        \bm{A}^{(0)}(\bm{r}) = \frac{\mu_0}{4\pi r} \int \bm{J}(\bm{r'}) \, \mathrm{d}V'
     \end{equation}
-    对于任何稳恒电流分布，可以证明 $\int \bm{j}(\bm{r'}) \, \mathrm{d}V' = 0$。因此，不存在磁单极矩项。
+    对于任何稳恒电流分布，可以证明 $\int \bm{J}(\bm{r'}) \, \mathrm{d}V' = 0$。因此，不存在磁单极矩项。
     
-    \item **第一阶项（磁偶极矩）**:
+    \item 第一阶项（磁偶极矩）:
     \begin{equation}
-        \bm{A}^{(1)}(\bm{r}) = \frac{\mu_0}{4\pi r^3} \int (\bm{r} \cdot \bm{r'}) \bm{j}(\bm{r'}) \, \mathrm{d}V'
+        \bm{A}^{(1)}(\bm{r}) = \frac{\mu_0}{4\pi r^3} \int (\bm{r} \cdot \bm{r'}) \bm{J}(\bm{r'}) 
+        \, \mathrm{d}V'
     \end{equation}
-    利用恒等式 $\int (\bm{c} \cdot \bm{r'}) \bm{j}(\bm{r'}) \, \mathrm{d}V' = \frac{1}{2} \left[ \bm{c} \times \int (\bm{j} \times \bm{r'}) \, \mathrm{d}V' \right]$，并定义磁偶极矩：
+    利用恒等式 $\int (\bm{c} \cdot \bm{r'}) \bm{J}(\bm{r'}) \, \mathrm{d}V' 
+    = \frac{1}{2} \left[ \bm{c} \times \int (\bm{J} \times \bm{r'}) \, \mathrm{d}V' \right]$，
+    并定义磁偶极矩：
     \begin{definition}[磁偶极矩]
     \begin{equation}
-        \bm{m} = \frac{1}{2} \int \bm{r'} \times \bm{j}(\bm{r'}) \, \mathrm{d}V'
+        \bm{m} = \frac{1}{2} \int \bm{r'} \times \bm{J}(\bm{r'}) \, \mathrm{d}V'
     \end{equation}
     \end{definition}
     磁偶极矩的矢势可以写为：

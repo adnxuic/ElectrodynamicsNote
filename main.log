@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.2.4)  2 SEP 2025 20:15
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.2.4)  2 SEP 2025 23:25
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1776,17 +1776,15 @@ LaTeX Font Info:    Font shape `U/BOONDOX-scro/b/n' will be
 Package hyperref Info: bookmark level for unknown corollary defaults to 0 on input line 1138.
  [19] [20] [21] [22] [23] [24]
 Package hyperref Info: bookmark level for unknown problem defaults to 0 on input line 1504.
- [25] [26]
-Overfull \hbox (69.99861pt too wide) in paragraph at lines 1614--1622
- \TU/LXGWWenKaiScreen.ttf(0)/m/it/10.53937 手 稿 中 的 第 二 个 边 界 条 件 表 达 式 存 在 一 些 模 糊 之 处。|  原 始 笔 记 为：| $\OML/lmm/m/it/10.53937 D[] \OMS/lmsy/m/n/10.53937 ^^@ \OML/lmm/m/it/10.53937 D[] \OT1/lmr/m/n/10.53937 = \OML/lmm/m/it/10.53937 ^^[[]  \OT1/lmr/m/n/10.53937 =[]\OMS/lmsy/m/n/10.53937 )  [][]$
- []
-
-[27] [28] [29] [30]
-
-Package tcolorbox Warning: Discard zero height first box part due to break problems (possible loss of zero height content) on input line 1828.
-
-[31] [32] [33] [34] [35] [36]
-Overfull \hbox (8.19447pt too wide) detected at line 2129
+ [25] [26] [27]
+LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
+(Font)              scaled to size 10.53937pt on input line 1728.
+LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
+(Font)              scaled to size 7.0pt on input line 1728.
+LaTeX Font Info:    Font shape `U/BOONDOX-scro/m/n' will be
+(Font)              scaled to size 5.0pt on input line 1728.
+ [28] [29] [30] [31] [32] [33] [34] [35] [36]
+Overfull \hbox (8.19447pt too wide) detected at line 2175
 [][][]\OML/cmm/b/it/10.53937 A[]\OT1/lmr/m/n/10.53937 (\OML/cmm/b/it/10.53937 R\OT1/lmr/m/n/10.53937 ) = [][]  \OMS/lmsy/m/n/10.53937 !  [] \OML/cmm/b/it/10.53937 A[]\OT1/lmr/m/n/10.53937 (\OML/cmm/b/it/10.53937 R\OT1/lmr/m/n/10.53937 ) = \OMS/lmsy/m/n/10.53937 ^^@[][] [] \OML/cmm/b/it/10.53937 r[]\OT1/lmr/m/n/10.53937 ([] \OMS/lmsy/m/n/10.53937 ^^A \OML/cmm/b/it/10.53937 r[]\OT1/lmr/m/n/10.53937 )\OML/lmm/m/it/10.53937 ^^Z\OT1/lmr/m/n/10.53937 (\OML/cmm/b/it/10.53937 r[]\OT1/lmr/m/n/10.53937 )d\OML/lmm/m/it/10.53937 V[]
  []
 
@@ -1794,7 +1792,7 @@ Overfull \hbox (8.19447pt too wide) detected at line 2129
 File: imgs/ComptonScattering.pdf Graphic file (type pdf)
 <use imgs/ComptonScattering.pdf>
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
-(Font)              scaled to size 9.03374pt on input line 2299.
+(Font)              scaled to size 9.03374pt on input line 2345.
  [40] [41] [42] [43] [44] [45] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./main.aux)
@@ -1805,12 +1803,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 211AB6B8BDE8E63CD52334ADCBFB3016;9595.
  ) 
 Here is how much of TeX's memory you used:
- 54980 strings out of 476683
- 1240160 string characters out of 5804048
+ 54995 strings out of 476683
+ 1241025 string characters out of 5804048
  1885012 words of memory out of 5000000
- 74333 multiletter control sequences out of 15000+600000
- 544936 words of font info for 143 fonts, out of 8000000 for 9000
+ 74347 multiletter control sequences out of 15000+600000
+ 545701 words of font info for 146 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 95i,18n,115p,3270b,1040s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 95i,18n,115p,3270b,997s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on main.pdf (45 pages).
