@@ -712,20 +712,26 @@ $\alpha$是一个张量，写为$\bm{\alpha}$，此时$\bm{p}$和$\bm{E}$的方�
 根据功能原理，电磁场对电荷做的功将转化为电荷的动能或其他形式的能量，这部分能量来源于电磁场本身。
 因此，电磁场对电荷做正功的过程，是电磁场能量减少的过程。
 
-考虑一个以速度 $\bm{v}$ 运动的点电荷 $q$，它在电磁场 ($\bm{E}$ 和 $\bm{B}$) 中受到的洛伦兹力为 $\bm{F} = q(\bm{E} + \bm{v} \times \bm{B})$。在微小时间间隔 $\mathrm{d}t$ 内，电荷移动的位移为 $\mathrm{d}\bm{l} = \bm{v}\mathrm{d}t$。电磁场对该电荷做的微功 $\mathrm{d}W$ 为：
+考虑一个以速度 $\bm{v}$ 运动的点电荷 $q$，它在电磁场 ($\bm{E}$ 和 $\bm{B}$) 中受到的洛伦兹力为 
+$\bm{F} = q(\bm{E} + \bm{v} \times \bm{B})$。在微小时间间隔 $\mathrm{d}t$ 内，
+电荷移动的位移为 $\mathrm{d}\bm{l} = \bm{v}\mathrm{d}t$。电磁场对该电荷做的微功 $\mathrm{d}W$ 为：
 \begin{equation}
-    \mathrm{d}W = \bm{F} \cdot \mathrm{d}\bm{l} = q(\bm{E} + \bm{v} \times \bm{B}) \cdot \bm{v}\mathrm{d}t
+    \mathrm{d}W = \bm{F} \cdot \mathrm{d}\bm{l} 
+    = q(\bm{E} + \bm{v} \times \bm{B}) \cdot \bm{v}\mathrm{d}t
 \end{equation}
-由于磁场力 $\bm{F}_m = q(\bm{v} \times \bm{B})$ 的方向始终垂直于电荷运动速度 $\bm{v}$ 的方向，即 $(\bm{v} \times \bm{B}) \cdot \bm{v} = 0$，所以磁场对自由电荷不做功。因此，做功的只有电场部分：
+由于磁场力 $\bm{F}_m = q(\bm{v} \times \bm{B})$ 的方向始终垂直于电荷运动速度 $\bm{v}$ 的方向，
+即 $(\bm{v} \times \bm{B}) \cdot \bm{v} = 0$，所以磁场对自由电荷不做功。因此，做功的只有电场部分：
 \begin{equation}
     \mathrm{d}W = q\bm{E} \cdot \bm{v}\mathrm{d}t
 \end{equation}
 
 现在，我们将此结论推广到连续分布的电荷和电流。在一个体积微元 $\mathrm{d}V$ 内，
 电荷量为 $\mathrm{d}q = \rho \mathrm{d}V$，其中 $\rho$ 是电荷体密度。
-这部分电荷运动形成的电流密度为 $\bm{J} = \rho \bm{v}$。那么，在时间 $\mathrm{d}t$ 内，场对整个体积 $V$ 内所有电荷做的总功为：
+这部分电荷运动形成的电流密度为 $\bm{J} = \rho \bm{v}$。那么，在时间 $\mathrm{d}t$ 内，
+场对整个体积 $V$ 内所有电荷做的总功为：
 \begin{equation}
-    \mathrm{d}W = \int_V (\rho \mathrm{d}V) \bm{E} \cdot \bm{v} \mathrm{d}t = \int_V (\bm{J} \cdot \bm{E}) \mathrm{d}V \mathrm{d}t
+    \mathrm{d}W = \int_V (\rho \mathrm{d}V) \bm{E} \cdot \bm{v} \mathrm{d}t 
+    = \int_V (\bm{J} \cdot \bm{E}) \mathrm{d}V \mathrm{d}t
 \end{equation}
 因此，电磁场对电荷做功的功率（单位时间内做的功）为：
 \begin{equation}
@@ -735,15 +741,20 @@ $\alpha$是一个张量，写为$\bm{\alpha}$，此时$\bm{p}$和$\bm{E}$的方�
 
 为了找到能量与电磁场本身的关系，我们利用安培-麦克斯韦定律的微分形式将电流密度 $\bm{J}$ 消去：
 \begin{equation}
-    \nabla \times \bm{H} = \bm{J} + \frac{\partial \bm{D}}{\partial t} \implies \bm{J} = \nabla \times \bm{H} - \frac{\partial \bm{D}}{\partial t}
+    \nabla \times \bm{H} = \bm{J} + \frac{\partial \bm{D}}{\partial t} \implies \bm{J} 
+    = \nabla \times \bm{H} - \frac{\partial \bm{D}}{\partial t}
 \end{equation}
 代入功率表达式中，得到：
 \begin{equation}
-    \bm{J} \cdot \bm{E} = \left(\nabla \times \bm{H} - \frac{\partial \bm{D}}{\partial t}\right) \cdot \bm{E} = (\nabla \times \bm{H}) \cdot \bm{E} - \frac{\partial \bm{D}}{\partial t} \cdot \bm{E}
+    \bm{J} \cdot \bm{E} = \left(\nabla \times \bm{H} 
+    - \frac{\partial \bm{D}}{\partial t}\right) \cdot \bm{E} 
+    = (\nabla \times \bm{H}) \cdot \bm{E} - \frac{\partial \bm{D}}{\partial t} \cdot \bm{E}
 \end{equation}
-这里我们使用一个矢量恒等式：$\nabla \cdot (\bm{E} \times \bm{H}) = (\nabla \times \bm{E}) \cdot \bm{H} - (\nabla \times \bm{H}) \cdot \bm{E}$。于是有：
+这里我们使用一个矢量恒等式：$\nabla \cdot (\bm{E} \times \bm{H}) 
+= (\nabla \times \bm{E}) \cdot \bm{H} - (\nabla \times \bm{H}) \cdot \bm{E}$。于是有：
 \begin{equation}
-    (\nabla \times \bm{H}) \cdot \bm{E} = (\nabla \times \bm{E}) \cdot \bm{H} - \nabla \cdot (\bm{E} \times \bm{H})
+    (\nabla \times \bm{H}) \cdot \bm{E} 
+    = (\nabla \times \bm{E}) \cdot \bm{H} - \nabla \cdot (\bm{E} \times \bm{H})
 \end{equation}
 再利用法拉第电磁感应定律：$\nabla \times \bm{E} = -\frac{\partial \bm{B}}{\partial t}$，代入上式可得：
 \begin{equation}
@@ -766,8 +777,10 @@ $\alpha$是一个张量，写为$\bm{\alpha}$，此时$\bm{p}$和$\bm{E}$的方�
 \begin{equation}
 \begin{aligned}
     \frac{\mathrm{d}W}{\mathrm{d}t} &= \int_V \bm{J} \cdot \bm{E} \, \mathrm{d}V \\
-    &= -\int_V \frac{\partial u}{\partial t} \mathrm{d}V - \int_V \nabla \cdot (\bm{E} \times \bm{H}) \mathrm{d}V \\
-    &= -\frac{\mathrm{d}}{\mathrm{d}t}\int_V u \, \mathrm{d}V - \oint_S (\bm{E} \times \bm{H}) \cdot \mathrm{d}\bm{S}
+    &= -\int_V \frac{\partial u}{\partial t} \mathrm{d}V 
+    - \int_V \nabla \cdot (\bm{E} \times \bm{H}) \mathrm{d}V \\
+    &= -\frac{\mathrm{d}}{\mathrm{d}t}\int_V u \, \mathrm{d}V 
+    - \oint_S (\bm{E} \times \bm{H}) \cdot \mathrm{d}\bm{S}
 \end{aligned}
 \end{equation}
 这个方程被称为 \textbf{坡印亭定理(Poynting's Theorem)}，是电磁场的能量守恒定律的体现。
@@ -779,7 +792,8 @@ $\alpha$是一个张量，写为$\bm{\alpha}$，此时$\bm{p}$和$\bm{E}$的方�
 物理图像是：电磁场对电荷做功的能量，一部分来自于场自身能量的减少，另一部分来自于从外界流入该区域的能量。
 
 \begin{definition}[坡印亭矢量与能量流密度]
-我们定义矢量 $\bm{S} = \bm{E} \times \bm{H}$ 为\textbf{坡印亭矢量(Poynting Vector)}。它的方向代表电磁能流动的方向，大小代表单位时间内垂直通过单位面积的能量，即\textbf{能流密度}。
+我们定义矢量 $\bm{S} = \bm{E} \times \bm{H}$ 为\textbf{坡印亭矢量(Poynting Vector)}。
+它的方向代表电磁能流动的方向，大小代表单位时间内垂直通过单位面积的能量，即\textbf{能流密度}。
 \end{definition}
 
 \begin{definition}[单位时间内变化的电磁场能量密度]
@@ -791,9 +805,11 @@ $\frac{\partial u}{\partial t}
 
 坡印亭定理可以写成一个更简洁的积分形式：
 \begin{equation}
-    \frac{\mathrm{d}}{\mathrm{d}t}\int_V u \, \mathrm{d}V + \oint_S \bm{S} \cdot \mathrm{d}\bm{S} + \frac{\mathrm{d}W}{\mathrm{d}t} = 0
+    \frac{\mathrm{d}}{\mathrm{d}t}\int_V u \, \mathrm{d}V 
+    + \oint_S \bm{S} \cdot \mathrm{d}\bm{S} + \frac{\mathrm{d}W}{\mathrm{d}t} = 0
 \end{equation}
-在一个没有自由电荷和电流的区域（$\rho=0, \bm{J}=0$），电磁场不对任何电荷做功，即 $\frac{\mathrm{d}W}{\mathrm{d}t} = 0$。此时，能量守恒定律变为：
+在一个没有自由电荷和电流的区域（$\rho=0, \bm{J}=0$），电磁场不对任何电荷做功，
+即 $\frac{\mathrm{d}W}{\mathrm{d}t} = 0$。此时，能量守恒定律变为：
 \begin{equation}
     \frac{\mathrm{d}}{\mathrm{d}t}\int_V u \, \mathrm{d}V + \oint_S \bm{S} \cdot \mathrm{d}\bm{S} = 0
 \end{equation}
@@ -807,8 +823,16 @@ $\frac{\partial u}{\partial t}
 \begin{equation}
     \left\{
     \begin{aligned}
-    \bm{E} \cdot \frac{\partial \bm{D}}{\partial t} &= \bm{E} \cdot \frac{\partial (\varepsilon \bm{E})}{\partial t} = \varepsilon \bm{E} \cdot \frac{\partial \bm{E}}{\partial t} = \frac{\partial}{\partial t}\left(\frac{1}{2}\varepsilon E^2\right) = \frac{\partial u_e}{\partial t} \\
-    \bm{H} \cdot \frac{\partial \bm{B}}{\partial t} &= \bm{H} \cdot \frac{\partial (\mu \bm{H})}{\partial t} = \mu \bm{H} \cdot \frac{\partial \bm{H}}{\partial t} = \frac{\partial}{\partial t}\left(\frac{1}{2}\mu H^2\right) = \frac{\partial u_m}{\partial t}
+    \bm{E} \cdot \frac{\partial \bm{D}}{\partial t} 
+    &= \bm{E} \cdot \frac{\partial (\varepsilon \bm{E})}{\partial t} 
+    = \varepsilon \bm{E} \cdot \frac{\partial \bm{E}}{\partial t} 
+    = \frac{\partial}{\partial t}\left(\frac{1}{2}\varepsilon E^2\right) 
+    = \frac{\partial u_e}{\partial t} \\
+    \bm{H} \cdot \frac{\partial \bm{B}}{\partial t} 
+    &= \bm{H} \cdot \frac{\partial (\mu \bm{H})}{\partial t} 
+    = \mu \bm{H} \cdot \frac{\partial \bm{H}}{\partial t} 
+    = \frac{\partial}{\partial t}\left(\frac{1}{2}\mu H^2\right) 
+    = \frac{\partial u_m}{\partial t}
     \end{aligned}
     \right.
 \end{equation}
@@ -817,20 +841,25 @@ $\frac{\partial u}{\partial t}
 \subsection{电磁场的动量}
 
 \begin{definition}[电磁场力密度]
-在一个包含电荷和电流的区域，单位体积的电荷和电流所受到的洛伦兹力被称为\textbf{力密度(Force Density)}，记为 $\bm{f}$。
+在一个包含电荷和电流的区域，
+单位体积的电荷和电流所受到的洛伦兹力被称为\textbf{力密度(Force Density)}，记为 $\bm{f}$。
 \begin{equation}
     \bm{f} = \rho \bm{E} + \bm{J} \times \bm{B}
 \end{equation}
 \end{definition}
 
-为了揭示动量与场的关系，我们用麦克斯韦方程消去源项 $\rho$ 和 $\bm{J}$。在真空中，$\bm{D}=\varepsilon_0 \bm{E}, \bm{B}=\mu_0 \bm{H}$，我们有：
+为了揭示动量与场的关系，我们用麦克斯韦方程消去源项 $\rho$ 和 $\bm{J}$。
+在真空中，$\bm{D}=\varepsilon_0 \bm{E}, \bm{B}=\mu_0 \bm{H}$，我们有：
 \begin{itemize}
     \item 高斯定律: $\rho = \nabla \cdot \bm{D} = \varepsilon_0 (\nabla \cdot \bm{E})$
-    \item 安培-麦克斯韦定律: $\bm{J} = \nabla \times \bm{H} - \frac{\partial \bm{D}}{\partial t} = \frac{1}{\mu_0}\nabla \times \bm{B} - \varepsilon_0 \frac{\partial \bm{E}}{\partial t}$
+    \item 安培-麦克斯韦定律: $\bm{J} = \nabla \times \bm{H} 
+    - \frac{\partial \bm{D}}{\partial t} = \frac{1}{\mu_0}\nabla \times \bm{B} 
+    - \varepsilon_0 \frac{\partial \bm{E}}{\partial t}$
 \end{itemize}
 代入力密度表达式：
 \begin{equation}
-    \bm{f} = \varepsilon_0 (\nabla \cdot \bm{E})\bm{E} + \left(\frac{1}{\mu_0}\nabla \times \bm{B} - \varepsilon_0 \frac{\partial \bm{E}}{\partial t}\right) \times \bm{B}
+    \bm{f} = \varepsilon_0 (\nabla \cdot \bm{E})\bm{E} + \left(\frac{1}{\mu_0}\nabla \times \bm{B} 
+    - \varepsilon_0 \frac{\partial \bm{E}}{\partial t}\right) \times \bm{B}
 \end{equation}
 
 利用法拉第定律 $\nabla \times \bm{E} = -\frac{\partial \bm{B}}{\partial t}$ 
@@ -856,7 +885,8 @@ $\frac{\partial u}{\partial t}
 \begin{definition}[麦克斯韦应力张量]
 麦克斯韦应力张量 $\overset{\leftrightarrow}{\bm{T}}$ 的分量形式为（在真空中）：
 \begin{equation}
-    T_{ij} = \varepsilon_0 \left(E_i E_j - \frac{1}{2}\delta_{ij}E^2\right) + \frac{1}{\mu_0}\left(B_i B_j - \frac{1}{2}\delta_{ij}B^2\right)
+    T_{ij} = \varepsilon_0 \left(E_i E_j - \frac{1}{2}\delta_{ij}E^2\right) 
+    + \frac{1}{\mu_0}\left(B_i B_j - \frac{1}{2}\delta_{ij}B^2\right)
 \end{equation}
 其中 $\delta_{ij}$ 是克罗内克符号。
 \end{definition}
@@ -880,18 +910,24 @@ $\frac{\partial u}{\partial t}
 \end{equation}
 这个方程是\textbf{电磁场动量守恒定律}的积分形式。
 \begin{itemize}
-    \item $\bm{P}_{\text{mech}} = \int_V \bm{p}_{\text{mech}} \mathrm{d}V$，$\bm{f} = \frac{\mathrm{d}\bm{p}_{\text{mech}}}{\mathrm{d}t}$。因此 $\int_V \bm{f} \mathrm{d}V = \frac{\mathrm{d}\bm{P}_{\text{mech}}}{\mathrm{d}t}$，代表体积 $V$ 内所有带电物质的机械动量变化率。
+    \item $\bm{P}_{\text{mech}} = \int_V \bm{p}_{\text{mech}} \mathrm{d}V$，$\bm{f} 
+    = \frac{\mathrm{d}\bm{p}_{\text{mech}}}{\mathrm{d}t}$。
+    因此 $\int_V \bm{f} \mathrm{d}V = \frac{\mathrm{d}\bm{P}_{\text{mech}}}{\mathrm{d}t}$，
+    代表体积 $V$ 内所有带电物质的机械动量变化率。
     \item $\bm{P}_{\text{em}} = \int_V \bm{g} \mathrm{d}V$ 是体积 $V$ 内电磁场的总动量。
-    \item $\oint_S \overset{\leftrightarrow}{\bm{T}} \cdot \mathrm{d}\bm{S}$ 代表通过曲面 $S$ 的动量流。$T_{ij}$ 可以理解为动量的第 $i$ 个分量沿第 $j$ 个方向的流量。
+    \item $\oint_S \overset{\leftrightarrow}{\bm{T}} \cdot \mathrm{d}\bm{S}$ 
+    代表通过曲面 $S$ 的动量流。$T_{ij}$ 可以理解为动量的第 $i$ 个分量沿第 $j$ 个方向的流量。
 \end{itemize}
 动量守恒方程可以重新写作：
 \begin{equation}
-    \frac{\mathrm{d}}{\mathrm{d}t}(\bm{P}_{\text{mech}} + \bm{P}_{\text{em}}) = \oint_S \mathbf{T} \cdot \mathrm{d}\bm{S}
+    \frac{\mathrm{d}}{\mathrm{d}t}(\bm{P}_{\text{mech}} + \bm{P}_{\text{em}}) 
+    = \oint_S \overset{\leftrightarrow}{\bm{T}} \cdot \mathrm{d}\bm{S}
 \end{equation}
 其物理图像为：物质和场的总动量变化率等于单位时间内通过系统边界流入的动量。
 对于一个孤立系统（即在无穷远处场为零），边界面 $S$ 可以取在无穷远，此时右边的面积分为零。那么：
 \begin{equation}
-    \frac{\mathrm{d}}{\mathrm{d}t}(\bm{P}_{\text{mech}} + \bm{P}_{\text{em}}) = 0 \implies \bm{P}_{\text{mech}} + \bm{P}_{\text{em}} = \text{常量}
+    \frac{\mathrm{d}}{\mathrm{d}t}(\bm{P}_{\text{mech}} + \bm{P}_{\text{em}}) 
+    = 0 \implies \bm{P}_{\text{mech}} + \bm{P}_{\text{em}} = \text{常量}
 \end{equation}
 这表明，一个孤立系统中的“物质动量”与“场的动量”之和是守恒的。
 
@@ -904,46 +940,63 @@ $\frac{\partial u}{\partial t}
 
 \textbf{能量密度 $u$}:
 \begin{equation}
-    u = \frac{1}{2}(\varepsilon_0 E^2 + \frac{1}{\mu_0}B^2) = \frac{1}{2}\left(\varepsilon_0 E^2 + \frac{1}{\mu_0}\frac{E^2}{c^2}\right) = \frac{1}{2}(\varepsilon_0 E^2 + \varepsilon_0 E^2) = \varepsilon_0 E^2
+    u = \frac{1}{2}(\varepsilon_0 E^2 + \frac{1}{\mu_0}B^2) 
+    = \frac{1}{2}\left(\varepsilon_0 E^2 + \frac{1}{\mu_0}\frac{E^2}{c^2}\right) 
+    = \frac{1}{2}(\varepsilon_0 E^2 + \varepsilon_0 E^2) = \varepsilon_0 E^2
 \end{equation}
 \textbf{能流密度 $\bm{S}$}:
 \begin{equation}
-    \bm{S} = \frac{1}{\mu_0}(\bm{E} \times \bm{B}) = \frac{1}{\mu_0 c}\bm{E} \times (\hat{\bm{k}} \times \bm{E}) = \frac{1}{\mu_0 c} E^2 \hat{\bm{k}} = c \varepsilon_0 E^2 \hat{\bm{k}} = c u \hat{\bm{k}}
+    \bm{S} = \frac{1}{\mu_0}(\bm{E} \times \bm{B}) 
+    = \frac{1}{\mu_0 c}\bm{E} \times (\hat{\bm{k}} \times \bm{E}) 
+    = \frac{1}{\mu_0 c} E^2 \hat{\bm{k}} = c \varepsilon_0 E^2 \hat{\bm{k}} = c u \hat{\bm{k}}
 \end{equation}
 \textbf{动量密度 $\bm{g}$}:
 \begin{equation}
-    \bm{g} = \varepsilon_0(\bm{E} \times \bm{B}) = \frac{\varepsilon_0}{c}\bm{E} \times (\hat{\bm{k}} \times \bm{E}) = \frac{\varepsilon_0 E^2}{c}\hat{\bm{k}} = \frac{u}{c}\hat{\bm{k}}
+    \bm{g} = \varepsilon_0(\bm{E} \times \bm{B}) 
+    = \frac{\varepsilon_0}{c}\bm{E} \times (\hat{\bm{k}} \times \bm{E}) 
+    = \frac{\varepsilon_0 E^2}{c}\hat{\bm{k}} = \frac{u}{c}\hat{\bm{k}}
 \end{equation}
 由此可见，对于平面电磁波，能流密度的大小是能量密度的 $c$ 倍，而动量密度的大小是能量密度的 $1/c$ 倍。
 \begin{equation}
     \bm{g} = \frac{\bm{S}}{c^2}
 \end{equation}
 
-对于随时间正弦变化的场，我们通常关心其时间平均值。对于 $E = E_0 \cos(\omega t)$，其平方的时间平均值为 $\langle E^2 \rangle = \frac{1}{2}E_0^2$。因此，时间平均的能量密度、能流密度和动量密度为：
+对于随时间正弦变化的场，我们通常关心其时间平均值。对于 $E = E_0 \cos(\omega t)$，
+其平方的时间平均值为 $\langle E^2 \rangle = \frac{1}{2}E_0^2$。因此，时间平均的能量密度、能流密度和动量密度为：
 \begin{equation}
 \begin{aligned}
     \langle u \rangle &= \frac{1}{2}\varepsilon_0 E_0^2 \\
-    \langle \bm{S} \rangle &= c \langle u \rangle \hat{\bm{k}} = \frac{1}{2}c\varepsilon_0 E_0^2 \hat{\bm{k}} \\
-    \langle \bm{g} \rangle &= \frac{\langle u \rangle}{c} \hat{\bm{k}} = \frac{1}{2c}\varepsilon_0 E_0^2 \hat{\bm{k}}
+    \langle \bm{S} \rangle &= c \langle u \rangle \hat{\bm{k}} 
+    = \frac{1}{2}c\varepsilon_0 E_0^2 \hat{\bm{k}} \\
+    \langle \bm{g} \rangle &= \frac{\langle u \rangle}{c} \hat{\bm{k}} 
+    = \frac{1}{2c}\varepsilon_0 E_0^2 \hat{\bm{k}}
 \end{aligned}
 \end{equation}
 
 \subsection{辐射压}
-电磁波携带着动量，当它被物体吸收或反射时，会把动量传递给物体，从而对物体产生一个力的作用。单位面积上受到的这个力，就是\textbf{辐射压力(Radiation Pressure)}。
+电磁波携带着动量，当它被物体吸收或反射时，会把动量传递给物体，
+从而对物体产生一个力的作用。单位面积上受到的这个力，就是\textbf{辐射压力(Radiation Pressure)}。
 
-考虑一束电磁波垂直入射到一块面积为 $A$ 的物体表面。在时间 $\Delta t$ 内，入射到该表面的电磁波占据的体积为 $V = c A \Delta t$。
+考虑一束电磁波垂直入射到一块面积为 $A$ 的物体表面。在时间 $\Delta t$ 内，
+入射到该表面的电磁波占据的体积为 $V = c A \Delta t$。
 这部分电磁波携带的动量为：
 \begin{equation}
     \Delta \bm{P}_{\text{em}} = \langle \bm{g} \rangle V = \langle \bm{g} \rangle c A \Delta t
 \end{equation}
 \begin{itemize}
-    \item \textbf{完全吸收}: 如果物体完全吸收这些电磁波，那么在 $\Delta t$ 时间内，物体获得的动量就等于电磁波失去的动量 $\Delta \bm{P}_{\text{mech}} = \Delta \bm{P}_{\text{em}}$。
+    \item \textbf{完全吸收}: 如果物体完全吸收这些电磁波，那么在 $\Delta t$ 时间内，
+    物体获得的动量就等于电磁波失去的动量 $\Delta \bm{P}_{\text{mech}} = \Delta \bm{P}_{\text{em}}$。
     由此产生的力为 $\bm{F} = \frac{\Delta \bm{P}_{\text{mech}}}{\Delta t} = \langle \bm{g} \rangle c A$。
     作用在单位面积上的压力 $P_{\text{rad}}$ 为：
     \begin{equation}
-        P_{\text{rad}} = \frac{F}{A} = \langle g \rangle c = \frac{\langle u \rangle}{c} \cdot c = \langle u \rangle
+        P_{\text{rad}} = \frac{F}{A} = \langle g \rangle c 
+        = \frac{\langle u \rangle}{c} \cdot c = \langle u \rangle
     \end{equation}
-    \item \textbf{完全反射}: 如果物体是完美反射体，入射波的动量为 $\Delta \bm{P}_{\text{in}}$, 反射波的动量为 $\Delta \bm{P}_{\text{out}} = -\Delta \bm{P}_{\text{in}}$。物体动量的改变量为 $\Delta \bm{P}_{\text{mech}} = \Delta \bm{P}_{\text{in}} - \Delta \bm{P}_{\text{out}} = 2 \Delta \bm{P}_{\text{in}}$。
+    \item \textbf{完全反射}: 如果物体是完美反射体，
+    入射波的动量为 $\Delta \bm{P}_{\text{in}}$, 反射波的动量为 $\Delta \bm{P}_{\text{out}} 
+    = -\Delta \bm{P}_{\text{in}}$。
+    物体动量的改变量为 $\Delta \bm{P}_{\text{mech}} 
+    = \Delta \bm{P}_{\text{in}} - \Delta \bm{P}_{\text{out}} = 2 \Delta \bm{P}_{\text{in}}$。
     因此，辐射压力是完全吸收情况下的两倍：
     \begin{equation}
         P_{\text{rad}} = 2 \langle u \rangle
@@ -955,34 +1008,48 @@ $\frac{\partial u}{\partial t}
 
 \subsection{真空中的电磁波}
 
-\begin{definition}[真空中的麦克斯韦方程组]
-在不含电荷和电流的真空区域中($\rho=0, \bm{j}=0$)，电磁场由以下麦克斯韦方程组描述：
-\begin{align}
-\nabla \cdot \bm{E} &= 0 \\
-\nabla \cdot \bm{B} &= 0 \\
-\nabla \times \bm{E} &= -\frac{\partial \bm{B}}{\partial t} \label{eq:faraday} \\
-\nabla \times \bm{B} &= \mu_0 \varepsilon_0 \frac{\partial \bm{E}}{\partial t} \label{eq:ampere}
-\end{align}
+\begin{theorem}[真空中的麦克斯韦方程组]
+在不含电荷和电流的真空区域中($\rho=0, \bm{J}=0$)，电磁场由以下麦克斯韦方程组描述：
+\begin{equation}    
+    \left\{
+    \begin{aligned}
+    &\nabla \cdot \bm{E} = 0 \\
+    &\nabla \cdot \bm{B} = 0 \\
+    &\nabla \times \bm{E} = -\frac{\partial \bm{B}}{\partial t}  \\
+    &\nabla \times \bm{B} = \mu_0 \varepsilon_0 \frac{\partial \bm{E}}{\partial t}
+    \end{aligned}
+    \right.
+\end{equation}
 其中 $\bm{E}$ 是电场强度矢量，$\bm{B}$ 是磁感应强度矢量，$\varepsilon_0$ 是真空介电常数，$\mu_0$ 是真空磁导率。
-\end{definition}
+\end{theorem}
 
 \begin{theorem}[电磁波的波动方程]
 在真空中，电场 $\bm{E}$ 和磁场 $\bm{B}$ 均满足三维波动方程。
 \end{theorem}
 
 \begin{proof}
-为了推导出电场 $\bm{E}$ 满足的方程，我们对方程 \eqref{eq:faraday} 两边取旋度：
+为了推导出电场 $\bm{E}$ 满足的方程，
+我们对方程 $\nabla \times \bm{E} = -\frac{\partial \bm{B}}{\partial t}$ 两边取旋度：
 \begin{equation}
-\nabla \times (\nabla \times \bm{E}) = -\nabla \times \left(\frac{\partial \bm{B}}{\partial t}\right) = -\frac{\partial}{\partial t}(\nabla \times \bm{B})
+\nabla \times (\nabla \times \bm{E}) 
+= -\nabla \times \left(\frac{\partial \bm{B}}{\partial t}\right) 
+= -\frac{\partial}{\partial t}(\nabla \times \bm{B})
 \end{equation}
-利用矢量恒等式 $\nabla \times (\nabla \times \bm{A}) = \nabla(\nabla \cdot \bm{A}) - \nabla^2 \bm{A}$ 以及麦克斯韦方程 $\nabla \cdot \bm{E} = 0$ 和方程 \eqref{eq:ampere}，我们得到：
+
+利用矢量恒等式 $\nabla \times (\nabla \times \bm{A}) = \nabla(\nabla \cdot \bm{A}) - \nabla^2 \bm{A}$ 
+以及麦克斯韦方程 $\nabla \cdot \bm{E} = 0$ 和
+方程 $\nabla \times \bm{B} = \mu_0 \varepsilon_0 \frac{\partial \bm{E}}{\partial t}$，我们得到：
 \begin{equation}
-\nabla(\nabla \cdot \bm{E}) - \nabla^2 \bm{E} = -\frac{\partial}{\partial t}\left(\mu_0 \varepsilon_0 \frac{\partial \bm{E}}{\partial t}\right)
+\nabla(\nabla \cdot \bm{E}) - \nabla^2 \bm{E} 
+= -\frac{\partial}{\partial t}\left(\mu_0 \varepsilon_0 \frac{\partial \bm{E}}{\partial t}\right)
 \end{equation}
+
 \begin{equation}
 \Rightarrow \quad \nabla^2 \bm{E} - \mu_0 \varepsilon_0 \frac{\partial^2 \bm{E}}{\partial t^2} = 0
 \end{equation}
-同理，对 \eqref{eq:ampere} 两边取旋度可以得到磁场 $\bm{B}$ 的波动方程：
+
+同理，对 $\nabla \times \bm{B} = \mu_0 \varepsilon_0 \frac{\partial \bm{E}}{\partial t}$ 
+两边取旋度可以得到磁场 $\bm{B}$ 的波动方程：
 \begin{equation}
 \nabla^2 \bm{B} - \mu_0 \varepsilon_0 \frac{\partial^2 \bm{B}}{\partial t^2} = 0
 \end{equation}
@@ -994,7 +1061,8 @@ c = \frac{1}{\sqrt{\mu_0 \varepsilon_0}}
 \end{proof}
 
 \subsection{单色波（时谐电磁波）}
-我们考虑在没有自由电荷和电流的线性、各向同性、均匀的介质中传播的电磁波。介质的电磁特性由介电常数 $\varepsilon$ 和磁导率 $\mu$ 描述。
+我们考虑在没有自由电荷和电流的线性、各向同性、均匀的介质中传播的电磁波。
+介质的电磁特性由介电常数 $\varepsilon$ 和磁导率 $\mu$ 描述。
 
 \begin{definition}[时谐场]
 一个时谐（或称单色）电磁波是指其场矢量随时间的行为是正弦的。我们可以使用复数表示法来简化计算，将场矢量写为：
@@ -1004,10 +1072,9 @@ c = \frac{1}{\sqrt{\mu_0 \varepsilon_0}}
 \bm{B}(\bm{r}, t) &= \mathrm{Re}[\bm{B}(\bm{r}) \mathrm{e}^{-\mathrm{i}\omega t}]
 \end{aligned}
 \end{equation}
-其中 $\bm{E}(\bm{r})$ 和 $\bm{B}(\bm{r})$ 是复振幅，包含了振幅和相位信息，$\omega$ 是角频率。在这种表示法下，时间导数 $\frac{\partial}{\partial t}$ 可以被替换为 $(-\mathrm{i}\omega)$。
+其中 $\bm{E}(\bm{r})$ 和 $\bm{B}(\bm{r})$ 是复振幅，包含了振幅和相位信息，$\omega$ 是角频率。
+在这种表示法下，时间导数 $\frac{\partial}{\partial t}$ 可以被替换为 $(-\mathrm{i}\omega)$。
 \end{definition}
-
-\textbf{作者注：} 原笔记中对时间导数的处理存在符号不一致的问题。例如，在处理 $\nabla \times \bm{E}$ 时使用了 $\frac{\partial}{\partial t} \to \mathrm{i}\omega$ 的约定，而在处理 $\nabla \times \bm{H}$ 时使用了 $\frac{\partial}{\partial t} \to -\mathrm{i}\omega$ 的约定。为了保持一致性，本文档统一采用物理学中更常见的 $e^{-\mathrm{i}\omega t}$ 约定，即 $\frac{\partial}{\partial t} \to -\mathrm{i}\omega$。
 
 在这种约定下，麦克斯韦方程组（频域形式）为：
 \begin{equation}
@@ -1050,7 +1117,9 @@ c = \frac{1}{\sqrt{\mu_0 \varepsilon_0}}
 \end{equation}
 同理可得磁场的亥姆霍兹方程 $\nabla^2 \bm{B} + k^2 \bm{B} = 0$。
 
-需要注意的是，亥姆霍兹方程的任何解都必须同时满足散度条件 $\nabla \cdot \bm{E} = 0$ 和 $\nabla \cdot \bm{B} = 0$，才能成为麦克斯韦方程组的有效解。
+需要注意的是，亥姆霍兹方程的任何解都必须同时满足散度条件 $\nabla \cdot \bm{E} = 0$ 
+和 $\nabla \cdot \bm{B} = 0$，才能成为麦克斯韦方程组的有效解。
+\textcolor{red}{其解若满足散度条件，则称为一种可能的波模。}
 \end{proof}
 
 \begin{definition}[平面电磁波]
@@ -1061,27 +1130,33 @@ c = \frac{1}{\sqrt{\mu_0 \varepsilon_0}}
 \bm{B}(\bm{r}, t) &= \bm{B}_0 \mathrm{e}^{\mathrm{i}(\bm{k} \cdot \bm{r} - \omega t)}
 \end{aligned}
 \end{equation}
-其中 $\bm{E}_0$ 和 $\bm{B}_0$ 是恒定的复矢量振幅，$\bm{k}$ 是波矢，其方向为波的传播方向，大小为波数 $k=|\bm{k}|$。波的等相位面（波前）由 $\bm{k} \cdot \bm{r} = \text{const}$ 定义，是垂直于 $\bm{k}$ 的平面。
+其中 $\bm{E}_0$ 和 $\bm{B}_0$ 是恒定的复矢量振幅，$\bm{k}$ 是波矢，
+其方向为波的传播方向，大小为波数 $k=|\bm{k}|$。
+波的等相位面（波前）由 $\bm{k} \cdot \bm{r} = \text{const}$ 定义，是垂直于 $\bm{k}$ 的平面。
 \end{definition}
 
-\begin{theorem}[平面电磁波的性质]
+\begin{corollary}[平面电磁波的性质]
+平面电磁波具有以下性质：
 \begin{enumerate}
     \item \textbf{横波性：} 电场 $\bm{E}$ 和磁场 $\bm{B}$ 都垂直于传播方向 $\bm{k}$。
     \item \textbf{正交性：} 电场 $\bm{E}$ 和磁场 $\bm{B}$ 相互垂直。
     \item $\bm{E}, \bm{B}, \bm{k}$ 构成右手系。
 \end{enumerate}
-\end{theorem}
+\end{corollary}
 \begin{proof}
 将平面波解代入麦克斯韦方程的散度条件 $\nabla \cdot \bm{E}=0$。注意到 $\nabla \to \mathrm{i}\bm{k}$：
 \begin{equation}
-\mathrm{i}\bm{k} \cdot \bm{E}_0 \mathrm{e}^{\mathrm{i}(\bm{k} \cdot \bm{r} - \omega t)} = 0 \quad \Rightarrow \quad \bm{k} \cdot \bm{E} = 0
+\mathrm{i}\bm{k} \cdot \bm{E}_0 \mathrm{e}^{\mathrm{i}(\bm{k} \cdot \bm{r} - \omega t)} 
+= 0 \quad \Rightarrow \quad \bm{k} \cdot \bm{E} = 0
 \end{equation}
 同理，$\bm{k} \cdot \bm{B} = 0$。这表明电场和磁场都没有沿着传播方向的分量，即电磁波是横波。
 
 从法拉第定律 $\nabla \times \bm{E} = \mathrm{i}\omega\bm{B}$，我们得到：
 \begin{equation}
-\mathrm{i}\bm{k} \times \bm{E} = \mathrm{i}\omega\bm{B} \quad \Rightarrow \quad \bm{B} = \frac{1}{\omega}(\bm{k} \times \bm{E})
+\mathrm{i}\bm{k} \times \bm{E} = \mathrm{i}\omega\bm{B} \quad \Rightarrow \quad \bm{B} 
+= \frac{1}{\omega}(\bm{k} \times \bm{E})
 \end{equation}
+
 这个关系表明 $\bm{B}$ 垂直于 $\bm{E}$ 和 $\bm{k}$ 构成的平面。因此，$\bm{E}$ 和 $\bm{B}$ 相互垂直。
 
 场强的关系为：
@@ -1090,36 +1165,73 @@ c = \frac{1}{\sqrt{\mu_0 \varepsilon_0}}
 \end{equation}
 其中 $v = \omega/k = 1/\sqrt{\mu\varepsilon}$ 是波在介质中的相速度。
 
-定义介质的折射率 $n = c/v = \sqrt{\mu\varepsilon/\mu_0\varepsilon_0} = \sqrt{\mu_r \varepsilon_r}$。如果 $\mu$ 或 $\varepsilon$ 依赖于频率 $\omega$，那么折射率 $n$ 也依赖于频率，这种现象称为 \textbf{色散}。
+定义介质的折射率 $n = c/v = \sqrt{\mu\varepsilon/\mu_0\varepsilon_0} = \sqrt{\mu_r \varepsilon_r}$。
+如果 $\mu$ 或 $\varepsilon$ 依赖于频率 $\omega$，那么折射率 $n$ 也依赖于频率，这种现象称为 \textbf{色散}。
 \end{proof}
 
 \begin{definition}[电磁波的能量和能流]
+电磁波的能量和能流定义为：
 \begin{enumerate}
     \item \textbf{能量密度 $u$：} 单位体积内的电磁场能量。对于线性介质，瞬时能量密度为：
     \begin{equation}
-        u = \frac{1}{2}(\bm{E} \cdot \bm{D} + \bm{B} \cdot \bm{H}) = \frac{1}{2}(\varepsilon E^2 + \frac{1}{\mu} B^2)
+        u = \frac{1}{2}(\bm{E} \cdot \bm{D} + \bm{B} \cdot \bm{H}) 
+        = \frac{1}{2}(\varepsilon E^2 + \frac{1}{\mu} B^2)
     \end{equation}
-    对于平面波，$B = E/v$，所以 $\frac{1}{\mu} B^2 = \frac{1}{\mu} (E/v)^2 = \frac{1}{\mu v^2} E^2 = \varepsilon E^2$。这意味着电场能量和磁场能量相等。
+    对于平面波，$B = E/v$，所以 $\frac{1}{\mu} B^2 = \frac{1}{\mu} (E/v)^2 
+    = \frac{1}{\mu v^2} E^2 = \varepsilon E^2$。这意味着电场能量和磁场能量相等。
     \begin{equation}
         u = \varepsilon E^2 = \frac{1}{\mu} B^2
     \end{equation}
-    如果 $E = E_0 \cos(\bm{k}\cdot\bm{r}-\omega t)$，则瞬时能量密度为 $u(t) = \varepsilon E_0^2 \cos^2(\bm{k}\cdot\bm{r}-\omega t)$。
+    如果 $E = E_0 \cos(\bm{k}\cdot\bm{r}-\omega t)$，则瞬时能量密度为 $u(t) 
+    = \varepsilon E_0^2 \cos^2(\bm{k}\cdot\bm{r}-\omega t)$。
     
     \item \textbf{坡印亭矢量 $\bm{S}$：} 代表单位时间通过单位面积的能量流密度。
     \begin{equation}
         \bm{S} = \bm{E} \times \bm{H}
     \end{equation}
-    对于平面波，$\bm{S} = \bm{E} \times \frac{\bm{B}}{\mu} = \frac{1}{\mu\omega} \bm{E} \times (\bm{k} \times \bm{E}) = \frac{E^2}{\mu\omega} \bm{k} = v\varepsilon E^2 \hat{\bm{k}} = u v \hat{\bm{k}}$。
+    对于平面波，$\bm{S} = \bm{E} \times \frac{\bm{B}}{\mu} 
+    = \frac{1}{\mu\omega} \bm{E} \times (\bm{k} \times \bm{E}) 
+    = \frac{E^2}{\mu\omega} \bm{k} = v\varepsilon E^2 \hat{\bm{k}} = u v \hat{\bm{k}}$。
 \end{enumerate}
 \end{definition}
 
 \begin{theorem}[时谐场的平均值]
-对于两个时谐量 $f(t) = \mathrm{Re}[f_0 \mathrm{e}^{-\mathrm{i}\omega t}]$ 和 $g(t) = \mathrm{Re}[g_0 \mathrm{e}^{-\mathrm{i}\omega t}]$，它们乘积在一个周期 $T=2\pi/\omega$ 内的时间平均值为：
+对于两个时谐量 $f(t) = f_0 \mathrm{e}^{-\mathrm{i}\omega t}$ 和 
+$g(t) = g_0 \mathrm{e}^{-\mathrm{i}\omega t + i\phi}$，
+它们乘积在一个周期 $T=2\pi/\omega$ 内的时间平均值为：
 \begin{equation}
-\langle f(t)g(t) \rangle = \frac{1}{T}\int_0^T f(t)g(t) \mathrm{d}t = \frac{1}{2}\mathrm{Re}[f_0 g_0^*] = \frac{1}{2}\mathrm{Re}[f_0^* g_0]
+\langle f(t)g(t) \rangle 
+= \frac{1}{T}\int_0^T \mathrm{Re}[f(t)]\mathrm{Re}[g(t)] \mathrm{d}t 
+= \frac{1}{2}\mathrm{Re}[f^* g]
 \end{equation}
 其中 $*$ 代表复共轭。
 \end{theorem}
+
+\begin{proof}
+\begin{equation}
+    \begin{aligned}
+    \langle f \cdot g \rangle &= \frac{1}{T} \int_{0}^{T} [f_0 \cos(\omega t)] 
+    \cdot [g_0 \cos(\omega t - \phi)] dt \\
+    &= \frac{\omega}{2\pi} \int_{0}^{2\pi/\omega} f_0 g_0 \cos(\omega t) \cos(\omega t - \phi) dt \\
+    &= \frac{f_0 g_0}{2\pi} \int_{0}^{2\pi} \cos(x) \cos(x - \phi) dx \\
+    &= \frac{f_0 g_0}{2\pi} \int_{0}^{2\pi} \frac{1}{2} [\cos(2x - \phi) + \cos(\phi)] dx \\
+    &= \frac{f_0 g_0}{4\pi} \left[ \frac{1}{2}\sin(2x - \phi) + x\cos(\phi) \right]_{0}^{2\pi} \\
+    &= \frac{f_0 g_0}{4\pi} [ (0 + 2\pi\cos(\phi)) - (0 + 0) ] \\
+    &= \frac{f_0 g_0}{2} \cos(\phi)
+\end{aligned}
+\end{equation}
+
+同时 $f^* g$有：
+\begin{equation}
+    f^* g = (f_0 e^{i\omega t})(g_0 e^{-i\omega t+i\phi}) = f_0 g_0 e^{i\phi}
+\end{equation}
+其实部为 $\mathrm{Re}[f^* g] = f_0 g_0 \cos(\phi)$。
+
+因此，我们可以得到最终的公式：
+\begin{equation}
+    \langle f \cdot g \rangle = \frac{1}{2} \mathrm{Re}[f^* g]
+\end{equation}
+\end{proof}
 
 应用这个定理，我们可以计算平均能量密度和平均能流：
 \begin{itemize}
@@ -1147,18 +1259,22 @@ c = \frac{1}{\sqrt{\mu_0 \varepsilon_0}}
 \end{itemize}
 
 \subsection{电磁波在介质分界面上的行为}
-考虑一束单色平面波从介质1（参数 $\varepsilon_1, \mu_1$）入射到介质2（参数 $\varepsilon_2, \mu_2$）的分界面上。我们假设界面是平的（$z=0$平面），并且界面上没有自由电荷和自由电流。
+考虑一束单色平面波从介质1（参数 $\varepsilon_1, \mu_1$）入射到介质2（参数 $\varepsilon_2, \mu_2$）的分界面上。
+我们假设界面是平的（$z=0$平面），并且界面上没有自由电荷和自由电流。
 
-\begin{definition}[边界条件]
+\begin{theorem}[边界条件]
 在介质分界面上，电磁场必须满足以下边界条件：
 \begin{align}
-(\bm{D}_1 - \bm{D}_2) \cdot \hat{\bm{n}} &= 0 \quad \Rightarrow \quad \varepsilon_1 E_{1\perp} = \varepsilon_2 E_{2\perp} \\
+(\bm{D}_1 - \bm{D}_2) \cdot \hat{\bm{n}} &= 0 \quad \Rightarrow \quad \varepsilon_1 E_{1\perp} 
+= \varepsilon_2 E_{2\perp} \\
 (\bm{B}_1 - \bm{B}_2) \cdot \hat{\bm{n}} &= 0 \quad \Rightarrow \quad B_{1\perp} = B_{2\perp} \\
-(\bm{E}_1 - \bm{E}_2) \times \hat{\bm{n}} &= 0 \quad \Rightarrow \quad \bm{E}_{1\parallel} = \bm{E}_{2\parallel} \\
-(\bm{H}_1 - \bm{H}_2) \times \hat{\bm{n}} &= 0 \quad \Rightarrow \quad \bm{H}_{1\parallel} = \bm{H}_{2\parallel}
+(\bm{E}_1 - \bm{E}_2) \times \hat{\bm{n}} &= 0 \quad \Rightarrow \quad \bm{E}_{1\parallel} 
+= \bm{E}_{2\parallel} \\
+(\bm{H}_1 - \bm{H}_2) \times \hat{\bm{n}} &= 0 \quad \Rightarrow \quad \bm{H}_{1\parallel} 
+= \bm{H}_{2\parallel}
 \end{align}
 其中 $\perp$ 表示垂直于界面的分量，$\parallel$ 表示平行于界面的分量，$\hat{\bm{n}}$ 是界面的法向量。
-\end{definition}
+\end{theorem}
 
 在界面上，总场由入射波（I）、反射波（R）和透射波（T）叠加而成。
 \begin{align}
@@ -1167,15 +1283,19 @@ c = \frac{1}{\sqrt{\mu_0 \varepsilon_0}}
 \end{align}
 波矢形式如下：
 \begin{align}
-\text{入射波：} \quad \bm{E}_I(\bm{r}, t) &= \bm{E}_{0I} \mathrm{e}^{\mathrm{i}(\bm{k}_I \cdot \bm{r} - \omega_I t)} \\
-\text{反射波：} \quad \bm{E}_R(\bm{r}, t) &= \bm{E}_{0R} \mathrm{e}^{\mathrm{i}(\bm{k}_R \cdot \bm{r} - \omega_R t)} \\
-\text{透射波：} \quad \bm{E}_T(\bm{r}, t) &= \bm{E}_{0T} \mathrm{e}^{\mathrm{i}(\bm{k}_T \cdot \bm{r} - \omega_T t)}
+\text{入射波：} \quad \bm{E}_I(\bm{r}, t) 
+&= \bm{E}_{0I} \mathrm{e}^{\mathrm{i}(\bm{k}_I \cdot \bm{r} - \omega_I t)} \\
+\text{反射波：} \quad \bm{E}_R(\bm{r}, t) 
+&= \bm{E}_{0R} \mathrm{e}^{\mathrm{i}(\bm{k}_R \cdot \bm{r} - \omega_R t)} \\
+\text{透射波：} \quad \bm{E}_T(\bm{r}, t) 
+&= \bm{E}_{0T} \mathrm{e}^{\mathrm{i}(\bm{k}_T \cdot \bm{r} - \omega_T t)}
 \end{align}
 
 \begin{theorem}[反射和折射定律]
 为了让边界条件在任何时间 $t$ 和界面上的任何点 $(x,y,0)$ 都成立，所有波的相位因子必须相等。
 \begin{equation}
-(\bm{k}_I \cdot \bm{r} - \omega_I t)|_{z=0} = (\bm{k}_R \cdot \bm{r} - \omega_R t)|_{z=0} = (\bm{k}_T \cdot \bm{r} - \omega_T t)|_{z=0}
+(\bm{k}_I \cdot \bm{r} - \omega_I t)|_{z=0} = (\bm{k}_R \cdot \bm{r} - \omega_R t)|_{z=0} 
+= (\bm{k}_T \cdot \bm{r} - \omega_T t)|_{z=0}
 \end{equation}
 由此可推导出：
 \begin{enumerate}
@@ -1186,7 +1306,8 @@ c = \frac{1}{\sqrt{\mu_0 \varepsilon_0}}
 \begin{enumerate}
     \item \textbf{入射、反射、折射三线共面：} 入射波矢、反射波矢和折射波矢位于同一个平面内（入射面）。
     \item \textbf{反射定律：} 入射角等于反射角, $\theta_I = \theta_R$。
-    \item \textbf{折射定律（斯涅尔定律）：} $k_I \sin\theta_I = k_T \sin\theta_T$。由于 $k=n\omega/c$，此式可写为：
+    \item \textbf{折射定律（斯涅尔定律）：} $k_I \sin\theta_I = k_T \sin\theta_T$。
+    由于 $k=n\omega/c$，此式可写为：
     \begin{equation}
     n_1 \sin\theta_I = n_2 \sin\theta_T
     \end{equation}
@@ -1197,19 +1318,29 @@ c = \frac{1}{\sqrt{\mu_0 \varepsilon_0}}
 菲涅尔方程描述了反射光和折射光振幅与入射光振幅之间的关系。通常分两种情况讨论：电场矢量平行或垂直于入射面。
 
 \paragraph{(i) p-偏振 (TM模): 电场 $\bm{E}$ 平行于入射面}
-在这种情况下，磁场 $\bm{H}$ 垂直于入射面。通过在边界 $z=0$ 处匹配 $\bm{E}$ 和 $\bm{H}$ 的切向分量，可以解出反射系数 $r_p$ 和透射系数 $t_p$。对于非磁性介质 ($\mu_1 \approx \mu_2 \approx \mu_0$)：
+在这种情况下，磁场 $\bm{H}$ 垂直于入射面。通过在边界 $z=0$ 处匹配 $\bm{E}$ 和 $\bm{H}$ 的切向分量，
+可以解出反射系数 $r_p$ 和透射系数 $t_p$。对于非磁性介质 ($\mu_1 \approx \mu_2 \approx \mu_0$)：
 \begin{align}
-r_p = \frac{E_{0R}}{E_{0I}} &= \frac{n_2 \cos\theta_I - n_1 \cos\theta_T}{n_2 \cos\theta_I + n_1 \cos\theta_T} = \frac{\tan(\theta_I - \theta_T)}{\tan(\theta_I + \theta_T)} \\
-t_p = \frac{E_{0T}}{E_{0I}} &= \frac{2 n_1 \cos\theta_I}{n_2 \cos\theta_I + n_1 \cos\theta_T} = \frac{2 \sin\theta_T \cos\theta_I}{\sin(\theta_I + \theta_T)\cos(\theta_I - \theta_T)}
+r_p = \frac{E_{0R}}{E_{0I}} 
+&= \frac{n_2 \cos\theta_I - n_1 \cos\theta_T}{n_2 \cos\theta_I + n_1 \cos\theta_T} 
+= \frac{\tan(\theta_I - \theta_T)}{\tan(\theta_I + \theta_T)} \\
+t_p = \frac{E_{0T}}{E_{0I}} 
+&= \frac{2 n_1 \cos\theta_I}{n_2 \cos\theta_I + n_1 \cos\theta_T} 
+= \frac{2 \sin\theta_T \cos\theta_I}{\sin(\theta_I + \theta_T)\cos(\theta_I - \theta_T)}
 \end{align}
 
 \paragraph{(ii) s-偏振 (TE模): 电场 $\bm{E}$ 垂直于入射面}
 在这种情况下，电场 $\bm{E}$ 垂直于入射面。类似地，可以解出反射系数 $r_s$ 和透射系数 $t_s$。对于非磁性介质：
 \begin{align}
-r_s = \frac{E_{0R}}{E_{0I}} &= \frac{n_1 \cos\theta_I - n_2 \cos\theta_T}{n_1 \cos\theta_I + n_2 \cos\theta_T} = -\frac{\sin(\theta_I - \theta_T)}{\sin(\theta_I + \theta_T)} \\
-t_s = \frac{E_{0T}}{E_{0I}} &= \frac{2 n_1 \cos\theta_I}{n_1 \cos\theta_I + n_2 \cos\theta_T} = \frac{2 \sin\theta_T \cos\theta_I}{\sin(\theta_I + \theta_T)}
+r_s = \frac{E_{0R}}{E_{0I}} 
+&= \frac{n_1 \cos\theta_I - n_2 \cos\theta_T}{n_1 \cos\theta_I + n_2 \cos\theta_T} 
+= -\frac{\sin(\theta_I - \theta_T)}{\sin(\theta_I + \theta_T)} \\
+t_s = \frac{E_{0T}}{E_{0I}} 
+&= \frac{2 n_1 \cos\theta_I}{n_1 \cos\theta_I + n_2 \cos\theta_T} 
+= \frac{2 \sin\theta_T \cos\theta_I}{\sin(\theta_I + \theta_T)}
 \end{align}
-当光从光疏介质射向光密介质（$n_1 < n_2$）时，$\theta_I > \theta_T$，因此 $r_s$ 为负值。这表示反射光的电场相位会反转 $\pi$（半波损失）。
+当光从光疏介质射向光密介质（$n_1 < n_2$）时，$\theta_I > \theta_T$，因此 $r_s$ 为负值。
+这表示反射光的电场相位会反转 $\pi$（半波损失）。
 
 \begin{definition}[反射率和透射率]
 \textbf{反射率 $R$} 是反射波的平均能流（强度）与入射波的平均能流之比。
@@ -1240,32 +1371,72 @@ T &= \frac{4 n_1 n_2}{(n_1 + n_2)^2}
 
 当入射角 $\theta_I > \theta_c$ 时，$\sin\theta_T > 1$，这意味着 $\cos\theta_T$ 是一个纯虚数：
 \begin{equation}
-\cos\theta_T = \sqrt{1 - \sin^2\theta_T} = \mathrm{i}\sqrt{\left(\frac{n_1}{n_2}\sin\theta_I\right)^2 - 1}
+\cos\theta_T = \sqrt{1 - \sin^2\theta_T} 
+= \mathrm{i}\sqrt{\left(\frac{n_1}{n_2}\sin\theta_I\right)^2 - 1}
 \end{equation}
-此时，透射波的波矢在 $z$ 方向的分量变为纯虚数 $k_{Tz} = k_T \cos\theta_T = \mathrm{i} \kappa$，其中 $\kappa$ 是一个实数。透射电场为：
+此时，透射波的波矢在 $z$ 方向的分量变为纯虚数 $k_{Tz} = k_T \cos\theta_T 
+= \mathrm{i} \kappa$，其中 $\kappa$ 是一个实数。透射电场为：
 \begin{equation}
-\bm{E}_T(\bm{r}, t) = \bm{E}_{0T} \mathrm{e}^{\mathrm{i}(k_{Tx}x - \omega t)} \mathrm{e}^{\mathrm{i}(k_{Tz}z)} = \bm{E}_{0T} \mathrm{e}^{-\kappa z} \mathrm{e}^{\mathrm{i}(k_{Tx}x - \omega t)}
+\bm{E}_T(\bm{r}, t) 
+= \bm{E}_{0T} \mathrm{e}^{\mathrm{i}(k_{Tx}x - \omega t)} \mathrm{e}^{\mathrm{i}(k_{Tz}z)} 
+= \bm{E}_{0T} \mathrm{e}^{-\kappa z} \mathrm{e}^{\mathrm{i}(k_{Tx}x - \omega t)}
 \end{equation}
-这个波在 $x$ 方向（平行于界面）传播，但在 $z$ 方向（垂直于界面）指数衰减。这种波被称为 \textbf{隐失波} 或 \textbf{倏逝波}。其振幅随深入介质2的距离呈指数下降，能量被限制在界面附近一个很薄的层内。
+这个波在 $x$ 方向（平行于界面）传播，但在 $z$ 方向（垂直于界面）指数衰减。
+这种波被称为 \textbf{隐失波} 或 \textbf{倏逝波}。
+其振幅随深入介质2的距离呈指数下降，能量被限制在界面附近一个很薄的层内。
 其穿透深度 $\delta$（振幅下降到 $1/\mathrm{e}$ 的距离）为：
 \begin{equation}
 \delta = \frac{1}{\kappa} = \frac{1}{k_T \sqrt{(n_1/n_2)^2\sin^2\theta_I - 1}}
 \end{equation}
-在全反射条件下，反射系数的模为1（$|r_s|^2=|r_p|^2=1$），这意味着所有入射能量都被反射回来，$R=1, T=0$。虽然有隐失波进入第二介质，但没有能量的净传输。
+在全反射条件下，反射系数的模为1（$|r_s|^2=|r_p|^2=1$），这意味着所有入射能量都被反射回来，$R=1, T=0$。
+虽然有隐失波进入第二介质，但没有能量的净传输。
 
 \subsection{导体中的电磁波}
-导体内部存在可以自由移动的电荷（传导电子）。在外电场作用下，会形成传导电流 $\bm{j}$。对于许多导体，电流密度和电场成正比，满足欧姆定律：
+导体内部存在可以自由移动的电荷（传导电子）。在外电场作用下，会形成传导电流 $\bm{J}_f$。
+对于许多导体，电流密度和电场成正比，满足欧姆定律：
 \begin{equation}
-\bm{j} = \sigma \bm{E}
+\bm{J}_f = \sigma \bm{E}
 \end{equation}
 其中 $\sigma$ 是电导率。
+
+根据电荷守恒定律（连续性方程），电流密度的散度等于电荷密度 $\rho_f$ 随时间的变化率的负值：
+\begin{equation}
+    \nabla \cdot \bm{J}_f = -\frac{\partial \rho_f}{\partial t}
+\end{equation}
+
+将欧姆定律代入上式，并利用高斯定律 $\nabla \cdot \bm{E} = \rho_f / \varepsilon$，
+我们可以推导电荷密度的变化规律。
+\begin{equation}
+    \nabla \cdot (\sigma \bm{E}) = -\frac{\partial \rho_f}{\partial t}
+\end{equation}
+代入高斯定律：
+\begin{equation}
+    \sigma \frac{\rho_f}{\varepsilon} = -\frac{\partial \rho_f}{\partial t}
+\end{equation}
+整理后得到一个关于 $\rho_f$ 的一阶微分方程：
+\begin{equation}
+    \frac{\partial \rho_f}{\partial t} + \frac{\sigma}{\varepsilon} \rho_f = 0
+\end{equation}
+这个方程的解为：
+\begin{equation}
+    \rho_f(t) = \rho_f(0) \, e^{-(\sigma/\varepsilon)t}
+\end{equation}
+这表明导体内部任意初始的自由电荷密度 $\rho_f(0)$ 都会随时间指数衰减。
+
+这个衰减过程的特征时间，也称为电荷的\textbf{弛豫时间} $\tau$，为：
+\begin{equation}
+    \tau = \frac{\varepsilon}{\sigma}
+\end{equation}
+
 此时，安培-麦克斯韦定律变为：
 \begin{equation}
-\nabla \times \bm{H} = \bm{j} + \frac{\partial \bm{D}}{\partial t} = \sigma \bm{E} + \varepsilon \frac{\partial \bm{E}}{\partial t}
+\nabla \times \bm{H} = \bm{J}_f + \frac{\partial \bm{D}}{\partial t} 
+= \sigma \bm{E} + \varepsilon \frac{\partial \bm{E}}{\partial t}
 \end{equation}
 对于时谐场（$\partial/\partial t \to -\mathrm{i}\omega$）：
 \begin{equation}
-\nabla \times \bm{H} = (\sigma - \mathrm{i}\omega\varepsilon)\bm{E} = -\mathrm{i}\omega\left(\varepsilon + \frac{\mathrm{i}\sigma}{\omega}\right)\bm{E}
+\nabla \times \bm{H} = (\sigma - \mathrm{i}\omega\varepsilon)\bm{E} 
+= -\mathrm{i}\omega\left(\varepsilon + \frac{\mathrm{i}\sigma}{\omega}\right)\bm{E}
 \end{equation}
 我们可以定义一个复介电常数 $\varepsilon_c$：
 \begin{equation}
@@ -1281,21 +1452,42 @@ T &= \frac{4 n_1 n_2}{(n_1 + n_2)^2}
 \end{equation}
 令 $\tilde{k} = \beta + \mathrm{i}\alpha$，其中 $\alpha, \beta$ 为实数。平面波解的形式为：
 \begin{equation}
-\bm{E}(z,t) = \bm{E}_0 \mathrm{e}^{\mathrm{i}(\tilde{k}z - \omega t)} = \bm{E}_0 \mathrm{e}^{-\alpha z} \mathrm{e}^{\mathrm{i}(\beta z - \omega t)}
+\bm{E}(z,t) = \bm{E}_0 \mathrm{e}^{\mathrm{i}(\tilde{k}z - \omega t)} 
+= \bm{E}_0 \mathrm{e}^{-\alpha z} \mathrm{e}^{\mathrm{i}(\beta z - \omega t)}
 \end{equation}
-这个解表示一个在 $z$ 方向传播的衰减波。$\beta$ 决定了波长（$\lambda = 2\pi/\beta$），而 $\alpha$ 是衰减系数。
-通过求解 $\tilde{k}^2 = (\beta+\mathrm{i}\alpha)^2 = \beta^2-\alpha^2+2\mathrm{i}\alpha\beta$，可以得到 $\alpha$ 和 $\beta$ 的表达式：
-\begin{align}
+这个解表示一个在 $z$ 方向传播的衰减波。 $\alpha$ 是衰减系数。
+通过求解 $\tilde{k}^2 = (\beta+\mathrm{i}\alpha)^2 = \beta^2-\alpha^2+2\mathrm{i}\alpha\beta$，
+可以得到 $\alpha$ 和 $\beta$ 的表达式：
+\begin{equation}
+\label{eq:alpha_beta}
+\left\{
+\begin{aligned}
 \alpha &= \omega \sqrt{\frac{\mu\varepsilon}{2}\left[\sqrt{1+\left(\frac{\sigma}{\omega\varepsilon}\right)^2} - 1\right]} \\
 \beta &= \omega \sqrt{\frac{\mu\varepsilon}{2}\left[\sqrt{1+\left(\frac{\sigma}{\omega\varepsilon}\right)^2} + 1\right]}
-\end{align}
+\end{aligned}
+\right.
+\end{equation}
 
 \begin{definition}[良导体]
-良导体的特征是传导电流远大于位移电流，即 $|\bm{j}| \gg |\partial\bm{D}/\partial t|$，这等价于 $\sigma \gg \omega\varepsilon$。
-对于良导体，可以近似得到：
-\begin{equation}
-\alpha \approx \beta \approx \sqrt{\frac{\omega\mu\sigma}{2}}
-\end{equation}
+    
+    若导体处于一个周期为 $T$ 的交变电磁波中，当电荷的弛豫时间远小于电磁波的周期时，
+    任何电荷积聚都会在电场方向改变前迅速耗散。这个条件可以表示为：
+    \begin{equation}
+        T \gg \tau \quad \Rightarrow \quad T \gg \frac{\varepsilon}{\sigma}
+    \end{equation}
+    由于周期 $T$ 和角频率 $\omega$ 的关系是 $T=2\pi/\omega$，上述条件可以改写为：
+    \begin{equation}
+        \frac{1}{\omega} \gg \frac{\varepsilon}{\sigma} \quad \Rightarrow 
+        \quad \frac{\sigma}{\omega\varepsilon} \gg 1
+    \end{equation}
+    满足此条件的导体，其内部就不会有显著的自由电荷积聚，可以看作是\textbf{良导体}，
+    此时可以近似认为内部的净自由电荷密度始终为零，即 $\rho_f \approx 0$。
+
+    将$\frac{\sigma}{\omega\varepsilon} \gg 1$代入\eqref{eq:alpha_beta}并作近似，可以得到：
+    \begin{equation}
+    \alpha \approx \beta \approx \sqrt{\frac{\omega\mu\sigma}{2}}
+    \end{equation}
+
 \end{definition}
 
 \begin{definition}[趋肤深度]
